@@ -7,12 +7,39 @@ body {
 .subtitleLargest {
   color: #F8F8F8;
   font-weight: bolder;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .subtitleLarge {
   color: #F8F8F8;
   font-weight: 0;
-  font-size: 18px;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+}
+
+.subtitleOne {
+  color: #F8F8F8;
+  font-weight: bolder;
+  font-size: 12px;
+}
+
+.subtitleTwo {
+  color: #F8F8F8;
+  font-weight: bolder;
+  font-size: 10px;
+  letter-spacing: 0.4px;
+}
+
+.navSubtitleOne {
+  color: #CCCCCC;
+  font-weight: bolder;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.navSubtitleTwo {
+  color: #2B2B28;
+  font-weight: 0;
+  font-size: 10px;
 }
 /*# sourceMappingURL=style.css.map */

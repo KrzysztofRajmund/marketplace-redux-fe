@@ -22,8 +22,10 @@ const JumbotronSale = ({getItems, fetchReducer }) => {
    <>
 <div className="subtitleLargest">Jumbotron Sale:</div>
 <div className="subtitleLarge">how is going</div>
-<div>how is going</div>
-<div>how is going</div>
+<div className="subtitleOne">how is going</div>
+<div className="subtitleTwo">how is going</div>
+<div className="navSubtitleOne">how is going</div>
+<div className="navSubtitleTwo">how is going</div>
 {listOfItems}
    </>
   );

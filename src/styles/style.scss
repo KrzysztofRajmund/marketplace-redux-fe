@@ -8,6 +8,8 @@ body {
     color: #F8F8F8 !important;
     
   }
+
+  //HOME PAGE
   
 .subtitleLargest {
     @include mainText($primaryTextWhite,$textBolder,$largestFontSize);
@@ -15,6 +17,25 @@ body {
 }
 
 .subtitleLarge {
-    @include mainText($primaryTextWhite,$putFontWeight,$largeFontSize);
+    @include mainText($primaryTextWhite,0,$largeFontSize);
+    letter-spacing: $letterSpacing;
+}
+
+.subtitleOne {
+    @include mainText($primaryTextWhite,$textBolder,$subtitleOneFontSize);
     
+}
+
+.subtitleTwo {
+    @include mainText($primaryTextWhite,$textBolder,$subtitleTwoFontSize);
+    letter-spacing: $letterSpacing;
+}
+
+.navSubtitleOne {
+    @include mainText($primaryTextLightGrey,$textBolder,$subtitleTwoFontSize);
+    text-transform: uppercase;
+}
+
+.navSubtitleTwo {
+    @include mainText($primaryTextDarkGrey,0,$subtitleTwoFontSize);
 }

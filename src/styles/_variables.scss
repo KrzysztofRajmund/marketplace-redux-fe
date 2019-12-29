@@ -1,10 +1,47 @@
 
-//TEXT
+//TEXT:
+//text color
 $primaryTextWhite:#F8F8F8;
-$textBolder:bolder;
+$primaryTextLightGrey:#CCCCCC;
+$primaryTextDarkGrey:#2B2B28;
 
-$largeFontSize: 18px;
-$largestFontSize: 24px;
+$secondaryTextTransparent: rgba(248, 248, 248, 0.35);
+$secondaryTextPurple:#BF74C5;
+$secondaryTextDarkRed:#EA211D;
+$secondaryTextLightRed:#E84340;
+$secondaryTextGreen:#439037;
+//text sizes
+$largestFontSize: 20px;
+$largeFontSize: 14px;
+$subtitleOneFontSize: 12px;
+$subtitleTwoFontSize: 10px;
+//text bolder + spacing
+$textBolder:bolder;
+$letterSpacing:0.4px;
+
+
+//BACKGROUND COLOR:
+//primary background
+$primaryBackgroundGreen:#3F6A0E;
+//nav
+$navBackgroundGrey:rgba(43, 43, 40, 0.85);
+//footer
+$footerBackgroundDarkGrey:#2F2F2F;
+//card
+$cardBackgroundLightGrey:#CCCCCC;
+
+
+
+//BUTTONS:
+//background color
+$lightGreyBtn:#F8F8F8;
+$purpleBtn:#BF74C5;
+$redBtn:#E84340;
+$greenBtn:#3FAF2E;
+$transparentBtn:rgba(248, 248, 248, 0.00);
+
+
+
 
 
 
