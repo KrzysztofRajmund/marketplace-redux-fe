@@ -12,9 +12,9 @@ const JumbotronSale = ({getItems, fetchReducer }) => {
     },[])
 
 
-    const listOfItems = fetchReducer.map(item=>(
+    const listOfItems = fetchReducer.slice(0,1).map(item=>(
         <div key={item.id}>
-            <img src={item.url} alt="image" width="100%" height="150px"/>
+            <img src={item.url} alt="image" width="100%" height="200px"/>
         </div>
     ));
   return (  
