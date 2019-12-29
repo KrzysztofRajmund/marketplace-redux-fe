@@ -1,4 +1,5 @@
 import React, {Component, useState, useEffect} from 'react';
+import {Jumbotron,Container} from 'react-bootstrap'
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getItems} from '../../actions/fetchActions';
@@ -13,21 +14,15 @@ const JumbotronSale = ({getItems, fetchReducer }) => {
     },[])
 
 
-    const listOfItems = fetchReducer.slice(0,1).map(item=>(
-        <div key={item.id}>
-            <img src={item.url} alt="image" width="100%" height="200px"/>
-        </div>
+    const winterSaleItem = fetchReducer.slice(0,1).map(item=>(
+        <Jumbotron className="jumbotronSale" key={item.id} fluid> 
+             <img src={item.url} alt="image" width="100%" height="400px"/>
+        </Jumbotron>
     ));
   return (  
-   <>
-<div className="subtitleLargest">Jumbotron Sale:</div>
-<div className="subtitleLarge">how is going</div>
-<div className="subtitleOne">how is going</div>
-<div className="subtitleTwo">how is going</div>
-<div className="navSubtitleOne">how is going</div>
-<div className="navSubtitleTwo">how is going</div>
-{listOfItems}
-   </>
+    <div>
+    {winterSaleItem}
+    </div>
   );
 }
 
