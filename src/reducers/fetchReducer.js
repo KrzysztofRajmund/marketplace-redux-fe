@@ -1,8 +1,8 @@
 import {GET_ITEMS} from '../actions/types';
 
 const initialState = {
-    items:[],
-    item:{}
+    items:[]
+  
 }
 
 export default function (state = initialState,action) {

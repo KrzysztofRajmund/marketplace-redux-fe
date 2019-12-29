@@ -1,9 +1,9 @@
 import { GET_ITEMS } from './types';
 
-const getItems = () => async dispatch => {
+export const getItems = () => async dispatch => {
     try {
 
-        var res = fetch('https://jsonplaceholder.typicode.com/photos',{
+        var res = await fetch('https://jsonplaceholder.typicode.com/photos',{
             method: "GET",
             // headers: {
             //     "Authorization": "Bearer " +    
@@ -13,7 +13,7 @@ const getItems = () => async dispatch => {
 
         if (res.ok) {
             var items = await res.json();
-            console.log("fetcActions - ITEMS", items)
+            console.log("fetchActions - ITEMS", items)
 
             dispatch({
                 type: GET_ITEMS,
