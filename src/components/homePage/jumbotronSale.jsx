@@ -1,4 +1,5 @@
 import React, {Component, useState, useEffect} from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getItems} from '../../actions/fetchActions';
 
@@ -23,6 +24,12 @@ JUMBOTRON SALE:
 {listOfItems}
    </div>
   );
+}
+
+
+JumbotronSale.propTypes = {
+    getItems: PropTypes.func.isRequired,
+    fetchReducer: PropTypes.array.isRequired
 }
 
 const mapStateToProps = state => ({
