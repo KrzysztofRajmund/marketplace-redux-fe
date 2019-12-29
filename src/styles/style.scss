@@ -9,7 +9,20 @@ body {
     
   }
 
-  //HOME PAGE
+  //JUMBOTRON SALE
+
+  .jumbotronSale {
+    margin:0px !important;
+    padding:0px !important;
+  }
+
+//SLIDE MAIN
+.slideMainBtn{
+    @include mainText($primaryTextWhite,$textBolder,$largeFontSize);
+    letter-spacing: $letterSpacing;
+    @include otherBtn();
+    background: $greenBtn;
+}
   
 .subtitleLargest {
     @include mainText($primaryTextWhite,$textBolder,$largestFontSize);
