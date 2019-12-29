@@ -1,0 +1,18 @@
+body {
+  font-family: Open Sans !important;
+  background: #3F6A0E !important;
+  color: #F8F8F8 !important;
+}
+
+.subtitleLargest {
+  color: #F8F8F8;
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+.subtitleLarge {
+  color: #F8F8F8;
+  font-weight: 0;
+  font-size: 18px;
+}
+/*# sourceMappingURL=style.css.map */

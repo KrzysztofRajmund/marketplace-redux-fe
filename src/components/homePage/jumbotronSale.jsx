@@ -19,10 +19,13 @@ const JumbotronSale = ({getItems, fetchReducer }) => {
         </div>
     ));
   return (  
-   <div>
-JUMBOTRON SALE:
+   <>
+<div className="subtitleLargest">Jumbotron Sale:</div>
+<div className="subtitleLarge">how is going</div>
+<div>how is going</div>
+<div>how is going</div>
 {listOfItems}
-   </div>
+   </>
   );
 }
 
