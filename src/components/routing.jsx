@@ -4,6 +4,7 @@ import store from '../store'
 
 import JumbotronSale from './homePage/jumbotronSale';
 import SlideMain from './homePage/slideMain';
+import ChosenForYou from './homePage/chosenForYou';
 
 
 const Routing = (props) => {
@@ -11,6 +12,7 @@ const Routing = (props) => {
     <Provider store={store}>
       <JumbotronSale />
       <SlideMain />
+      <ChosenForYou/>
     </Provider>
   );
 }
