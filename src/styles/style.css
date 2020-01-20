@@ -25,6 +25,16 @@ body {
 
 .cardGroup {
   margin: 15px !important;
+  padding: 0px !important;
+}
+
+.colGroup {
+  padding: 0px !important;
+}
+
+.rowGroup {
+  padding: 0px !important;
+  margin: 0px !important;
 }
 
 .card-body {
