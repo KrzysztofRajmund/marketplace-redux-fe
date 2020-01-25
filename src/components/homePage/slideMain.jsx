@@ -35,9 +35,15 @@ const SlideMain = ({getItems, fetchReducer }) => {
       </Carousel.Item>
     ));
     return (
+      <>
+      <div className="subtitleLargest">
+        Suggested Products
+        <hr/>
+      </div>
         <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
             {suggestedItems}
         </Carousel>
+        </>
       );
 }
 

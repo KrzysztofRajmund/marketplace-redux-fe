@@ -95,9 +95,15 @@ const ChosenForYou = ({getItems, fetchReducer }) => {
       </Carousel.Item>
     ));
     return (
+      <>
+      <div className="subtitleLargest">
+        Chosen For You
+        <hr/>
+      </div>
         <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
             {itemsForYou}
         </Carousel>
+        </>
       );
 }
 

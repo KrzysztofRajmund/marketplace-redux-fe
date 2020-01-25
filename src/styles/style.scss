@@ -27,6 +27,13 @@ body {
     
 }
 
+.transparentBtn {
+        @include mainText($primaryTextWhite,$textBolder,$largeFontSize);
+        letter-spacing: $letterSpacing;
+        @include otherBtn();
+        background: $transparentBtn;
+}
+
 .cardGroup {
     margin:15px !important; 
     padding: 0px !important;
@@ -34,6 +41,12 @@ body {
 
 .colGroup {
     padding: 0px !important;
+}
+
+.colGroupPromotion {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    
 }
 
 .rowGroup {
@@ -48,6 +61,11 @@ body {
   
 .subtitleLargest {
     @include mainText($primaryTextWhite,$textBolder,$largestFontSize);
+    
+}
+
+hr {
+    background-color: #439037;
     
 }
 
