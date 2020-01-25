@@ -9,6 +9,7 @@ import ChosenPromotions from './homePage/chosenPromotions';
 import WeekOffer from './homePage/weekOffer';
 import WeekendOffer from './homePage/weekendOffer';
 import Discover from './homePage/discover';
+import Footer from './footer';
 
 
 const Routing = (props) => {
@@ -21,6 +22,7 @@ const Routing = (props) => {
       <WeekOffer/>
       <WeekendOffer/>
       <Discover/>
+      <Footer/>
     </Provider>
   );
 }
