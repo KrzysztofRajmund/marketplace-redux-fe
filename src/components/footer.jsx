@@ -37,10 +37,10 @@ const Footer = () => {
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
       
-    <p> <Nav.Link href="#features">Language:</Nav.Link>
+    <blockquote> <Nav.Link href="#features">Language:</Nav.Link>
       <Nav.Link href="#pricing">Eng</Nav.Link>
       <Nav.Link href="#pricing">Pln</Nav.Link>
-      </p>
+      </blockquote>
     
      
       <Nav.Link href="#features">Currency:</Nav.Link>
