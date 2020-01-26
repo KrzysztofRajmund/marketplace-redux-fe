@@ -92,3 +92,21 @@ hr {
 .navSubtitleTwo {
     @include mainText($primaryTextDarkGrey,0,$subtitleTwoFontSize);
 }
+
+footer {
+    letter-spacing: $letterSpacing;
+}
+
+.navbarMiddle{
+    background-color: #4b4b4b!important;
+    border: 0.3px solid #2B2B28;
+    box-sizing: border-box;
+    box-shadow: 50px 50px 50px rgb(5, 5, 5);
+    border-radius: 2px;
+}
+.footerMiddleLink2{
+    margin-left: -12.5rem;
+}
+.footerButtonLink2 {
+    margin-left: -8rem;
+}

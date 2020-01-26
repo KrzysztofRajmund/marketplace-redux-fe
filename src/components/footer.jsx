@@ -1,63 +1,65 @@
-import React, {Component} from 'react';
-import {Card,Container, Button, Navbar,Nav} from 'react-bootstrap'
-
-
-
-
-
+import React, { Component } from "react";
+import {
+  Card,
+  Container,
+  Button,
+  Navbar,
+  Nav,
+  Row,
+  Col
+} from "react-bootstrap";
 
 const Footer = () => {
-
-
-  return (  
-    <div>
-  <Card className="text-center">
-  <Card.Header>
-  <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="mr-auto">
-      <Nav.Link href="#features">GOG Connect</Nav.Link>
-      <Nav.Link href="#pricing">Contact Us</Nav.Link>
-      <Nav.Link href="#pricing">Career</Nav.Link>
-    </Nav>
-    <Nav>
-      <Nav.Link href="#deets">Facebook</Nav.Link>
-      <Nav.Link eventKey={2} href="#memes">
-        Tweeter
-      </Nav.Link>
-    </Nav>
-  </Navbar.Collapse>
-</Navbar>
-  </Card.Header>
-  <Card.Body>
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-    <Navbar.Brand href="#home">GOG LOGO</Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="mr-auto">
-      
-    <blockquote> <Nav.Link href="#features">Language:</Nav.Link>
-      <Nav.Link href="#pricing">Eng</Nav.Link>
-      <Nav.Link href="#pricing">Pln</Nav.Link>
-      </blockquote>
-    
-     
-      <Nav.Link href="#features">Currency:</Nav.Link>
-      <Nav.Link href="#pricing">Euro</Nav.Link>
-      <Nav.Link href="#pricing">GBP</Nav.Link>
-      <Nav.Link href="#pricing">PLN</Nav.Link>
-     
-    </Nav>
-    
-  </Navbar.Collapse>
-</Navbar>
-  </Card.Body>
-  <Card.Footer className="text-muted">2 days ago</Card.Footer>
-</Card>
-    </div>
+  return (
+    <footer>
+        {/* FOOTER TOP */}
+      <Navbar bg="dark" variant="dark">
+        <Nav className="mr-auto">
+          <Nav.Link href="#home">Promo Code</Nav.Link>
+          <Nav.Link href="#features">Features</Nav.Link>
+          <Nav.Link href="#pricing">Pricing</Nav.Link>
+        </Nav>
+        <Nav className="mr-5">
+          <Nav.Link href="#home">Facebook</Nav.Link>
+          <Nav.Link href="#features">Tweeter</Nav.Link>
+        </Nav>
+      </Navbar>
+        {/* FOOTER MIDDLE */}
+        <Navbar className="navbarMiddle">
+        <Nav className="mr-auto">
+          <Nav.Link href="#home">LOGO</Nav.Link>
+          <Nav.Link href="#features">Language: 
+          <a>ENG </a>
+          <a>ENG </a>
+          <a>ENG </a>
+          </Nav.Link>
+          <Nav.Link className="footerMiddleLink2" href="#features"><br/>Currency:
+          <a>PLN </a>
+          <a>PLN </a>
+          <a>PLN </a>
+          </Nav.Link>
+        </Nav>
+        <Nav className="mr-5">
+          <Button>Download Button</Button>
+        </Nav>
+      </Navbar>
+              {/* FOOTER BOTTOM */}
+              <Navbar bg="dark" variant="dark">
+        <Nav className="mr-auto">
+          <Nav.Link href="#home">Policy</Nav.Link>
+          <Nav.Link href="#features">Cookies</Nav.Link>
+          <Nav.Link className="footerButtonLink2" href="#features"><br/>
+         <p>
+             All rights reserved... More about cookies here...
+         </p>
+          </Nav.Link>
+        </Nav>
+        <Nav className="mr-5">
+          <Button>Coorporate LOGO</Button>
+        </Nav>
+      </Navbar>
+    </footer>
   );
-}
-
+};
 
 export default Footer;

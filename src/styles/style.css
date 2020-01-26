@@ -103,4 +103,26 @@ hr {
   font-weight: 0;
   font-size: 10px;
 }
+
+footer {
+  letter-spacing: 0.4px;
+}
+
+.navbarMiddle {
+  background-color: #4b4b4b !important;
+  border: 0.3px solid #2B2B28;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 50px 50px 50px #050505;
+          box-shadow: 50px 50px 50px #050505;
+  border-radius: 2px;
+}
+
+.footerMiddleLink2 {
+  margin-left: -12.5rem;
+}
+
+.footerButtonLink2 {
+  margin-left: -8rem;
+}
 /*# sourceMappingURL=style.css.map */
