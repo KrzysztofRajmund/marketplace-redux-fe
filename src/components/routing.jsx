@@ -2,6 +2,7 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import store from '../store'
 
+import NavMain from './navbar/navMain';
 import JumbotronSale from './homePage/jumbotronSale';
 import SlideMain from './homePage/slideMain';
 import ChosenForYou from './homePage/chosenForYou';
@@ -14,7 +15,9 @@ import Footer from './footer';
 
 const Routing = (props) => {
   return (
+
     <Provider store={store}>
+      <NavMain/>
       <JumbotronSale />
       <SlideMain />
       <ChosenForYou/>
