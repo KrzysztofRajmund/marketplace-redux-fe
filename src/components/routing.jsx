@@ -7,8 +7,6 @@ import JumbotronSale from './homePage/jumbotronSale';
 import SlideMain from './homePage/slideMain';
 import ChosenForYou from './homePage/chosenForYou';
 import ChosenPromotions from './homePage/chosenPromotions';
-import WeekOffer from './homePage/weekOffer';
-import WeekendOffer from './homePage/weekendOffer';
 import Discover from './homePage/discover';
 import Footer from './footer';
 
@@ -22,8 +20,6 @@ const Routing = (props) => {
       <SlideMain />
       <ChosenForYou/>
       <ChosenPromotions/>
-      <WeekOffer/>
-      <WeekendOffer/>
       <Discover/>
       <Footer/>
     </Provider>
