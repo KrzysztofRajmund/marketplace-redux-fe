@@ -17,15 +17,33 @@ const Discover = ({getItems, fetchReducer }) => {
     const [direction, setDirection] = useState(null);
 
     //Toggle useState
+     const [toggleBestsellers,setToggleBestsellers] = useState(true);
+     const [togglePremiere, setTogglePremiere] = useState(false);
+     const [toggleNewcoming, setToggleNewcoming] = useState(false);
 
+     //Toggle Bestsellers
+     const onClickToggleBestsellers = async () => {
+      await setToggleBestsellers(true);
+      await setTogglePremiere(false);
+      await setToggleNewcoming(false);
+     }
 
+     //Toggle Premiere
+     const onClickTogglePremiere = async () => {
+       await setToggleBestsellers(false);
+       await setTogglePremiere(true);
+       await setToggleNewcoming(false);
+     }
 
-  
-    const handleSelect = (selectedIndex, e) => {
-      setIndex(selectedIndex);
-      setDirection(e.direction);
-    };
-    const discoverItems = fetchReducer.slice(0, 5).map(item => (
+     //Toggle Newcoming
+     const onClickToggleNewcoming = async () =>{
+       await setToggleBestsellers(false);
+       await setTogglePremiere(false);
+       await setToggleNewcoming(true);
+     }
+
+     // CONDITIONALS FOR TOGGLE !
+     const discoverItems = fetchReducer.slice(0, 5).map(item => (
       <Table responsive>
         <tbody key={item.id}>
           <tr>
@@ -44,6 +62,12 @@ const Discover = ({getItems, fetchReducer }) => {
       </Table>
     ));
 
+    //Carousel 
+    const handleSelect = (selectedIndex, e) => {
+      setIndex(selectedIndex);
+      setDirection(e.direction);
+    };
+    
     const suggestedItems = fetchReducer.slice(0,3).map(item=>(
         <Carousel.Item key={item.id}>
         <img
@@ -62,7 +86,7 @@ const Discover = ({getItems, fetchReducer }) => {
       <Row className="col-10">
         <Col className="col-8">
           <div className="subtitleLargest">
-            Discover: Bestesellers -> Premier -> New Coming
+            Discover: Bestesellers -> Premiere -> New Coming
             <hr />
           </div>
           {discoverItems}
