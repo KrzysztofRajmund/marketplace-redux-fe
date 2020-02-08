@@ -59,9 +59,9 @@ const ChosenPromotions = ({getItems, fetchReducer }) => {
      
   // CONDITIONALS FOR TOGGLE !
 
+  //items promo fetch
 if (togglePromotion) {
 
-   //items promo fetch
     const itemsForYou = fetchReducer.slice(0,3).map(item=>(
         <Carousel.Item>
         <CardGroup>
