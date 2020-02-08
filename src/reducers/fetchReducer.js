@@ -1,7 +1,9 @@
 import {GET_ITEMS} from '../actions/types';
+import {GET_PRODUCTDETAILS} from '../actions/types';
 
 const initialState = {
-    items:[]
+    items:[],
+    productDetails:{}
   
 }
 
@@ -17,6 +19,15 @@ export default function (state = initialState,action) {
                 ...state,
                 items: payload,
             }
+
+        case GET_PRODUCTDETAILS:
+            console.log("fetched PRODUCTDETAILS")
+
+            return{
+                ...state,
+                productDetails: payload,
+            }
+
         default:
             return state;
     }
