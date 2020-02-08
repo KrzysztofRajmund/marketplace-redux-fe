@@ -15,6 +15,11 @@ const Discover = ({getItems, fetchReducer }) => {
 
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(null);
+
+    //Toggle useState
+
+
+
   
     const handleSelect = (selectedIndex, e) => {
       setIndex(selectedIndex);
@@ -57,7 +62,7 @@ const Discover = ({getItems, fetchReducer }) => {
       <Row className="col-10">
         <Col className="col-8">
           <div className="subtitleLargest">
-            Discover: Bestesellers -> New -> New Coming
+            Discover: Bestesellers -> Premier -> New Coming
             <hr />
           </div>
           {discoverItems}

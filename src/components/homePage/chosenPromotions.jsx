@@ -4,7 +4,7 @@ import {Link, Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getItems} from '../../actions/fetchActions';
-import WeekendOffer from './weekendOffer';
+
 
 
 
@@ -22,7 +22,8 @@ const ChosenPromotions = ({getItems, fetchReducer }) => {
       setIndex(selectedIndex);
       setDirection(e.direction);
     };
-    //TogglePromotion
+    
+    //Toggle useState
     const [togglePromotion, setTogglePromotion] = useState(true);
     console.log('promo',togglePromotion);
     const [toggleWeekendOffer, setToggleWeekendOffer] = useState(false);
@@ -30,6 +31,7 @@ const ChosenPromotions = ({getItems, fetchReducer }) => {
     const [toggleWeekOffer, setToggleWeekOffer] = useState(false);
     console.log('week',toggleWeekOffer);
 
+    //TogglePromotion
     const onClickTogglePromotion = async () => {
     await setTogglePromotion(true)
     console.log("clicked promo", togglePromotion)
@@ -52,12 +54,15 @@ const ChosenPromotions = ({getItems, fetchReducer }) => {
       await setToggleWeekOffer(true)
       console.log("clicked weekoffer", toggleWeekOffer)
      }
-   
 
 
+     
+  // CONDITIONALS FOR TOGGLE !
 
-   //items fetch
-    const itemsForYou = fetchReducer.slice(0,1).map(item=>(
+if (togglePromotion) {
+
+   //items promo fetch
+    const itemsForYou = fetchReducer.slice(0,3).map(item=>(
         <Carousel.Item>
         <CardGroup>
           
@@ -147,9 +152,197 @@ const ChosenPromotions = ({getItems, fetchReducer }) => {
         <button onClick={onClickToggleWeekOffer}>Week Offer</button>
         <hr/>
       </div>
-        <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
-            {itemsForYou}
-        </Carousel>
+      <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
+      {itemsForYou}
+  </Carousel>
+        </>
+    )
+  } 
+   //items weekOffer fetch
+   if (toggleWeekOffer) {
+    const itemsForYou = fetchReducer.slice(0,3).map(item=>(
+      <Carousel.Item>
+      <CardGroup>
+        
+          <Col className="colGroup col-3">
+          <Row className=" rowGroup col-12">
+      <Card className="cardGroup col-10" style={{ width: '16rem', height: '28rem'}} key={item.id}>
+      <Card.Img 
+        className="d-block w-100"
+        src={item.url}
+        height="350px" 
+      src={item.url} />
+      <Card.Body>
+        <Card.Title>Outlander - cast away</Card.Title>
+        <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+    </Row>
+    </Col>
+
+    <Col className=" colGroupPromotion col-9 ">
+    <Row className=" rowGroup col-12">
+    <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
+      <Card.Img 
+        className="d-block w-100"
+        src={item.url}
+        height="125px" 
+      src={item.url} />
+      <Card.Body>
+        <Card.Title>Outlander - cast away</Card.Title>
+        <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+    <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
+      <Card.Img 
+        className="d-block w-100"
+        src={item.url}
+        height="125px" 
+      src={item.url} />
+      <Card.Body>
+        <Card.Title>Outlander - cast away</Card.Title>
+        <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+    <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
+      <Card.Img 
+        className="d-block w-100"
+        src={item.url}
+        height="125px" 
+      src={item.url} />
+      <Card.Body>
+        <Card.Title>Outlander - cast away</Card.Title>
+        <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+    <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
+      <Card.Img 
+        className="d-block w-100"
+        src={item.url}
+        height="125px" 
+      src={item.url} />
+      <Card.Body>
+        <Card.Title>Outlander - cast away</Card.Title>
+        <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+    </Row>
+    </Col>
+   
+    </CardGroup>
+    </Carousel.Item>
+    ));
+    return (
+      <>
+      <div className="subtitleLargest">
+        <button onClick={onClickTogglePromotion}>Chosen Promotions:</button>
+        <button onClick={onClickToggleWeekendOffer}>WeekendOffer -></button>
+        <button onClick={onClickToggleWeekOffer}>Week Offer</button>
+        <hr/>
+      </div>
+      <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
+      {itemsForYou}
+  </Carousel>
+        </>
+    )
+  }
+  //items weekendOffer fetch 
+  if (toggleWeekendOffer) {
+    const itemsForYou = fetchReducer.slice(0,3).map(item=>(
+      <Carousel.Item>
+      <CardGroup>
+        
+          <Col className="colGroup col-3">
+          <Row className=" rowGroup col-12">
+      <Card className="cardGroup col-10" style={{ width: '16rem', height: '28rem'}} key={item.id}>
+      <Card.Img 
+        className="d-block w-100"
+        src={item.url}
+        height="350px" 
+      src={item.url} />
+      <Card.Body>
+        <Card.Title>Outlander - cast away</Card.Title>
+        <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+    </Row>
+    </Col>
+
+    <Col className=" colGroupPromotion col-9 ">
+    <Row className=" rowGroup col-12">
+    <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
+      <Card.Img 
+        className="d-block w-100"
+        src={item.url}
+        height="125px" 
+      src={item.url} />
+      <Card.Body>
+        <Card.Title>Outlander - cast away</Card.Title>
+        <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+    <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
+      <Card.Img 
+        className="d-block w-100"
+        src={item.url}
+        height="125px" 
+      src={item.url} />
+      <Card.Body>
+        <Card.Title>Outlander - cast away</Card.Title>
+        <Button variant="primary" className=" lead float-right mr-3">Weekend Offer</Button>
+      </Card.Body>
+    </Card>
+    <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
+      <Card.Img 
+        className="d-block w-100"
+        src={item.url}
+        height="125px" 
+      src={item.url} />
+      <Card.Body>
+        <Card.Title>Outlander - cast away</Card.Title>
+        <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+    <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
+      <Card.Img 
+        className="d-block w-100"
+        src={item.url}
+        height="125px" 
+      src={item.url} />
+      <Card.Body>
+        <Card.Title>Outlander - cast away</Card.Title>
+        <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+    </Row>
+    </Col>
+   
+    </CardGroup>
+    </Carousel.Item>
+    ));
+    return (
+      <>
+      <div className="subtitleLargest">
+        <button onClick={onClickTogglePromotion}>Chosen Promotions:</button>
+        <button onClick={onClickToggleWeekendOffer}>WeekendOffer -></button>
+        <button onClick={onClickToggleWeekOffer}>Week Offer</button>
+        <hr/>
+      </div>
+      <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
+      {itemsForYou}
+  </Carousel>
+        </>
+    )
+  }
+
+    return (
+      <>
+      <div className="subtitleLargest">
+        <button onClick={onClickTogglePromotion}>Chosen Promotions:</button>
+        <button onClick={onClickToggleWeekendOffer}>WeekendOffer -></button>
+        <button onClick={onClickToggleWeekOffer}>Week Offer</button>
+        <hr/>
+      </div>
         </>
       );
 }
