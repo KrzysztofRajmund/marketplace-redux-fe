@@ -35,10 +35,10 @@ export const getItems = () => async dispatch => {
 
 
 // get one product with specific ID
-export const getProductDetails = () => async (dispatch, id) => {
+export const getProductDetails = (id) => async dispatch => {
     try {
 
-        var res = await fetch('https://jsonplaceholder.typicode.com/photos' + id,{
+        var res = await fetch('https://jsonplaceholder.typicode.com/photos/' + id,{
             method: "GET",
             // headers: {
             //     "Authorization": "Bearer " +    
@@ -48,7 +48,6 @@ export const getProductDetails = () => async (dispatch, id) => {
 
         if (res.ok) {
             var productDetails = await res.json();
-            console.log("fetchActions - ONE ITEM FETCHED", productDetails)
 
             dispatch({
                 type: GET_PRODUCTDETAILS,
@@ -57,7 +56,7 @@ export const getProductDetails = () => async (dispatch, id) => {
         }
         
     } catch (error) {
-        console.log(error)
+        console.log(error, "error to fetch specific product")
         
     }
 

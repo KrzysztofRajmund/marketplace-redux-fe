@@ -2,18 +2,16 @@ import React, {Component, useState, useEffect} from 'react';
 import {Container,Carousel,Button} from 'react-bootstrap'
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {getItems,getProductDetails} from '../../actions/fetchActions';
-import { Route, Switch,Link } from 'react-router-dom';
-import ProductDetails from './../productsPage/productDetails';
+import {getItems} from '../../actions/fetchActions';
+import { Link } from 'react-router-dom';
 
 
 
 
-const SlideMain = ({getItems, getProductDetails, fetchReducer }) => {
+const SlideMain = ({getItems,fetchReducer }) => {
 
     useEffect (()=>{
         getItems();
-        getProductDetails();
     },[])
 
     const [index, setIndex] = useState(0);
@@ -24,25 +22,17 @@ const SlideMain = ({getItems, getProductDetails, fetchReducer }) => {
       setDirection(e.direction);
     };
 
-    // const clickedProduct = (id) => {
-
-    //   return (
-    //   <Route exact path={"/"+id} component={ProductDetails} />
-    //   );
-    // }
-
     const suggestedItems = fetchReducer.slice(0, 8).map(item => (
       <Carousel.Item
         key={item.id}
-        // onClick={clickedProduct(item.id)}
       >
-        <Link to={"/" + item.id}>
+        <Link to={'/'+item.id}>
           <img
             className="d-block w-100"
             src={item.url}
             alt="First slide"
             height="550px"
-            to={"/" + item.id}
+            
           />
         </Link>
         <Carousel.Caption>
@@ -69,13 +59,11 @@ const SlideMain = ({getItems, getProductDetails, fetchReducer }) => {
 
 SlideMain.propTypes = {
     getItems: PropTypes.func.isRequired,
-    getProductDetails: PropTypes.func.isRequired,
     fetchReducer: PropTypes.array.isRequired
 }
 
 const mapStateToProps = state => ({
-fetchReducer: state.fetchReducer.items,
-fetchReducerProductDetails: state.fetchReducer.productDetails
+fetchReducer: state.fetchReducer.items
 });
 
-export default connect (mapStateToProps,{getItems, getProductDetails})(SlideMain);
+export default connect (mapStateToProps,{getItems})(SlideMain);

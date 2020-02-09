@@ -3,7 +3,7 @@ import {GET_PRODUCTDETAILS} from '../actions/types';
 
 const initialState = {
     items:[],
-    productDetails:{}
+    productDetails:[]
   
 }
 
@@ -13,7 +13,6 @@ export default function (state = initialState,action) {
     switch (type) {
 
         case GET_ITEMS:
-            console.log("fetchReducer-ITEMS")
 
             return{
                 ...state,
@@ -21,7 +20,6 @@ export default function (state = initialState,action) {
             }
 
         case GET_PRODUCTDETAILS:
-            console.log("fetched PRODUCTDETAILS")
 
             return{
                 ...state,

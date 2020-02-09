@@ -21,15 +21,14 @@ import ProductDetails from './productsPage/productDetails';
 
 const Routing = (props) => {
   return (
-
     <Provider store={store}>
       <Router>
-      <Route path="/" component={NavMain}/>
-      <Switch>
-      <Route path="/mainpage" component={MainPage}/>
-      <Route path="/:id"  component={ProductDetails}/>
-      </Switch>
-      <Route path="/" component={Footer}/>
+        <Route path="/" component={NavMain} />
+        <Switch>
+          <Route path="/mainpage" component={MainPage} />
+          <Route path="/:id" component={ProductDetails} />
+        </Switch>
+        <Route path="/" component={Footer} />
       </Router>
     </Provider>
   );
