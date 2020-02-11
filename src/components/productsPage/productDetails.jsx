@@ -1,9 +1,13 @@
 import React, {Component, useState, useEffect} from 'react';
-import {Container,Carousel,Button, Jumbotron,Card} from 'react-bootstrap'
+import { Route, Switch,Link } from 'react-router-dom';
+import {Container,Carousel,Button, Jumbotron,Card, CardGroup, Row, Col, Breadcrumb} from 'react-bootstrap'
+//redux
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getProductDetails} from '../../actions/fetchActions';
-import { Route, Switch,Link } from 'react-router-dom';
+//components
+import ThumbnailCarousel from './thumbnailCarousel';
+
 
 
 
@@ -14,23 +18,64 @@ const ProductDetails = ({getProductDetails, selectedProduct,match}) => {
         getProductDetails(paramProduct);
     },[])
 
+   
 
     const getProduct = (
-          <Jumbotron className="jumbotronSale" key={selectedProduct.id} fluid> 
-          <Button primary>{selectedProduct.title}</Button>
-               <img src={selectedProduct.url} alt="image" width="100%" height="400px"/>
-          </Jumbotron>
-      );
-      
-
-
+      <>
+        {/* Jumbotron */}
+        <Jumbotron className="jumbotronSale" key={selectedProduct.id} fluid>
+          <img
+            src={selectedProduct.url}
+            alt="image"
+            width="100%"
+            height="400px"
+          />
+        </Jumbotron>
+        {/* Product title + Card Price with Basket */}
+        <CardGroup>
+          <Row className="col-12">
+            {/* Title */}
+            <div className="cardTitleProduct col-4">
+              <h5>Product Title</h5>
+              <Breadcrumb>
+                <Breadcrumb.Item >Feature</Breadcrumb.Item>
+                <Breadcrumb.Item >
+                  Social Media
+                </Breadcrumb.Item>
+                <Breadcrumb.Item active>Stars</Breadcrumb.Item>
+              </Breadcrumb>
+            </div>
+            {/* Price Card */}
+            <div className=" cardPriceProduct col-5">
+              <Card key={selectedProduct.id}>
+                <Card.Body className="pl-2 pr-2">
+                  <Card.Title>€19.99</Card.Title>
+                  <Button className="col-12" variant="success" size="sm">
+                    ADD TO BASKET
+                  </Button>
+                  <Button
+                    className="col-12"
+                    variant="outline-success"
+                    size="sm"
+                  >
+                    ADD TO WISHLIST
+                  </Button>
+                </Card.Body>
+              </Card>
+            </div>
+          </Row>
+        </CardGroup>
+      </>
+    );
   
     return (
       <>
-      ID: {match.params.id}
-      <div>PRODUCT: 
+      <div>
         {getProduct}
-        </div>
+      </div>
+      <div>
+      <ThumbnailCarousel/>
+      </div>
       
      
         </>

@@ -27,6 +27,42 @@ body {
     
 }
 
+//CARD PRODUCT PRICE (PRODUCT DETAILS PAGE)
+
+.cardPriceProduct{
+    top: -3rem;
+    z-index:1;
+    margin-left: 14rem;
+   
+}
+
+.cardPriceProduct, .card-title{
+    margin-top: 10px;
+    color:$primaryTextDarkGrey;
+   
+}
+
+//TITLE WITH BREADCRUMB (PRODUCT DETAILS PAGE)
+
+.cardTitleProduct {
+    margin-top:20px;
+}
+
+.cardTitleProduct h5 {
+    color:$primaryTextDarkGrey !important;
+    font-weight:$textBolder;
+    letter-spacing: $letterSpacing;
+}
+.breadcrumb {
+    padding:0px !important;
+    background-color: transparent !important;    
+}
+
+.breadcrumb-item a {
+    color: $primaryTextDarkGrey;
+    
+}
+
 .transparentBtn {
         @include mainText($primaryTextWhite,$textBolder,$largeFontSize);
         letter-spacing: $letterSpacing;

@@ -23,6 +23,36 @@ body {
   background: #3FAF2E !important;
 }
 
+.cardPriceProduct {
+  top: -3rem;
+  z-index: 1;
+  margin-left: 14rem;
+}
+
+.cardPriceProduct, .card-title {
+  margin-top: 10px;
+  color: #2B2B28;
+}
+
+.cardTitleProduct {
+  margin-top: 20px;
+}
+
+.cardTitleProduct h5 {
+  color: #2B2B28 !important;
+  font-weight: bolder;
+  letter-spacing: 0.4px;
+}
+
+.breadcrumb {
+  padding: 0px !important;
+  background-color: transparent !important;
+}
+
+.breadcrumb-item a {
+  color: #2B2B28;
+}
+
 .transparentBtn {
   color: #F8F8F8;
   font-weight: bolder;
