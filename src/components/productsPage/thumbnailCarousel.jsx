@@ -24,7 +24,7 @@ const ThumbnailCarousel = ({getItems,fetchReducer }) => {
 
     const suggestedItems = fetchReducer.slice(0, 4).map(item => (
       <Carousel.Item>
-        <CardGroup>
+        <CardGroup className="mb-3 pb-5">
           {/* <Card className="cardGroup" style={{ width: '16rem', height: '6rem'}} key={item.id}>
         <Card.Img 
           className="d-block w-100"
@@ -32,50 +32,51 @@ const ThumbnailCarousel = ({getItems,fetchReducer }) => {
           height="150px" 
         />
       </Card> */}
-          <Card className="cardGroup bg-dark text-white" 
+          <Card className="cardGroup bg-dark text-white mb-3 mr-6" 
           style={{ width: '16rem', height: '6rem'}} key={item.id}>
             <Card.Img 
              className="d-block w-100"
              src={item.thumbnailUrl}
-             height="150px"
+             height="125px"
              />
             <Card.ImgOverlay>
                 Product title
             </Card.ImgOverlay>
           </Card>
-          <Card className="cardGroup bg-dark text-white" 
+          <Card className="cardGroup bg-dark text-white mb-3 mr-6" 
           style={{ width: '16rem', height: '6rem'}} key={item.id}>
             <Card.Img 
              className="d-block w-100"
              src={item.thumbnailUrl}
-             height="150px"
+             height="125px"
              />
             <Card.ImgOverlay>
                 Product title
             </Card.ImgOverlay>
           </Card>
-          <Card className="cardGroup bg-dark text-white" 
+          <Card className="cardGroup bg-dark text-white mb-3 mr-6" 
           style={{ width: '16rem', height: '6rem'}} key={item.id}>
             <Card.Img 
              className="d-block w-100"
              src={item.thumbnailUrl}
-             height="150px"
+             height="125px"
              />
             <Card.ImgOverlay>
                 Product title
             </Card.ImgOverlay>
           </Card>
-          <Card className="cardGroup bg-dark text-white" 
+          <Card className="cardGroup bg-dark text-white mb-3 mr-6" 
           style={{ width: '16rem', height: '6rem'}} key={item.id}>
             <Card.Img 
              className="d-block w-100"
              src={item.thumbnailUrl}
-             height="150px"
+             height="125px"
              />
             <Card.ImgOverlay>
                 Product title
             </Card.ImgOverlay>
           </Card>
+          <hr/>
         </CardGroup>
       </Carousel.Item>
     ));
