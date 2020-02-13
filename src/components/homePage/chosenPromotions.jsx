@@ -174,7 +174,7 @@ if (togglePromotion) {
       src={item.url} />
       <Card.Body>
         <Card.Title>Outlander - cast away</Card.Title>
-        <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+        <Button variant="primary" className=" lead float-right mr-3">WEEK</Button>
       </Card.Body>
     </Card>
     </Row>
@@ -190,7 +190,7 @@ if (togglePromotion) {
       src={item.url} />
       <Card.Body>
         <Card.Title>Outlander - cast away</Card.Title>
-        <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+        <Button variant="primary" className=" lead float-right mr-3">WEEK</Button>
       </Card.Body>
     </Card>
     <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
@@ -201,7 +201,7 @@ if (togglePromotion) {
       src={item.url} />
       <Card.Body>
         <Card.Title>Outlander - cast away</Card.Title>
-        <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+        <Button variant="primary" className=" lead float-right mr-3">WEEK</Button>
       </Card.Body>
     </Card>
     <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
@@ -212,7 +212,7 @@ if (togglePromotion) {
       src={item.url} />
       <Card.Body>
         <Card.Title>Outlander - cast away</Card.Title>
-        <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+        <Button variant="primary" className=" lead float-right mr-3">WEEK</Button>
       </Card.Body>
     </Card>
     <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
@@ -299,8 +299,8 @@ if (togglePromotion) {
         height="125px" 
       src={item.url} />
       <Card.Body>
-        <Card.Title>Outlander - cast away</Card.Title>
-        <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+        <Card.Title>WEEKEND OFFER</Card.Title>
+        <Button variant="primary" className=" lead float-right mr-3">WEEKEND OFFER</Button>
       </Card.Body>
     </Card>
     <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
@@ -311,7 +311,7 @@ if (togglePromotion) {
       src={item.url} />
       <Card.Body>
         <Card.Title>Outlander - cast away</Card.Title>
-        <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+        <Button variant="primary" className=" lead float-right mr-3">WEEKEND OFFER</Button>
       </Card.Body>
     </Card>
     </Row>
