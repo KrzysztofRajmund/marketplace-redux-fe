@@ -7,6 +7,8 @@ import {connect} from 'react-redux';
 import {getProductDetails} from '../../actions/fetchActions';
 //components
 import ThumbnailCarousel from './thumbnailCarousel';
+import ProductDescription from './productDescription';
+import SimilarProducts from './similarProducts';
 
 
 
@@ -75,6 +77,8 @@ const ProductDetails = ({getProductDetails, selectedProduct,match}) => {
       </div>
       <div>
       <ThumbnailCarousel/>
+      <ProductDescription/>
+      <SimilarProducts/>
       </div>
       
      

@@ -53,6 +53,10 @@ body {
   color: #2B2B28;
 }
 
+.modal-dialog {
+  margin-top: 15% !important;
+}
+
 .transparentBtn {
   color: #F8F8F8;
   font-weight: bolder;

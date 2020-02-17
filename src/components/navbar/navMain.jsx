@@ -19,9 +19,9 @@ const NavMain = () => {
         <Nav className="mr-auto">
             {/* DROPDOWN ONE */}
           <NavDropdown title="Shop" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Game nr 1</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Game nr 2</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Game nr 3</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.1">Product nr 1</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">Product nr 2</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Product nr 3</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/3.4">Premier</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.4">Bestseller</NavDropdown.Item>
@@ -59,7 +59,7 @@ const NavMain = () => {
         </Nav>
         {/* SHOPPING ICON + SEARCH ICON */}
         <Nav className="mr-5">
-      <Nav.Link href="#home">Shopping Icon</Nav.Link>
+      <Nav.Link href="#home"><img src="./basketicon.png"></img></Nav.Link>
       <Nav.Link href="#link">Search Icon</Nav.Link>
     </Nav>
       </Navbar.Collapse>

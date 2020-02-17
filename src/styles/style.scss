@@ -63,6 +63,12 @@ body {
     
 }
 
+// modal Product Details
+
+.modal-dialog {
+    margin-top: 15% !important;
+}
+
 .transparentBtn {
         @include mainText($primaryTextWhite,$textBolder,$largeFontSize);
         letter-spacing: $letterSpacing;
