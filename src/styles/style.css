@@ -53,8 +53,33 @@ body {
   color: #2B2B28;
 }
 
+.modal-open {
+  padding: 0px !important;
+}
+
 .modal-dialog {
   margin-top: 15% !important;
+}
+
+.modalSearch .modal-dialog {
+  margin-top: 0% !important;
+}
+
+.modalSearch .modal-content {
+  background-color: transparent;
+  border: none;
+}
+
+.searchFormControl .form-control {
+  width: 80% !important;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+}
+
+.searchFormControl input {
+  background-color: transparent !important;
+  color: #CCCCCC !important;
 }
 
 .transparentBtn {

@@ -63,11 +63,47 @@ body {
     
 }
 
-// modal Product Details
+//MODAL OPEN
+.modal-open {
+    padding:0px !important;
+}
 
+// modal Product Details
 .modal-dialog {
     margin-top: 15% !important;
 }
+// modal searchBar
+.modalSearch .modal-dialog {
+    margin-top: 0% !important ;
+}
+
+.modalSearch .modal-content {
+    background-color:transparent;
+    border: none;  
+}
+
+.searchFormControl .form-control {
+    width: 80% !important;
+    border-radius: 0;
+    // border:none;
+    border: 0;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.5);  
+}
+
+.searchFormControl input {
+    background-color: transparent !important;
+    color: $primaryTextLightGrey !important;
+    
+}
+
+// .modalSearch {
+//     transition: opacity .15s linear;
+//     transition-property: opacity;
+//     transition-duration: 0.15s;
+//     transition-timing-function: linear;
+//     transition-delay: 0s;
+// }
+
 
 .transparentBtn {
         @include mainText($primaryTextWhite,$textBolder,$largeFontSize);
