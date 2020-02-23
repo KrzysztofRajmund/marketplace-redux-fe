@@ -1,4 +1,9 @@
 import React, {Component, useState, useEffect} from 'react';
+//redux
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {getItems} from '../../actions/fetchActions';
+//react bootstrap
 import {
   Card,
   Button,
@@ -14,16 +19,49 @@ import {
 //assets
 import basketicon from "./assets/basketicon.png";
 import searchicon from "./assets/searchicon.png";
+//components
+import SearchBarResults from './searchBarResults';
 
 
 
-const NavMain = () => {
+const NavMain = ({getItems, fetchReducer }) => {
+
+  useEffect (()=>{
+    getItems();
+},[])
 
   //modal
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => {
     setShow(true)};
+
+
+  //search handler and hooks
+  const [product , setProduct] = useState("");
+  const [productResult, setProductResult] = useState([]);
+
+    const searchHandler = (e) => {
+      setProduct(e.target.value)
+      console.log("searchHandler", product )
+    }
+
+    useEffect (() =>{
+      const result = fetchReducer.filter(item =>
+        item.title.toString().toLowerCase().includes(product.toLowerCase())
+        || item.id.toString().toLowerCase().includes(product.toLowerCase())
+        );
+        console.log("FILTER", result )
+        if (product.length > 2)
+        return (
+          setProductResult(result)
+        )
+        if (product.length <= 2)
+        return (
+          setProductResult([])
+        )
+    },[product])
+  
 
   return (
     <>
@@ -108,18 +146,57 @@ const NavMain = () => {
 
       {/* modal */}
       <Modal className="modalSearch" show={show} onHide={handleClose}>
-          <Modal.Body closeButton>
-            <Form className="searchFormControl" inline>
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className=" mr-sm-2"
-              />
-            </Form>
-          </Modal.Body>
+        <Modal.Body closeButton>
+          <Form className="searchFormControl" inline>
+            <FormControl
+              type="text"
+              placeholder="Search"
+              className=" mr-sm-2"
+              onChange={searchHandler}
+              value={product}
+            />
+          </Form>
+          <div>
+            {productResult.map(search => (
+              
+                <Card>
+                  <Card.Body>
+                  <div className="col-1">
+                  <img src={search.thumbnailUrl} alt="image" width="30px">
+                  </img>
+                  </div>
+                  <div classname="col-5">
+                  <small>
+                    {search.title.substr(0,8)+"..."}
+                  </small>
+                  </div>
+                  <div className="col-4" is-centered>
+                    rating
+                  </div>
+                  <div className="2">
+                    <button disabled>-10%</button>
+                    <button>basket</button>
+
+                  </div>
+                  </Card.Body>
+                </Card>
+              
+            ))}
+          </div>
+          {/* <SearchBarResults productResult = {productResult}/> */}
+        </Modal.Body>
       </Modal>
     </>
   );
 };
 
-export default NavMain;
+NavMain.propTypes = {
+  getItems: PropTypes.func.isRequired,
+  fetchReducer: PropTypes.array.isRequired
+}
+
+const mapStateToProps = state => ({
+fetchReducer: state.fetchReducer.items
+});
+
+export default connect (mapStateToProps,{getItems})(NavMain);
