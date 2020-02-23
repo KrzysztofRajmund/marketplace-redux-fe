@@ -105,6 +105,23 @@ body {
 // }
 
 
+//searchBar Card
+.containerSearchBar.card-body{
+    display: flex;
+    justify-content: space-between;
+    color:$primaryTextDarkGrey;
+}
+
+.containerSearchBar div{
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+
+.cardSearchBar.card{
+    border-radius: 0px;
+}
+
+
 .transparentBtn {
         @include mainText($primaryTextWhite,$textBolder,$largeFontSize);
         letter-spacing: $letterSpacing;

@@ -1,8 +1,8 @@
-import React, {Component, useState, useEffect} from 'react';
+import React, { Component, useState, useEffect } from "react";
 //redux
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {getItems} from '../../actions/fetchActions';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { getItems } from "../../actions/fetchActions";
 //react bootstrap
 import {
   Card,
@@ -20,48 +20,45 @@ import {
 import basketicon from "./assets/basketicon.png";
 import searchicon from "./assets/searchicon.png";
 //components
-import SearchBarResults from './searchBarResults';
+import SearchBarResults from "./searchBarResults";
 
-
-
-const NavMain = ({getItems, fetchReducer }) => {
-
-  useEffect (()=>{
+const NavMain = ({ getItems, fetchReducer }) => {
+  useEffect(() => {
     getItems();
-},[])
+  }, []);
 
   //modal
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => {
-    setShow(true)};
-
+    setShow(true);
+  };
 
   //search handler and hooks
-  const [product , setProduct] = useState("");
+  const [product, setProduct] = useState("");
   const [productResult, setProductResult] = useState([]);
 
-    const searchHandler = (e) => {
-      setProduct(e.target.value)
-      console.log("searchHandler", product )
-    }
+  const searchHandler = e => {
+    setProduct(e.target.value);
+    console.log("searchHandler", product);
+  };
 
-    useEffect (() =>{
-      const result = fetchReducer.filter(item =>
-        item.title.toString().toLowerCase().includes(product.toLowerCase())
-        || item.id.toString().toLowerCase().includes(product.toLowerCase())
-        );
-        console.log("FILTER", result )
-        if (product.length > 2)
-        return (
-          setProductResult(result)
-        )
-        if (product.length <= 2)
-        return (
-          setProductResult([])
-        )
-    },[product])
-  
+  useEffect(() => {
+    const result = fetchReducer.filter(
+      item =>
+        item.title
+          .toString()
+          .toLowerCase()
+          .includes(product.toLowerCase()) ||
+        item.id
+          .toString()
+          .toLowerCase()
+          .includes(product.toLowerCase())
+    );
+    console.log("FILTER", result);
+    if (product.length > 2) return setProductResult(result);
+    if (product.length <= 2) return setProductResult([]);
+  }, [product]);
 
   return (
     <>
@@ -158,29 +155,28 @@ const NavMain = ({getItems, fetchReducer }) => {
           </Form>
           <div>
             {productResult.map(search => (
-              
-                <Card>
-                  <Card.Body>
-                  <div className="col-1">
-                  <img src={search.thumbnailUrl} alt="image" width="30px">
-                  </img>
+              <Card className="cardSearchBar">
+                <Card.Body className="containerSearchBar pl-1 pr-1">
+                  <div>
+                    <img
+                      src={search.thumbnailUrl}
+                      alt="image"
+                      width="60px"
+                      height="40"
+                    ></img>
                   </div>
-                  <div classname="col-5">
-                  <small>
-                    {search.title.substr(0,8)+"..."}
-                  </small>
-                  </div>
-                  <div className="col-4" is-centered>
-                    rating
-                  </div>
-                  <div className="2">
-                    <button disabled>-10%</button>
-                    <button>basket</button>
 
+                  <div className="pl-1">{search.title.substr(0, 12) + "..."}</div>
+
+                  <div className="pl-1 pr-1">rating</div>
+                  
+                  <div>
+                    <button disabled>-10%</button>
+                  
+                    <button>basket</button>
                   </div>
-                  </Card.Body>
-                </Card>
-              
+                </Card.Body>
+              </Card>
             ))}
           </div>
           {/* <SearchBarResults productResult = {productResult}/> */}
@@ -193,10 +189,10 @@ const NavMain = ({getItems, fetchReducer }) => {
 NavMain.propTypes = {
   getItems: PropTypes.func.isRequired,
   fetchReducer: PropTypes.array.isRequired
-}
+};
 
 const mapStateToProps = state => ({
-fetchReducer: state.fetchReducer.items
+  fetchReducer: state.fetchReducer.items
 });
 
-export default connect (mapStateToProps,{getItems})(NavMain);
+export default connect(mapStateToProps, { getItems })(NavMain);
