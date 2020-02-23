@@ -119,16 +119,18 @@ const NavMain = ({ getItems, fetchReducer }) => {
           </Nav>
           {/* SHOPPING ICON + SEARCH ICON */}
           <Nav className="mr-5">
-            <Nav.Link href="#home">
+            <Nav.Link>
+            <Button className="p-0" variant="link">
               <img
                 src={basketicon}
                 alt="basket img"
                 height="20px"
                 width="20px"
               ></img>
-            </Nav.Link>
-            <Nav.Link href="#link">
-              <Button variant="link" onClick={handleShow}>
+              </Button>
+              </Nav.Link>
+              <Nav.Link>
+              <Button className="p-0" variant="link" onClick={handleShow}>
                 <img
                   src={searchicon}
                   alt="searchicon img"
@@ -136,7 +138,7 @@ const NavMain = ({ getItems, fetchReducer }) => {
                   width="20px"
                 ></img>
               </Button>
-            </Nav.Link>
+              </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
