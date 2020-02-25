@@ -1,7 +1,15 @@
 body {
   font-family: Open Sans !important;
   background: #F8F8F8 !important;
-  color: #2B2B28 !important;
+  color: #F8F8F8 !important;
+}
+
+.card-body {
+  background-color: #CCCCCC;
+}
+
+.card-title {
+  color: #2B2B28;
 }
 
 .navbarMain {
@@ -101,6 +109,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: #2B2B28;
+  background-color: #CCCCCC;
 }
 
 .containerSearchBar div {
