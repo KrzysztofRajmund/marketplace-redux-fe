@@ -72,7 +72,7 @@ const NavMain = ({ getItems, fetchReducer }) => {
   return (
     <>
       {/* navbar */}
-      <Navbar bg="dark" expand="lg" sticky="top">
+      <Navbar className="navbarMain" expand="lg" sticky="top">
         {/* LOGO */}
         <Navbar.Brand href="#home">LOGO</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
