@@ -60,6 +60,15 @@ const NavMain = ({ getItems, fetchReducer }) => {
     if (product.length <= 2) return setProductResult([]);
   }, [product]);
 
+
+
+  //shopping cart!!!
+
+  //1.onClick event listener
+  //2.add new clicked item to new array
+  //3.increase number of item next to basket logo
+  //4.purchase button (clear basket)
+
   return (
     <>
       {/* navbar */}

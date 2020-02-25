@@ -37,8 +37,8 @@ const SlideMain = ({getItems,fetchReducer }) => {
         </Link>
         <Carousel.Caption>
           <h3>Sale -70%</h3>
-          <Button className="slideMainBtn" type="button">
-            Primary
+          <Button className="slideMainBtn" type="button" key={item.id}>
+            Add to basket
           </Button>
         </Carousel.Caption>
       </Carousel.Item>
