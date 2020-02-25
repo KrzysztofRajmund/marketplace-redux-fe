@@ -29,9 +29,10 @@ const SlideMain = ({getItems,fetchReducer }) => {
         <Link to={'/'+item.id}>
           <img
             className="d-block w-100"
-            src={item.url}
+            src={item.jumbotronUrl}
             alt="First slide"
-            height="550px"
+            height="auto"
+            width="100%"
             
           />
         </Link>

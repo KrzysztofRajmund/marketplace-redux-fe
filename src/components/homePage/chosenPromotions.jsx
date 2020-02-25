@@ -71,9 +71,10 @@ if (togglePromotion) {
         <Card className="cardGroup col-5" style={{ width: '16rem', height: '28rem'}} key={item.id}>
         <Card.Img 
           className="d-block w-100"
-          src={item.url}
-          height="350px" 
-        src={item.url} />
+          src={item.verticalCardUrl}
+          height="auto"
+          width="auto"  
+        />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -82,9 +83,10 @@ if (togglePromotion) {
       <Card className="cardGroup col-5" style={{ width: '16rem', height: '28rem'}} key={item.id}>
         <Card.Img 
           className="d-block w-100"
-          src={item.url}
-          height="350px" 
-        src={item.url} />
+          src={item.verticalCardUrl}
+          height="auto"
+          width="auto" 
+        />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -97,9 +99,10 @@ if (togglePromotion) {
       <Card className="cardGroup col-5" style={{ width: '16rem', height: '13rem'}} key={item.id}>
         <Card.Img 
           className="d-block w-100"
-          src={item.url}
-          height="125px" 
-        src={item.url} />
+          src={item.jumbotronUrl}
+          height="auto" 
+          width="auto"
+        />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -108,9 +111,10 @@ if (togglePromotion) {
       <Card className="cardGroup col-5" style={{ width: '16rem', height: '13rem'}} key={item.id}>
         <Card.Img 
           className="d-block w-100"
-          src={item.url}
-          height="125px" 
-        src={item.url} />
+          src={item.jumbotronUrl}
+          height="auto" 
+          width="auto"
+        />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -119,9 +123,10 @@ if (togglePromotion) {
       <Card className="cardGroup col-5" style={{ width: '16rem', height: '13rem'}} key={item.id}>
         <Card.Img 
           className="d-block w-100"
-          src={item.url}
-          height="125px" 
-        src={item.url} />
+          src={item.jumbotronUrl}
+          height="auto" 
+          width="auto"
+         />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -130,9 +135,10 @@ if (togglePromotion) {
       <Card className="cardGroup col-5" style={{ width: '16rem', height: '13rem'}} key={item.id}>
         <Card.Img 
           className="d-block w-100"
-          src={item.url}
-          height="125px" 
-        src={item.url} />
+          src={item.jumbotronUrl}
+          height="auto" 
+          width="auto"
+        />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -169,9 +175,10 @@ if (togglePromotion) {
       <Card className="cardGroup col-10" style={{ width: '16rem', height: '28rem'}} key={item.id}>
       <Card.Img 
         className="d-block w-100"
-        src={item.url}
-        height="350px" 
-      src={item.url} />
+        src={item.verticalCardUrl}
+        height="auto"
+        width="auto" 
+      />
       <Card.Body>
         <Card.Title>Outlander - cast away</Card.Title>
         <Button variant="primary" className=" lead float-right mr-3">WEEK</Button>
@@ -185,9 +192,10 @@ if (togglePromotion) {
     <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
       <Card.Img 
         className="d-block w-100"
-        src={item.url}
-        height="125px" 
-      src={item.url} />
+        src={item.jumbotronUrl}
+        height="auto" 
+        width="auto"
+      />
       <Card.Body>
         <Card.Title>Outlander - cast away</Card.Title>
         <Button variant="primary" className=" lead float-right mr-3">WEEK</Button>
@@ -196,9 +204,10 @@ if (togglePromotion) {
     <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
       <Card.Img 
         className="d-block w-100"
-        src={item.url}
-        height="125px" 
-      src={item.url} />
+        src={item.jumbotronUrl}
+        height="auto" 
+        width="auto"
+      />
       <Card.Body>
         <Card.Title>Outlander - cast away</Card.Title>
         <Button variant="primary" className=" lead float-right mr-3">WEEK</Button>
@@ -207,9 +216,10 @@ if (togglePromotion) {
     <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
       <Card.Img 
         className="d-block w-100"
-        src={item.url}
-        height="125px" 
-      src={item.url} />
+        src={item.jumbotronUrl}
+        height="auto" 
+        width="auto"
+      />
       <Card.Body>
         <Card.Title>Outlander - cast away</Card.Title>
         <Button variant="primary" className=" lead float-right mr-3">WEEK</Button>
@@ -218,9 +228,10 @@ if (togglePromotion) {
     <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
       <Card.Img 
         className="d-block w-100"
-        src={item.url}
-        height="125px" 
-      src={item.url} />
+        src={item.jumbotronUrl}
+        height="auto" 
+        width="auto"
+      />
       <Card.Body>
         <Card.Title>Outlander - cast away</Card.Title>
         <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -257,9 +268,10 @@ if (togglePromotion) {
       <Card className="cardGroup col-10" style={{ width: '16rem', height: '28rem'}} key={item.id}>
       <Card.Img 
         className="d-block w-100"
-        src={item.url}
-        height="350px" 
-      src={item.url} />
+        src={item.verticalCardUrl}
+        height="auto"
+        width="auto"
+      />
       <Card.Body>
         <Card.Title>Outlander - cast away</Card.Title>
         <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -273,9 +285,10 @@ if (togglePromotion) {
     <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
       <Card.Img 
         className="d-block w-100"
-        src={item.url}
-        height="125px" 
-      src={item.url} />
+        src={item.jumbotronUrl}
+        height="auto" 
+        width="auto"
+      />
       <Card.Body>
         <Card.Title>Outlander - cast away</Card.Title>
         <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -284,9 +297,10 @@ if (togglePromotion) {
     <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
       <Card.Img 
         className="d-block w-100"
-        src={item.url}
-        height="125px" 
-      src={item.url} />
+        src={item.jumbotronUrl}
+        height="auto" 
+        width="auto"
+      />
       <Card.Body>
         <Card.Title>Outlander - cast away</Card.Title>
         <Button variant="primary" className=" lead float-right mr-3">Weekend Offer</Button>
@@ -295,9 +309,10 @@ if (togglePromotion) {
     <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
       <Card.Img 
         className="d-block w-100"
-        src={item.url}
-        height="125px" 
-      src={item.url} />
+        src={item.jumbotronUrl}
+        height="auto" 
+        width="auto"
+      />
       <Card.Body>
         <Card.Title>WEEKEND OFFER</Card.Title>
         <Button variant="primary" className=" lead float-right mr-3">WEEKEND OFFER</Button>
@@ -306,9 +321,10 @@ if (togglePromotion) {
     <Card className="cardGroup col-4" style={{ width: '16rem', height: '13rem'}} key={item.id}>
       <Card.Img 
         className="d-block w-100"
-        src={item.url}
-        height="125px" 
-      src={item.url} />
+        src={item.jumbotronUrl}
+        height="auto" 
+        width="auto" 
+      />
       <Card.Body>
         <Card.Title>Outlander - cast away</Card.Title>
         <Button variant="primary" className=" lead float-right mr-3">WEEKEND OFFER</Button>

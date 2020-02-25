@@ -170,7 +170,7 @@ const NavMain = ({ getItems, fetchReducer }) => {
                 <Card.Body className="containerSearchBar pl-1 pr-1">
                   <div>
                     <img
-                      src={search.thumbnailUrl}
+                      src={search.url}
                       alt="image"
                       width="60px"
                       height="40"

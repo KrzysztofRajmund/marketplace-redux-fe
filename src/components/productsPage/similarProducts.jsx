@@ -18,10 +18,11 @@ const SimilarProducts = ({getItems, fetchReducer }) => {
       <CardGroup>
         <Card className="cardGroup" style={{ width: '16rem', height: '18rem'}} key={item.id}>
         <Card.Img 
-          className="d-block w-100"
-          src={item.url}
-          height="200px" 
-        src={item.url} />
+         className="d-block w-100"
+         src={item.url}
+         height="200px"
+         width="200px"
+        />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -31,8 +32,9 @@ const SimilarProducts = ({getItems, fetchReducer }) => {
         <Card.Img 
           className="d-block w-100"
           src={item.url}
-          height="200px" 
-        src={item.url} />
+          height="200px"
+          width="200px"
+        />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -42,8 +44,9 @@ const SimilarProducts = ({getItems, fetchReducer }) => {
         <Card.Img 
           className="d-block w-100"
           src={item.url}
-          height="200px" 
-        src={item.url} />
+          height="200px"
+          width="200px"
+        />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -53,8 +56,9 @@ const SimilarProducts = ({getItems, fetchReducer }) => {
         <Card.Img 
           className="d-block w-100"
           src={item.url}
-          height="200px" 
-        src={item.url} />
+          height="200px"
+          width="200px"
+        />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>

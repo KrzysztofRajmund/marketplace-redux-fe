@@ -6,7 +6,7 @@ import { GET_PRODUCTDETAILS } from './types';
 export const getItems = () => async dispatch => {
     try {
 
-        var res = await fetch('https://jsonplaceholder.typicode.com/photos',{
+        var res = await fetch('http://localhost:4000/items/',{
             method: "GET",
             // headers: {
             //     "Authorization": "Bearer " +    
@@ -38,7 +38,7 @@ export const getItems = () => async dispatch => {
 export const getProductDetails = (id) => async dispatch => {
     try {
 
-        var res = await fetch('https://jsonplaceholder.typicode.com/photos/' + id,{
+        var res = await fetch('http://localhost:4000/items/' + id,{
             method: "GET",
             // headers: {
             //     "Authorization": "Bearer " +    

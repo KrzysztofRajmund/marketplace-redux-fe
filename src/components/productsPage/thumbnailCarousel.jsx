@@ -46,12 +46,12 @@ const ThumbnailCarousel = ({getItems,getProductDetails, fetchReducer,selectedPro
 
             <Card.Img 
              className="d-block w-100"
-             src={item.thumbnailUrl}
+             src={item.jumbotronUrl}
              height="125px"
              />
             
             <Card.ImgOverlay>
-                Product title
+                <small>{item.title}</small>
             </Card.ImgOverlay>
           </Card>
           </Button>
@@ -61,12 +61,12 @@ const ThumbnailCarousel = ({getItems,getProductDetails, fetchReducer,selectedPro
 
             <Card.Img 
              className="d-block w-100"
-             src={item.thumbnailUrl}
+             src={item.jumbotronUrl}
              height="125px"
              />
             
             <Card.ImgOverlay>
-                Product title
+                <small>{item.title}</small>
             </Card.ImgOverlay>
           </Card>
           </Button>
@@ -77,12 +77,12 @@ const ThumbnailCarousel = ({getItems,getProductDetails, fetchReducer,selectedPro
 
             <Card.Img 
              className="d-block w-100"
-             src={item.thumbnailUrl}
+             src={item.jumbotronUrl}
              height="125px"
              />
             
             <Card.ImgOverlay>
-                Product title
+                <small>{item.title}</small>
             </Card.ImgOverlay>
           </Card>
           </Button>
@@ -93,12 +93,12 @@ const ThumbnailCarousel = ({getItems,getProductDetails, fetchReducer,selectedPro
 
             <Card.Img 
              className="d-block w-100"
-             src={item.thumbnailUrl}
+             src={item.jumbotronUrl}
              height="125px"
              />
             
             <Card.ImgOverlay>
-                Product title
+                <small>{item.title}</small>
             </Card.ImgOverlay>
           </Card>
           </Button>
@@ -120,8 +120,8 @@ const ThumbnailCarousel = ({getItems,getProductDetails, fetchReducer,selectedPro
               <Modal.Body>
               <Card.Img 
              className="d-block w-100"
-             src={selectedProduct.thumbnailUrl}
-             height="125px"
+             src={selectedProduct.verticalCardUrl}
+             height="auto"
              />
               </Modal.Body>
             </Modal.Header>

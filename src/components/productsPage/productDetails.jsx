@@ -26,12 +26,7 @@ const ProductDetails = ({getProductDetails, selectedProduct,match}) => {
       <>
         {/* Jumbotron */}
         <Jumbotron className="jumbotronSale" key={selectedProduct.id} fluid>
-          <img
-            src={selectedProduct.url}
-            alt="image"
-            width="100%"
-            height="400px"
-          />
+        <img src={selectedProduct.jumbotronUrl} alt="image" width="100%" height="auto"/>
         </Jumbotron>
         {/* Product title + Card Price with Basket */}
         <CardGroup>

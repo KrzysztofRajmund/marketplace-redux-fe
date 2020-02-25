@@ -26,9 +26,11 @@ const ChosenForYou = ({getItems, fetchReducer }) => {
         <Card className="cardGroup" style={{ width: '16rem', height: '18rem'}} key={item.id}>
         <Card.Img 
           className="d-block w-100"
-          src={item.url}
-          height="200px" 
-        src={item.url} />
+          src={item.jumbotronUrl}
+          height="auto" 
+          width="auto"
+        
+        />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -37,9 +39,10 @@ const ChosenForYou = ({getItems, fetchReducer }) => {
       <Card className="cardGroup" style={{ width: '16rem', height: '18rem'}} key={item.id}>
         <Card.Img 
           className="d-block w-100"
-          src={item.url}
-          height="200px" 
-        src={item.url} />
+          src={item.jumbotronUrl}
+          height="auto" 
+          width="auto"
+         />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -48,9 +51,10 @@ const ChosenForYou = ({getItems, fetchReducer }) => {
       <Card className="cardGroup" style={{ width: '16rem', height: '18rem'}} key={item.id}>
         <Card.Img 
           className="d-block w-100"
-          src={item.url}
-          height="200px" 
-        src={item.url} />
+          src={item.jumbotronUrl}
+          height="auto" 
+          width="auto"
+         />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -61,9 +65,10 @@ const ChosenForYou = ({getItems, fetchReducer }) => {
         <Card className="cardGroup" style={{ width: '16rem', height: '18rem'}} key={item.id}>
         <Card.Img 
           className="d-block w-100"
-          src={item.url}
-          height="200px" 
-        src={item.url} />
+          src={item.jumbotronUrl}
+          height="auto" 
+          width="auto"
+         />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -72,9 +77,10 @@ const ChosenForYou = ({getItems, fetchReducer }) => {
       <Card className="cardGroup" style={{ width: '16rem', height: '18rem'}} key={item.id}>
         <Card.Img 
           className="d-block w-100"
-          src={item.url}
-          height="200px" 
-        src={item.url} />
+          src={item.jumbotronUrl}
+          height="auto" 
+          width="auto"
+        />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
@@ -83,9 +89,10 @@ const ChosenForYou = ({getItems, fetchReducer }) => {
       <Card className="cardGroup" style={{ width: '16rem', height: '18rem'}} key={item.id}>
         <Card.Img 
           className="d-block w-100"
-          src={item.url}
-          height="200px" 
-        src={item.url} />
+          src={item.jumbotronUrl}
+          height="auto" 
+          width="auto"
+         />
         <Card.Body>
           <Card.Title>Outlander - cast away</Card.Title>
           <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>

@@ -16,7 +16,7 @@ const JumbotronSale = ({getItems, fetchReducer }) => {
 
     const winterSaleItem = fetchReducer.slice(0,1).map(item=>(
         <Jumbotron className="jumbotronSale" key={item.id} fluid> 
-             <img src={item.url} alt="image" width="100%" height="400px"/>
+             <img src={item.jumbotronUrl} alt="image" width="100%" height="auto"/>
         </Jumbotron>
     ));
   return (  
