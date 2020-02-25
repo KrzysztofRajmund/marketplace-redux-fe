@@ -4,10 +4,25 @@
 
 body {
     font-family: Open Sans !important;
-    background: #3F6A0E !important;
-    color: #F8F8F8 !important;
+    background:#F8F8F8 !important;
+    color: #2B2B28 !important;
     
   }
+
+  //navbarMain
+
+  .navbarMain {
+      box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.3)!important;
+      background-color: rgba(26,26,26,0.9)!important;
+      color:#CCCCCC !important;
+  }
+
+  .navbarMain .nav-link {
+ 
+    color:#CCCCCC !important;
+}
+
+  
 
   //JUMBOTRON SALE
 
@@ -160,7 +175,8 @@ body {
 }
 
 hr {
-    background-color: #439037;
+    background-color: #CCCCCC;
+    box-shadow: 0px 1px 3px 1px rgba(184, 184, 184, 0.6);
     
 }
 
