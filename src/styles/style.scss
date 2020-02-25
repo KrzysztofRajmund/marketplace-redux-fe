@@ -133,7 +133,12 @@ body {
     display: flex;
     justify-content: space-between;
     color:$primaryTextDarkGrey;
-    background-color:$cardBackgroundLightGrey;
+    background-color:#F8F8F8;
+}
+
+//modal basket
+.basketModal .modal-dialog {
+  margin-right: 5px;
 }
 
 .containerSearchBar div{

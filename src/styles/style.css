@@ -109,7 +109,11 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: #2B2B28;
-  background-color: #CCCCCC;
+  background-color: #F8F8F8;
+}
+
+.basketModal .modal-dialog {
+  margin-right: 5px;
 }
 
 .containerSearchBar div {

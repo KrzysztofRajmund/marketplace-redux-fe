@@ -29,8 +29,10 @@ const NavMain = ({ getItems, fetchReducer }) => {
 
   //modal
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => {
+  const handleClose = () => {setShow(false)
+    setProduct("")
+  };
+  const handleShowSearch = () => {
     setShow(true);
   };
 
@@ -62,12 +64,23 @@ const NavMain = ({ getItems, fetchReducer }) => {
 
 
 
-  //shopping cart!!!
+  //shopping cart
 
   //1.onClick event listener
   //2.add new clicked item to new array
   //3.increase number of item next to basket logo
   //4.purchase button (clear basket)
+
+  const [showBasket, setShowBasket] = useState(false);
+
+  const handleShowBasket = () =>{
+    setShowBasket(true);
+  }
+
+  const handleCloseBasket = () => {
+    setShowBasket(false)
+  };
+  
 
   return (
     <>
@@ -129,7 +142,7 @@ const NavMain = ({ getItems, fetchReducer }) => {
           {/* SHOPPING ICON + SEARCH ICON */}
           <Nav className="mr-5">
             <Nav.Link>
-            <Button className="p-0" variant="link">
+            <Button className="p-0" variant="link" onClick={handleShowBasket}>
               <img
                 src={basketicon}
                 alt="basket img"
@@ -139,7 +152,7 @@ const NavMain = ({ getItems, fetchReducer }) => {
               </Button>
               </Nav.Link>
               <Nav.Link>
-              <Button className="p-0" variant="link" onClick={handleShow}>
+              <Button className="p-0" variant="link" onClick={handleShowSearch}>
                 <img
                   src={searchicon}
                   alt="searchicon img"
@@ -152,7 +165,7 @@ const NavMain = ({ getItems, fetchReducer }) => {
         </Navbar.Collapse>
       </Navbar>
 
-      {/* modal */}
+      {/* modal search */}
       <Modal className="modalSearch" show={show} onHide={handleClose}>
         <Modal.Body closeButton>
           <Form className="searchFormControl" inline>
@@ -191,6 +204,35 @@ const NavMain = ({ getItems, fetchReducer }) => {
             ))}
           </div>
           {/* <SearchBarResults productResult = {productResult}/> */}
+        </Modal.Body>
+      </Modal>
+
+
+      {/* modal basket */}
+      <Modal className="basketModal" show={showBasket} onHide={handleCloseBasket}>
+        <Modal.Body closeButton>
+        <Card className="cardSearchBar">
+                <Card.Body className="containerSearchBar pl-1 pr-1">
+                  <div>
+                    <img
+                      src=""
+                      alt="image"
+                      width="60px"
+                      height="40"
+                    ></img>
+                  </div>
+
+                  <div className="pl-1">title</div>
+
+                  <div className="pl-1 pr-1">3</div>
+                  
+                  <div>
+                    <button disabled>-10%</button>
+                  
+                    <button>price</button>
+                  </div>
+                </Card.Body>
+              </Card>
         </Modal.Body>
       </Modal>
     </>
