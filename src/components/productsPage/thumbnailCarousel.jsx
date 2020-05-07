@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getItems, getProductDetails} from '../../actions/fetchActions';
 import { Link } from 'react-router-dom';
-import modalCarousel from './modalCarousel';
+
 
 
 

@@ -1,17 +1,24 @@
-import {ADD_PRODUCT_TO_BASKET} from './types';
-
+import { ADD_PRODUCT_TO_BASKET } from "./types";
 
 //add product to basket
-export const addProductToBasket = (basketProducts, product) => async dispatch => {
-    
+export const addProductToBasket = (product,basketReducer) => async dispatch => {
 
-    console.log("basketReducerProducts",basketProducts)
-            dispatch({
-                type: ADD_PRODUCT_TO_BASKET,
-                payload: basketProducts
-            })
-            
+  let productAlreadyInBasket = false
+  
+basketReducer.forEach(item=>{
+  if (item.id === product.id){
+    productAlreadyInBasket = true;
+    item.count++
+  };
+})
 
-}
+  if(!productAlreadyInBasket){
+    dispatch({
+      type: ADD_PRODUCT_TO_BASKET,
+      payload: ({...product,count:1})
+      
+    });
+  }
+};
 
 

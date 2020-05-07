@@ -32,8 +32,11 @@ const ProductDetails = ({getProductDetails, selectedProduct,match}) => {
         <CardGroup>
           <Row className="col-12">
             {/* Title */}
-            <div className="cardTitleProduct col-4">
-              <h5>Product Title</h5>
+            <div className="col-4">
+            <Col className="subtitleLargest">
+        Product Title
+        <hr/>
+      </Col>
               <Breadcrumb>
                 <Breadcrumb.Item >Feature</Breadcrumb.Item>
                 <Breadcrumb.Item >

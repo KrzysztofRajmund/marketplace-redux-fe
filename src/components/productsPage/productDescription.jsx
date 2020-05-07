@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getItems, getProductDetails } from "../../actions/fetchActions";
 import { Link } from "react-router-dom";
-import modalCarousel from "./modalCarousel";
+
 
 const ProductDescription = ({
   getItems,
@@ -26,7 +26,7 @@ const ProductDescription = ({
       <Col className="col-7">
         <h5>Description</h5>
         <hr />
-        <div>
+        <div className="basicDescriptionText">
             {selectedProduct.title}
             {selectedProduct.title}
             {selectedProduct.title}
@@ -46,20 +46,20 @@ const ProductDescription = ({
         <Table responsive borderless>
        <tbody>
          <tr>
-           <td className="pl-0 pr-0"> Brand:</td>
-           <td>Boethe</td>
+           <td className="pl-0 pr-0 basicDescriptionText"> <strong>Brand:</strong></td>
+           <td className="basicDescriptionText">Boethe</td>
          </tr>
          <tr>
-           <td className="pl-0 pr-0"> Product type:</td>
-           <td>Power Tools</td>
+           <td className="pl-0 pr-0 basicDescriptionText"> <strong>Product type:</strong></td>
+           <td className="basicDescriptionText">Power Tools</td>
          </tr>
          <tr>
-           <td className="pl-0 pr-0"> Launched on:</td>
-           <td>05/2013</td>
+           <td className="pl-0 pr-0 basicDescriptionText"> <strong>Launched on:</strong></td>
+           <td className="basicDescriptionText">05/2013</td>
          </tr>
          <tr>
-           <td className="pl-0 pr-0"> Language:</td>
-           <td>ENG/CN/PL</td>
+           <td className="pl-0 pr-0 basicDescriptionText"> <strong>Language:</strong></td>
+           <td className="basicDescriptionText">ENG/CN/PL</td>
          </tr>
        </tbody>
      </Table>

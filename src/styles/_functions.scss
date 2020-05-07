@@ -1,7 +1,7 @@
 
 @mixin mainText($putTextColor,$putFontWeight,$putFontSize) {
-color: $putTextColor;
-font-weight: $putFontWeight;
+color: $putTextColor!important;
+font-weight: $putFontWeight!important;
 font-size: $putFontSize;
     
 }

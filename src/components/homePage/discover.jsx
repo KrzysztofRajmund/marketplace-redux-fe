@@ -1,13 +1,19 @@
 import React, {Component, useState, useEffect} from 'react';
+//bootstrap
 import {Container,Carousel,Button, Card, CardGroup, Row, Col, Table} from 'react-bootstrap'
+//redux
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getItems} from '../../actions/fetchActions';
+import { addProductToBasket } from "../../actions/basketActions";
+//assets
+import basketicon from "../navbar/assets/basketicon.png";
 
 
 
 
-const Discover = ({getItems, fetchReducer }) => {
+
+const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) => {
 
     useEffect (()=>{
         getItems();
@@ -21,6 +27,10 @@ const Discover = ({getItems, fetchReducer }) => {
         setIndex(selectedIndex);
         setDirection(e.direction);
       };
+
+      const addProduct = (product,basketReducer) => {
+        addProductToBasket(product,basketReducer) 
+        };
       
       const suggestedItems = fetchReducer.slice(0,3).map(item=>(
           <Carousel.Item key={item.id}>
@@ -31,8 +41,15 @@ const Discover = ({getItems, fetchReducer }) => {
             width="auto"
           />
           <Carousel.Caption>
-            <h3>Sale -70%</h3>
-            <Button className="slideMainBtn" type="button">Primary</Button>
+            <h3>Sale -30%</h3>
+            <Button className="slideMainBtn" type="button" key={item.id} onClick={() => addProduct(item,basketReducer)}>
+                <img
+                  src={basketicon}
+                  alt="basket img"
+                  height="30px"
+                  width="30px"
+                ></img>
+          </Button>
           </Carousel.Caption>
         </Carousel.Item>
       ));
@@ -76,11 +93,10 @@ const Discover = ({getItems, fetchReducer }) => {
              src={item.url}
              width="120px"
              height="70px"
-             src={item.url}
            />
          </td>
-         <td>Outlander - Bestsellers</td>
-         <td className=" float-right ">44.99 PLN</td>
+         <td className="basicDescriptionText">Outlander - Bestsellers</td>
+         <td className=" float-right basicDescriptionText ">44.99 PLN</td>
        </tr>
      </tbody>
    </Table>
@@ -88,12 +104,12 @@ const Discover = ({getItems, fetchReducer }) => {
      return (
       <Row className="col-10">
         <Col className="col-8">
+        <hr />
           <div className="subtitleLargest">
             <button disabled>Discover:</button>
             <button onClick={onClickToggleBestsellers}>Bestsellers</button>
             <button onClick={onClickTogglePremiere}>Premiere -></button>
             <button onClick={onClickToggleNewcoming}>New Coming</button>
-            <hr />
           </div>
           {discoverItems}
           <Button className="transparentBtn float-centered" type="button">
@@ -101,9 +117,9 @@ const Discover = ({getItems, fetchReducer }) => {
           </Button>
         </Col>
         <Col className="col-4">
+        <hr />
           <div className="subtitleLargest">
             Suggested
-            <hr />
           </div>
           <Carousel
             activeIndex={index}
@@ -131,8 +147,8 @@ if (togglePremiere){
            src={item.url}
          />
        </td>
-       <td>Outlander - Premiere</td>
-       <td className=" float-right ">44.99 PLN</td>
+       <td className="basicDescriptionText">Outlander - Premiere</td>
+       <td className=" float-right basicDescriptionText ">44.99 PLN</td>
      </tr>
    </tbody>
  </Table>
@@ -140,12 +156,12 @@ if (togglePremiere){
    return (
     <Row className="col-10">
       <Col className="col-8">
+      <hr />
         <div className="subtitleLargest">
           <button disabled>Discover:</button>
           <button onClick={onClickToggleBestsellers}>Bestsellers</button>
           <button onClick={onClickTogglePremiere}>Premiere -></button>
           <button onClick={onClickToggleNewcoming}>New Coming</button>
-          <hr />
         </div>
         {discoverItems}
         <Button className="transparentBtn float-centered" type="button">
@@ -153,9 +169,9 @@ if (togglePremiere){
         </Button>
       </Col>
       <Col className="col-4">
+      <hr />
         <div className="subtitleLargest">
           Suggested
-          <hr />
         </div>
         <Carousel
           activeIndex={index}
@@ -183,8 +199,8 @@ if (togglePremiere){
                src={item.url}
              />
            </td>
-           <td>Outlander - New Coming</td>
-           <td className=" float-right ">44.99 PLN</td>
+           <td className="basicDescriptionText">Outlander - New Coming</td>
+           <td className=" float-right basicDescriptionText ">44.99 PLN</td>
          </tr>
        </tbody>
      </Table>
@@ -192,12 +208,12 @@ if (togglePremiere){
        return (
         <Row className="col-10">
           <Col className="col-8">
+          <hr />
             <div className="subtitleLargest">
               <button disabled>Discover:</button>
               <button onClick={onClickToggleBestsellers}>Bestsellers</button>
               <button onClick={onClickTogglePremiere}>Premiere -></button>
               <button onClick={onClickToggleNewcoming}>New Coming</button>
-              <hr />
             </div>
             {discoverItems}
             <Button className="transparentBtn float-centered" type="button">
@@ -205,9 +221,9 @@ if (togglePremiere){
             </Button>
           </Col>
           <Col className="col-4">
+            <hr/>
             <div className="subtitleLargest">
               Suggested
-              <hr />
             </div>
             <Carousel
               activeIndex={index}
@@ -223,21 +239,21 @@ if (togglePremiere){
        return (
         <Row className="col-10">
           <Col className="col-8">
+          <hr/>
             <div className="subtitleLargest">
               <button disabled>Discover:</button>
               <button onClick={onClickToggleBestsellers}>Bestsellers</button>
               <button onClick={onClickTogglePremiere}>Premiere -></button>
               <button onClick={onClickToggleNewcoming}>New Coming</button>
-              <hr />
             </div>
             <Button className="transparentBtn float-centered" type="button">
               Show more ...
             </Button>
           </Col>
           <Col className="col-4">
+          <hr/>
             <div className="subtitleLargest">
               Suggested
-              <hr />
             </div>
             <Carousel
               activeIndex={index}
@@ -254,11 +270,14 @@ if (togglePremiere){
 
 Discover.propTypes = {
     getItems: PropTypes.func.isRequired,
-    fetchReducer: PropTypes.array.isRequired
+    addProductToBasket: PropTypes.func.isRequired,
+    fetchReducer: PropTypes.array.isRequired,
+    basketReducer: PropTypes.array.isRequired
 }
 
 const mapStateToProps = state => ({
-fetchReducer: state.fetchReducer.items
+fetchReducer: state.fetchReducer.items,
+basketReducer: state.basketReducer.basketProducts
 });
 
-export default connect (mapStateToProps,{getItems})(Discover);
+export default connect (mapStateToProps,{getItems,addProductToBasket})(Discover);

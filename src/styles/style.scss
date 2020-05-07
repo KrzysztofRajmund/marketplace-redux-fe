@@ -9,6 +9,12 @@ body {
     
   }
 
+  .basicDescriptionText{
+    @include mainText($primaryTextDarkGrey,0,$largeFontSize);
+    letter-spacing: 0.4px;
+
+  }
+
   .card-body{
     background-color:#CCCCCC;
     
@@ -59,26 +65,18 @@ body {
    
 }
 
-.cardPriceProduct, .card-title{
+.cardPriceProduct > h5 button{
     margin-top: 10px;
-    color:$primaryTextDarkGrey;
+    color:$primaryTextDarkGrey !important;
    
 }
 
-//TITLE WITH BREADCRUMB (PRODUCT DETAILS PAGE)
+//BREADCRUMB (PRODUCT DETAILS PAGE)
 
-.cardTitleProduct {
-    margin-top:20px;
-}
-
-.cardTitleProduct h5 {
-    color:$primaryTextDarkGrey !important;
-    font-weight:$textBolder;
-    letter-spacing: $letterSpacing;
-}
 .breadcrumb {
     padding:0px !important;
-    background-color: transparent !important;    
+    background-color: transparent !important; 
+    margin-left: 30px;   
 }
 
 .breadcrumb-item a {
@@ -119,15 +117,6 @@ body {
     
 }
 
-// .modalSearch {
-//     transition: opacity .15s linear;
-//     transition-property: opacity;
-//     transition-duration: 0.15s;
-//     transition-timing-function: linear;
-//     transition-delay: 0s;
-// }
-
-
 //searchBar Card
 .containerSearchBar.card-body{
     display: flex;
@@ -152,15 +141,16 @@ body {
 
 
 .transparentBtn {
-        @include mainText($primaryTextWhite,$textBolder,$largeFontSize);
+        @include mainText($primaryTextDarkGrey,$textBolder,$largeFontSize);
         letter-spacing: $letterSpacing;
         @include otherBtn();
         background: $transparentBtn;
+        margin-left: 10px;
 }
 
 .cardGroup {
     margin:15px !important; 
-    padding: 0px !important;
+    padding: 3px !important;
 }
 
 .colGroup {
@@ -184,8 +174,12 @@ body {
 }
   
 .subtitleLargest {
-    @include mainText($primaryTextWhite,$textBolder,$largestFontSize);
-    
+    @include mainText($primaryTextDarkGrey,$textBolder,$largestFontSize);
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 hr {

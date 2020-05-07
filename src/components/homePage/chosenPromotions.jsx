@@ -152,11 +152,11 @@ if (togglePromotion) {
     ));
     return (
       <>
+       <hr/>
       <div className="subtitleLargest">
         <button onClick={onClickTogglePromotion}>Chosen Promotions:</button>
         <button onClick={onClickToggleWeekendOffer}>WeekendOffer -></button>
         <button onClick={onClickToggleWeekOffer}>Week Offer</button>
-        <hr/>
       </div>
       <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
       {itemsForYou}
@@ -245,11 +245,11 @@ if (togglePromotion) {
     ));
     return (
       <>
+      <hr/>
       <div className="subtitleLargest">
         <button onClick={onClickTogglePromotion}>Chosen Promotions:</button>
         <button onClick={onClickToggleWeekendOffer}>WeekendOffer -></button>
         <button onClick={onClickToggleWeekOffer}>Week Offer</button>
-        <hr/>
       </div>
       <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
       {itemsForYou}
@@ -338,11 +338,11 @@ if (togglePromotion) {
     ));
     return (
       <>
+      <hr/>
       <div className="subtitleLargest">
         <button onClick={onClickTogglePromotion}>Chosen Promotions:</button>
         <button onClick={onClickToggleWeekendOffer}>WeekendOffer -></button>
         <button onClick={onClickToggleWeekOffer}>Week Offer</button>
-        <hr/>
       </div>
       <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
       {itemsForYou}
@@ -353,11 +353,11 @@ if (togglePromotion) {
 
     return (
       <>
+      <hr/>
       <div className="subtitleLargest">
         <button onClick={onClickTogglePromotion}>Chosen Promotions:</button>
         <button onClick={onClickToggleWeekendOffer}>WeekendOffer -></button>
         <button onClick={onClickToggleWeekOffer}>Week Offer</button>
-        <hr/>
       </div>
         </>
       );

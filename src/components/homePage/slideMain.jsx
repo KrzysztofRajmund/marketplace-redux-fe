@@ -1,14 +1,20 @@
 import React, {Component, useState, useEffect} from 'react';
+//bootstrap
 import {Container,Carousel,Button} from 'react-bootstrap'
+//redux
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getItems} from '../../actions/fetchActions';
+import { addProductToBasket } from "../../actions/basketActions";
+//router
 import { Link } from 'react-router-dom';
+//assets
+import basketicon from "../navbar/assets/basketicon.png";
 
 
 
 
-const SlideMain = ({getItems,fetchReducer }) => {
+const SlideMain = ({getItems,fetchReducer,addProductToBasket,basketReducer }) => {
 
     useEffect (()=>{
         getItems();
@@ -21,6 +27,10 @@ const SlideMain = ({getItems,fetchReducer }) => {
       setIndex(selectedIndex);
       setDirection(e.direction);
     };
+
+    const addProduct = (product,basketReducer) => {
+      addProductToBasket(product,basketReducer) 
+      };
 
     const suggestedItems = fetchReducer.slice(0, 8).map(item => (
       <Carousel.Item
@@ -38,8 +48,13 @@ const SlideMain = ({getItems,fetchReducer }) => {
         </Link>
         <Carousel.Caption>
           <h3>Sale -70%</h3>
-          <Button className="slideMainBtn" type="button" key={item.id}>
-            Add to basket
+          <Button className="slideMainBtn" type="button" key={item.id} onClick={() => addProduct(item,basketReducer)}>
+                <img
+                  src={basketicon}
+                  alt="basket img"
+                  height="40px"
+                  width="40px"
+                ></img>
           </Button>
         </Carousel.Caption>
       </Carousel.Item>
@@ -47,8 +62,8 @@ const SlideMain = ({getItems,fetchReducer }) => {
     return (
       <>
       <div className="subtitleLargest">
+      <hr/>
         Suggested Products
-        <hr/>
       </div>
         <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
             {suggestedItems}
@@ -60,11 +75,14 @@ const SlideMain = ({getItems,fetchReducer }) => {
 
 SlideMain.propTypes = {
     getItems: PropTypes.func.isRequired,
-    fetchReducer: PropTypes.array.isRequired
+    addProductToBasket: PropTypes.func.isRequired,
+    fetchReducer: PropTypes.array.isRequired,
+    basketReducer: PropTypes.array.isRequired
 }
 
 const mapStateToProps = state => ({
-fetchReducer: state.fetchReducer.items
+fetchReducer: state.fetchReducer.items,
+basketReducer: state.basketReducer.basketProducts
 });
 
-export default connect (mapStateToProps,{getItems})(SlideMain);
+export default connect (mapStateToProps, {getItems,addProductToBasket})(SlideMain);

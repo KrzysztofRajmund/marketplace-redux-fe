@@ -20,7 +20,7 @@ const ChosenForYou = ({getItems, fetchReducer }) => {
       setIndex(selectedIndex);
       setDirection(e.direction);
     };
-    const itemsForYou = fetchReducer.slice(0,1).map(item=>(
+    const itemsForYou = fetchReducer.slice(0,3).map(item=>(
         <Carousel.Item>
         <CardGroup>
         <Card className="cardGroup" style={{ width: '16rem', height: '18rem'}} key={item.id}>
@@ -104,8 +104,8 @@ const ChosenForYou = ({getItems, fetchReducer }) => {
     return (
       <>
       <div className="subtitleLargest">
+      <hr/>
         Chosen For You
-        <hr/>
       </div>
         <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
             {itemsForYou}
