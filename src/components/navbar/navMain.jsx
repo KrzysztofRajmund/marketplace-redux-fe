@@ -3,6 +3,7 @@ import React, { Component, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getItems } from "../../actions/fetchActions";
+import {addProductToBasket} from '../../actions/basketActions';
 //react bootstrap
 import {
   Card,
@@ -22,15 +23,16 @@ import searchicon from "./assets/searchicon.png";
 //components
 import SearchBarResults from "./searchBarResults";
 
-const NavMain = ({ getItems, fetchReducer }) => {
+const NavMain = ({ getItems,addProductToBasket, fetchReducer,basketReducer}) => {
   useEffect(() => {
     getItems();
   }, []);
 
   //modal
   const [show, setShow] = useState(false);
-  const handleClose = () => {setShow(false)
-    setProduct("")
+  const handleClose = () => {
+    setShow(false);
+    setProduct("");
   };
   const handleShowSearch = () => {
     setShow(true);
@@ -62,10 +64,8 @@ const NavMain = ({ getItems, fetchReducer }) => {
     if (product.length <= 2) return setProductResult([]);
   }, [product]);
 
-
-
   //shopping cart
-
+//0. solve problem with undifiend / try finish all code with localStorage
   //1.onClick event listener
   //2.add new clicked item to new array
   //3.increase number of item next to basket logo
@@ -73,14 +73,14 @@ const NavMain = ({ getItems, fetchReducer }) => {
 
   const [showBasket, setShowBasket] = useState(false);
 
-  const handleShowBasket = () =>{
+  const handleShowBasket = () => {
     setShowBasket(true);
-  }
+    addProductToBasket();
+  };
 
   const handleCloseBasket = () => {
-    setShowBasket(false)
+    setShowBasket(false);
   };
-  
 
   return (
     <>
@@ -142,16 +142,16 @@ const NavMain = ({ getItems, fetchReducer }) => {
           {/* SHOPPING ICON + SEARCH ICON */}
           <Nav className="mr-5">
             <Nav.Link>
-            <Button className="p-0" variant="link" onClick={handleShowBasket}>
-              <img
-                src={basketicon}
-                alt="basket img"
-                height="20px"
-                width="20px"
-              ></img>
+              <Button className="p-0" variant="link" onClick={handleShowBasket}>
+                <img
+                  src={basketicon}
+                  alt="basket img"
+                  height="20px"
+                  width="20px"
+                ></img>
               </Button>
-              </Nav.Link>
-              <Nav.Link>
+            </Nav.Link>
+            <Nav.Link>
               <Button className="p-0" variant="link" onClick={handleShowSearch}>
                 <img
                   src={searchicon}
@@ -160,7 +160,7 @@ const NavMain = ({ getItems, fetchReducer }) => {
                   width="20px"
                 ></img>
               </Button>
-              </Nav.Link>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -190,13 +190,14 @@ const NavMain = ({ getItems, fetchReducer }) => {
                     ></img>
                   </div>
 
-                  <div className="pl-1">{search.title.substr(0, 12) + "..."}</div>
+                  <div className="pl-1">
+                    {search.title.substr(0, 12) + "..."}
+                  </div>
 
                   <div className="pl-1 pr-1">rating</div>
-                  
+
                   <div>
                     <button disabled>-10%</button>
-                  
                     <button>basket</button>
                   </div>
                 </Card.Body>
@@ -207,32 +208,39 @@ const NavMain = ({ getItems, fetchReducer }) => {
         </Modal.Body>
       </Modal>
 
-
       {/* modal basket */}
-      <Modal className="basketModal" show={showBasket} onHide={handleCloseBasket}>
+      <Modal
+        className="basketModal"
+        show={showBasket}
+        onHide={handleCloseBasket}
+      >
+        {console.log("basketReducernavMain",basketReducer)}
         <Modal.Body closeButton>
-        <Card className="cardSearchBar">
-                <Card.Body className="containerSearchBar pl-1 pr-1">
+          <Card className="cardSearchBar">
+            <Card.Body className="containerSearchBar pl-1 pr-1">
+              {basketReducer === [] ?
+              <div>
+                basket is empty
+              </div>
+              :
+                <>
                   <div>
-                    <img
-                      src=""
-                      alt="image"
-                      width="60px"
-                      height="40"
-                    ></img>
+                    <img src="" alt="image" width="60px" height="40"></img>
                   </div>
 
                   <div className="pl-1">title</div>
 
                   <div className="pl-1 pr-1">3</div>
-                  
+
                   <div>
                     <button disabled>-10%</button>
-                  
+
                     <button>price</button>
                   </div>
-                </Card.Body>
-              </Card>
+                </>
+              }
+            </Card.Body>
+          </Card>
         </Modal.Body>
       </Modal>
     </>
@@ -245,7 +253,8 @@ NavMain.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  fetchReducer: state.fetchReducer.items
+  fetchReducer: state.fetchReducer.items,
+  basketReducer: state.basketReducer.basketProducts
 });
 
-export default connect(mapStateToProps, { getItems })(NavMain);
+export default connect(mapStateToProps, { getItems,addProductToBasket })(NavMain);
