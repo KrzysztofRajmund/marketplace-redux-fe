@@ -9,6 +9,8 @@ import {getProductDetails} from '../../actions/fetchActions';
 import ThumbnailCarousel from './thumbnailCarousel';
 import ProductDescription from './productDescription';
 import SimilarProducts from './similarProducts';
+//assets
+import basketicon from "../navbar/assets/basketicon.png";
 
 
 
@@ -46,16 +48,21 @@ const ProductDetails = ({getProductDetails, selectedProduct,match}) => {
               </Breadcrumb>
             </div>
             {/* Price Card */}
-            <div className=" cardPriceProduct col-5">
-              <Card key={selectedProduct.id}>
+            <div className=" cardPriceProduct col-4">
+              <Card className="cardPrice" key={selectedProduct.id}>
                 <Card.Body className="pl-2 pr-2">
-                  <Card.Title>€19.99</Card.Title>
-                  <Button className="col-12" variant="success" size="sm">
-                    ADD TO BASKET
+                  <Card.Title className="mt-2">€19.99</Card.Title>
+                  <Button className="col-12" variant="dark" size="sm">
+                  <img
+                  src={basketicon}
+                  alt="basket img"
+                  height="30px"
+                  width="30px"
+                ></img>
                   </Button>
                   <Button
-                    className="col-12"
-                    variant="outline-success"
+                    className="col-12 mb-3"
+                    variant="outline-dark"
                     size="sm"
                   >
                     ADD TO WISHLIST

@@ -88,7 +88,7 @@ const NavMain = ({
     <>
       {/* navbar */}
       <Navbar className="navbarMain" expand="lg" sticky="top">
-        <Navbar.Brand href="#home">LOGO</Navbar.Brand>
+        <Navbar.Brand>LOGO</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -98,7 +98,7 @@ const NavMain = ({
           {/* search icon + basket icon */}
           <Nav className="mr-5">
             <Nav.Link>
-              <Button className="p-0" variant="link" onClick={handleShowBasket}>
+              <Button className="p-0 m-0" variant="link" onClick={handleShowBasket}>
                 <img
                   src={basketicon}
                   alt="basket img"

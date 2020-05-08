@@ -16,28 +16,13 @@ body {
   }
 
   .card-body{
-    background-color:#CCCCCC;
+    background-color:$cardBackgroundColor;
     
   }
   .card-title {
     color: $primaryTextDarkGrey;
   }
-
-  //navbarMain
-
-  .navbarMain {
-      box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.3)!important;
-      background-color: rgba(26,26,26,0.9)!important;
-      color:#CCCCCC !important;
-  }
-
-  .navbarMain .nav-link {
- 
-    color:#CCCCCC !important;
-}
-
   
-
   //JUMBOTRON SALE
 
   .jumbotronSale {
@@ -59,16 +44,16 @@ body {
 //CARD PRODUCT PRICE (PRODUCT DETAILS PAGE)
 
 .cardPriceProduct{
-    top: -3rem;
+    top: -10rem;
     z-index:1;
     margin-left: 14rem;
    
 }
 
-.cardPriceProduct > h5 button{
-    margin-top: 10px;
-    color:$primaryTextDarkGrey !important;
-   
+.cardPrice {
+    box-shadow: 0px 5px 8px 3px rgba(0,0,0,0.3)!important;
+    background-color: rgba(139, 80, 185, 0.5) !important;
+    color:#CCCCCC !important;
 }
 
 //BREADCRUMB (PRODUCT DETAILS PAGE)
@@ -183,7 +168,7 @@ body {
 }
 
 hr {
-    background-color: #CCCCCC;
+    background-color: #AF85CE;
     box-shadow: 0px 1px 3px 1px rgba(184, 184, 184, 0.6);
     
 }
@@ -203,29 +188,75 @@ hr {
     letter-spacing: $letterSpacing;
 }
 
-.navSubtitleOne {
-    @include mainText($primaryTextLightGrey,$textBolder,$subtitleTwoFontSize);
-    text-transform: uppercase;
+// .navSubtitleOne {
+//     @include mainText($primaryTextLightGrey,$textBolder,$subtitleTwoFontSize);
+//     text-transform: uppercase;
+// }
+
+// .navSubtitleTwo {
+//     @include mainText($primaryTextDarkGrey,0,$subtitleTwoFontSize);
+// }
+
+  //navbarMain
+  .navbarMain {
+    box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.3)!important;
+    background-color: $navBackgroundColor;
+    color:#CCCCCC !important;
 }
 
-.navSubtitleTwo {
-    @include mainText($primaryTextDarkGrey,0,$subtitleTwoFontSize);
+.nav-link{
+    padding:0px;
 }
 
+@media screen and (max-width:991px){
+    .nav-link{
+        padding:10px;
+    }
+}
+
+.navbar-brand{
+    color:$primaryTextWhite !important;
+}
+
+//footer
 footer {
-    letter-spacing: $letterSpacing;
+    letter-spacing: 1px;;
+    background-color:$footerBackgroundColor;
 }
 
-.navbarMiddle{
-    background-color: #4b4b4b!important;
+a {
+    color:$primaryTextDarkGrey !important;
+    font-size: $largeFontSize;
+    text-transform: uppercase;
+    font-weight:lighter;
+}
+
+a:hover{
+    color:$primaryTextWhite!important;
+    font-size: 18px;
+}
+
+
+a img:hover{
+    transform: scale(1.5);
+    padding:0px !important;
+}
+
+
+.footerTopElementOne{
     border: 0.3px solid #2B2B28;
     box-sizing: border-box;
-    box-shadow: 50px 50px 50px rgb(5, 5, 5);
-    border-radius: 2px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.356) ;
+    border-radius: 1px;
 }
-.footerMiddleLink2{
-    margin-left: -12.5rem;
+
+.footerBottom{
+    background-color:rgb(114, 71, 146); 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:2px;
+    
 }
-.footerButtonLink2 {
-    margin-left: -8rem;
-}
+
+
