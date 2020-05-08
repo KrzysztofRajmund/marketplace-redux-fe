@@ -136,7 +136,7 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
           <div className="subtitleLargest hideSetionMediaOne">
             Suggested
           </div>
-          <Carousel
+          <Carousel className="discoverCarouselItem"
             activeIndex={index}
             direction={direction}
             onSelect={handleSelect}

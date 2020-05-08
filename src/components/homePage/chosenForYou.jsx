@@ -1,17 +1,26 @@
 import React, {Component, useState, useEffect} from 'react';
-import {Container,Carousel,Button, Card, CardGroup} from 'react-bootstrap'
+//react-boottrap
+import {Container,Carousel,Button, Card, CardGroup, Row} from 'react-bootstrap'
+//redux
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getItems} from '../../actions/fetchActions';
+import { addProductToBasket } from "../../actions/basketActions";
+//assets
+import basketicon from "../navbar/assets/basketicon.png";
 
 
 
 
-const ChosenForYou = ({getItems, fetchReducer }) => {
+const ChosenForYou = ({getItems, fetchReducer,addProductToBasket,basketReducer }) => {
 
     useEffect (()=>{
         getItems();
     },[])
+
+    const addProduct = (product,basketReducer) => {
+      addProductToBasket(product,basketReducer) 
+      };
 
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(null);
@@ -20,108 +29,78 @@ const ChosenForYou = ({getItems, fetchReducer }) => {
       setIndex(selectedIndex);
       setDirection(e.direction);
     };
-    const itemsForYou = fetchReducer.slice(0,3).map(item=>(
-        <Carousel.Item>
-        <CardGroup>
-        <Card className="cardGroup" style={{ width: '16rem', height: '18rem'}} key={item.id}>
-        <Card.Img 
-          className="d-block w-100"
-          src={item.jumbotronUrl}
-          height="auto" 
-          width="auto"
-        
-        />
+    const itemsForYou = fetchReducer.slice(0,2).map(item=>(
+      <Row className="col-12 col-md-6">
+      <Card key={item.id} className="chosenForYouRow">
+        <Card.Img variant="top"src={item.jumbotronUrl}/>
         <Card.Body>
-          <Card.Title>Outlander - cast away</Card.Title>
-          <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+    <Card.Title><div>{item.title}</div><p>${item.price}</p></Card.Title>
         </Card.Body>
+        <Card.Footer>
+          <Button className="slideMainBtn" onClick={() => addProduct(item,basketReducer)}> <img
+                        src={basketicon}
+                        alt="basket img"
+                        height="30px"
+                        width="30px"
+                      ></img></Button>
+        </Card.Footer>
       </Card>
-      <Card className="cardGroup" style={{ width: '16rem', height: '18rem'}} key={item.id}>
-        <Card.Img 
-          className="d-block w-100"
-          src={item.jumbotronUrl}
-          height="auto" 
-          width="auto"
-         />
+      </Row>
+    ));
+    const itemsForYouTwo = fetchReducer.slice(2,4).map(item=>(
+      <Row className="col-12 col-md-6">
+      <Card key={item.id} className="chosenForYouRow">
+        <Card.Img variant="top"src={item.jumbotronUrl}/>
         <Card.Body>
-          <Card.Title>Outlander - cast away</Card.Title>
-          <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
+    <Card.Title><div>{item.title}</div><p>${item.price}</p></Card.Title>
         </Card.Body>
+        <Card.Footer>
+        <Button className="slideMainBtn" onClick={() => addProduct(item,basketReducer)}> <img
+                        src={basketicon}
+                        alt="basket img"
+                        height="30px"
+                        width="30px"
+                      ></img></Button>
+        </Card.Footer>
       </Card>
-      <Card className="cardGroup" style={{ width: '16rem', height: '18rem'}} key={item.id}>
-        <Card.Img 
-          className="d-block w-100"
-          src={item.jumbotronUrl}
-          height="auto" 
-          width="auto"
-         />
-        <Card.Body>
-          <Card.Title>Outlander - cast away</Card.Title>
-          <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      </CardGroup>
-      <CardGroup>
-        <Card className="cardGroup" style={{ width: '16rem', height: '18rem'}} key={item.id}>
-        <Card.Img 
-          className="d-block w-100"
-          src={item.jumbotronUrl}
-          height="auto" 
-          width="auto"
-         />
-        <Card.Body>
-          <Card.Title>Outlander - cast away</Card.Title>
-          <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      <Card className="cardGroup" style={{ width: '16rem', height: '18rem'}} key={item.id}>
-        <Card.Img 
-          className="d-block w-100"
-          src={item.jumbotronUrl}
-          height="auto" 
-          width="auto"
-        />
-        <Card.Body>
-          <Card.Title>Outlander - cast away</Card.Title>
-          <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      <Card className="cardGroup" style={{ width: '16rem', height: '18rem'}} key={item.id}>
-        <Card.Img 
-          className="d-block w-100"
-          src={item.jumbotronUrl}
-          height="auto" 
-          width="auto"
-         />
-        <Card.Body>
-          <Card.Title>Outlander - cast away</Card.Title>
-          <Button variant="primary" className=" lead float-right mr-3">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      </CardGroup>
-      </Carousel.Item>
+      </Row>
     ));
     return (
-      <>
+      <Container className="col-12" >
       <div className="subtitleLargest">
       <hr/>
         Chosen For You
       </div>
-        <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
-            {itemsForYou}
+        <Carousel className="chosenForYouCarousel" activeIndex={index} direction={direction} onSelect={handleSelect}>
+          <Carousel.Item>
+            <CardGroup>
+          {itemsForYou}
+          {itemsForYouTwo}
+          </CardGroup>
+          </Carousel.Item>
+          <Carousel.Item>
+            <CardGroup>
+          {itemsForYou}
+          {itemsForYouTwo}
+          </CardGroup>
+          </Carousel.Item>
         </Carousel>
-        </>
+        </Container>
       );
 }
 
 
 ChosenForYou.propTypes = {
     getItems: PropTypes.func.isRequired,
-    fetchReducer: PropTypes.array.isRequired
+    addProductToBasket: PropTypes.func.isRequired,
+    fetchReducer: PropTypes.array.isRequired,
+    basketReducer: PropTypes.array.isRequired
+
 }
 
 const mapStateToProps = state => ({
-fetchReducer: state.fetchReducer.items
+fetchReducer: state.fetchReducer.items,
+basketReducer: state.basketReducer.basketProducts
 });
 
-export default connect (mapStateToProps,{getItems})(ChosenForYou);
+export default connect (mapStateToProps,{getItems,addProductToBasket})(ChosenForYou);

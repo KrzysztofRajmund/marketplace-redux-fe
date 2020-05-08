@@ -233,14 +233,14 @@ a {
 a:hover{
     color:$primaryTextWhite!important;
     font-size: 18px;
-    transition: transform 0.5s;
+    transition: transform 0.5s ease;
 }
 
 
 a img:hover{
     transform: scale(1.5);
     padding:0px !important;
-    transition: transform 0.5s;
+    transition: transform 0.5s ease;
 }
 
 .footerTopElementOne{
@@ -260,7 +260,6 @@ a img:hover{
     letter-spacing: 5px;
     
 }
-
 
 @media screen and (max-width:991px){
     .nav-link{
@@ -290,4 +289,61 @@ a img:hover{
     .hideSetionMediaOne{
         display:none !important;
     }
+}
+
+@media screen and (max-width:600px){
+    .chosenForYouCarousel a.carousel-control-prev, .chosenForYouCarousel a.carousel-control-next{
+        width: 15% !important;
+    }
+    .chosenForYouCarousel{
+        margin:0px;
+    }
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.chosenForYouCarousel{
+    margin-left: 55px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.chosenForYouRow{
+    margin:5px;
+}
+
+ .carousel-control-next, .carousel-control-prev{
+    width: 5% !important;
+}
+
+.chosenForYouCarousel a.carousel-control-prev{
+    margin-left: -60px !important;
+}
+
+.carousel-control-prev-icon{
+    background-image: url("../assets/prevIcon.png") !important;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.carousel-control-next-icon{
+    background-image: url("../assets/nextIcon.png") !important;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.carousel-indicators li{
+    background-color:$navBackgroundColor;
+    height: 8px !important;
+}
+
+.chosenForYouCarousel ol.carousel-indicators{
+    display:none;
+}
+.discoverCarouselItem a.carousel-control-prev, .discoverCarouselItem a.carousel-control-next{
+    display:none;
 }
