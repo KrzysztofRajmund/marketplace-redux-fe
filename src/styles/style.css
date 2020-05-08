@@ -129,6 +129,11 @@ body {
   margin-left: 10px;
 }
 
+.discoverButton {
+  background-color: #8C50B9 !important;
+  margin-left: !important;
+}
+
 .cardGroup {
   margin: 15px !important;
   padding: 3px !important;
@@ -198,13 +203,8 @@ hr {
 }
 
 .nav-link {
-  padding: 0px;
-}
-
-@media screen and (max-width: 991px) {
-  .nav-link {
-    padding: 10px;
-  }
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
 }
 
 .navbar-brand {
@@ -226,12 +226,20 @@ a {
 a:hover {
   color: #F8F8F8 !important;
   font-size: 18px;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 a img:hover {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
   padding: 0px !important;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .footerTopElementOne {
@@ -254,5 +262,39 @@ a img:hover {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 2px;
+  padding-bottom: 10px;
+  letter-spacing: 5px;
+}
+
+@media screen and (max-width: 991px) {
+  .nav-link {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .nav-link {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  .footerTopElementOne:first-child img {
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+  }
+  .footerTopElementOne:first-child a {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .hideSetionMediaOne {
+    display: none !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */

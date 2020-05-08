@@ -5,8 +5,7 @@
 body {
     font-family: Open Sans !important;
     background:#F8F8F8 !important;
-    color: #F8F8F8!important;
-    
+    color: #F8F8F8!important; 
   }
 
   .basicDescriptionText{
@@ -133,6 +132,11 @@ body {
         margin-left: 10px;
 }
 
+.discoverButton{
+    background-color: $footerBackgroundColor !important;
+    margin-left: !important;
+}
+
 .cardGroup {
     margin:15px !important; 
     padding: 3px !important;
@@ -205,13 +209,8 @@ hr {
 }
 
 .nav-link{
-    padding:0px;
-}
-
-@media screen and (max-width:991px){
-    .nav-link{
-        padding:10px;
-    }
+    padding-top:5px !important;
+    padding-bottom:5px !important;
 }
 
 .navbar-brand{
@@ -220,7 +219,7 @@ hr {
 
 //footer
 footer {
-    letter-spacing: 1px;;
+    letter-spacing: 1px;
     background-color:$footerBackgroundColor;
 }
 
@@ -234,14 +233,15 @@ a {
 a:hover{
     color:$primaryTextWhite!important;
     font-size: 18px;
+    transition: transform 0.5s;
 }
 
 
 a img:hover{
     transform: scale(1.5);
     padding:0px !important;
+    transition: transform 0.5s;
 }
-
 
 .footerTopElementOne{
     border: 0.3px solid #2B2B28;
@@ -256,7 +256,38 @@ a img:hover{
     flex-wrap: wrap;
     justify-content: center;
     padding:2px;
+    padding-bottom: 10px;
+    letter-spacing: 5px;
     
 }
 
 
+@media screen and (max-width:991px){
+    .nav-link{
+        padding-top:10px !important;
+        padding-bottom:10px !important;
+    }
+}
+
+@media screen and (max-width:465px){
+    .nav-link{
+        padding-top:10px !important;
+        padding-bottom:10px !important;
+    }
+
+    .footerTopElementOne:first-child img{
+        cursor: pointer;
+        width: 45px;
+        height: 45px;
+        transition: transform 0.5s;
+    }
+    .footerTopElementOne:first-child a{
+        display: none;
+    }    
+}
+
+@media screen and (max-width:750px){
+    .hideSetionMediaOne{
+        display:none !important;
+    }
+}

@@ -17,6 +17,7 @@ import {
 } from "react-bootstrap";
 //assets
 import basketicon from "./assets/basketicon.png";
+import basketiconTwo from "./assets/basketiconTwo.png";
 import searchicon from "./assets/searchicon.png";
 //components
 import Basket from "./../Basket";
@@ -159,7 +160,7 @@ const NavMain = ({
                     <button disabled>-10%</button>
                     <button onClick={() => addProduct(search,basketReducer)}>
                       <img
-                        src={basketicon}
+                        src={basketiconTwo}
                         alt="basket img"
                         height="20px"
                         width="20px"

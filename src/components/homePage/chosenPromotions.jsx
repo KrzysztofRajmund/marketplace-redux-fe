@@ -1,9 +1,14 @@
 import React, {Component, useState, useEffect} from 'react';
+//reactstrap
 import {Container,Carousel,Button, Card, CardGroup, Row, Col} from 'react-bootstrap'
+//router
 import {Link, Redirect} from 'react-router-dom';
+//redux
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getItems} from '../../actions/fetchActions';
+//assets
+import promoCode from "../../assets/promoCode.png";
 
 
 
@@ -153,12 +158,27 @@ if (togglePromotion) {
     return (
       <>
        <hr/>
-      <div className="subtitleLargest">
-        <button onClick={onClickTogglePromotion}>Chosen Promotions:</button>
-        <button onClick={onClickToggleWeekendOffer}>WeekendOffer -></button>
-        <button onClick={onClickToggleWeekOffer}>Week Offer</button>
+      <div className="hideSetionMediaOne">
+        <Button className="transparentBtn" onClick={onClickTogglePromotion}>  <img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>All Promotions</Button>
+        <Button className="transparentBtn" onClick={onClickToggleWeekendOffer}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Weekend</Button>
+        <Button className="transparentBtn" onClick={onClickToggleWeekOffer}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Week</Button>
       </div>
-      <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
+      <Carousel className="hideSetionMediaOne" activeIndex={index} direction={direction} onSelect={handleSelect}>
       {itemsForYou}
   </Carousel>
         </>
@@ -246,10 +266,25 @@ if (togglePromotion) {
     return (
       <>
       <hr/>
-      <div className="subtitleLargest">
-        <button onClick={onClickTogglePromotion}>Chosen Promotions:</button>
-        <button onClick={onClickToggleWeekendOffer}>WeekendOffer -></button>
-        <button onClick={onClickToggleWeekOffer}>Week Offer</button>
+      <div className="hideSetionMediaOne">
+      <Button className="transparentBtn" onClick={onClickTogglePromotion}>  <img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>All Promotions</Button>
+        <Button className="transparentBtn" onClick={onClickToggleWeekendOffer}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Weekend</Button>
+        <Button className="transparentBtn" onClick={onClickToggleWeekOffer}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Week</Button>
       </div>
       <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
       {itemsForYou}
@@ -339,10 +374,25 @@ if (togglePromotion) {
     return (
       <>
       <hr/>
-      <div className="subtitleLargest">
-        <button onClick={onClickTogglePromotion}>Chosen Promotions:</button>
-        <button onClick={onClickToggleWeekendOffer}>WeekendOffer -></button>
-        <button onClick={onClickToggleWeekOffer}>Week Offer</button>
+      <div className="hideSetionMediaOne">
+      <Button className="transparentBtn" onClick={onClickTogglePromotion}>  <img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>All Promotions</Button>
+        <Button className="transparentBtn" onClick={onClickToggleWeekendOffer}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Weekend</Button>
+        <Button className="transparentBtn" onClick={onClickToggleWeekOffer}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Week</Button>
       </div>
       <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
       {itemsForYou}
@@ -354,10 +404,25 @@ if (togglePromotion) {
     return (
       <>
       <hr/>
-      <div className="subtitleLargest">
-        <button onClick={onClickTogglePromotion}>Chosen Promotions:</button>
-        <button onClick={onClickToggleWeekendOffer}>WeekendOffer -></button>
-        <button onClick={onClickToggleWeekOffer}>Week Offer</button>
+      <div className="hideSetionMediaOne">
+      <Button className="transparentBtn" onClick={onClickTogglePromotion}>  <img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>All Promotions</Button>
+        <Button className="transparentBtn" onClick={onClickToggleWeekendOffer}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Weekend</Button>
+        <Button className="transparentBtn" onClick={onClickToggleWeekOffer}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Week</Button>
       </div>
         </>
       );

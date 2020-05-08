@@ -8,6 +8,7 @@ import {getItems} from '../../actions/fetchActions';
 import { addProductToBasket } from "../../actions/basketActions";
 //assets
 import basketicon from "../navbar/assets/basketicon.png";
+import promoCode from "../../assets/promoCode.png";
 
 
 
@@ -86,7 +87,7 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
    if (toggleBestsellers){
     const discoverItems = fetchReducer.slice(0, 5).map(item => (
    <Table responsive>
-     <tbody key={item.id}>
+     <tbody key={item.id} className="transparentBtn">
        <tr>
          <td>
            <img
@@ -95,30 +96,44 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
              height="70px"
            />
          </td>
-         <td className="basicDescriptionText">Outlander - Bestsellers</td>
-         <td className=" float-right basicDescriptionText ">44.99 PLN</td>
+         <td>Outlander - Bestsellers</td>
+         <td className=" float-right">44.99 PLN</td>
        </tr>
      </tbody>
    </Table>
    ));
      return (
-      <Row className="col-10">
+      <Row className="col-12 hideSetionMediaOne">
         <Col className="col-8">
         <hr />
-          <div className="subtitleLargest">
-            <button disabled>Discover:</button>
-            <button onClick={onClickToggleBestsellers}>Bestsellers</button>
-            <button onClick={onClickTogglePremiere}>Premiere -></button>
-            <button onClick={onClickToggleNewcoming}>New Coming</button>
+          <div className="mb-3">
+            <Button className="transparentBtn discoverButton ml-0" onClick={onClickToggleBestsellers}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Bestsellers</Button>
+            <Button className="transparentBtn discoverButton" onClick={onClickTogglePremiere}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Premiere</Button>
+            <Button className="transparentBtn discoverButton" onClick={onClickToggleNewcoming}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>New Coming</Button>
           </div>
           {discoverItems}
-          <Button className="transparentBtn float-centered" type="button">
+          <Button className="transparentBtn float-centered mb-4" type="button">
             Show more ...
           </Button>
         </Col>
         <Col className="col-4">
         <hr />
-          <div className="subtitleLargest">
+          <div className="subtitleLargest hideSetionMediaOne">
             Suggested
           </div>
           <Carousel
@@ -137,7 +152,7 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
 if (togglePremiere){
   const discoverItems = fetchReducer.slice(0, 5).map(item => (
  <Table responsive>
-   <tbody key={item.id}>
+   <tbody key={item.id} className="transparentBtn">
      <tr>
        <td>
          <img
@@ -147,30 +162,44 @@ if (togglePremiere){
            src={item.url}
          />
        </td>
-       <td className="basicDescriptionText">Outlander - Premiere</td>
-       <td className=" float-right basicDescriptionText ">44.99 PLN</td>
+       <td>Outlander - Premiere</td>
+       <td className=" float-right">44.99 PLN</td>
      </tr>
    </tbody>
  </Table>
  ));
    return (
-    <Row className="col-10">
+    <Row className="col-12 hideSetionMediaOne">
       <Col className="col-8">
       <hr />
-        <div className="subtitleLargest">
-          <button disabled>Discover:</button>
-          <button onClick={onClickToggleBestsellers}>Bestsellers</button>
-          <button onClick={onClickTogglePremiere}>Premiere -></button>
-          <button onClick={onClickToggleNewcoming}>New Coming</button>
+        <div className="mb-3">
+        <Button className="transparentBtn discoverButton ml-0" onClick={onClickToggleBestsellers}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Bestsellers</Button>
+            <Button className="transparentBtn discoverButton" onClick={onClickTogglePremiere}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Premiere</Button>
+            <Button className="transparentBtn discoverButton" onClick={onClickToggleNewcoming}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>New Coming</Button>
         </div>
         {discoverItems}
-        <Button className="transparentBtn float-centered" type="button">
+        <Button className="transparentBtn float-centered mb-4" type="button">
           Show more ...
         </Button>
       </Col>
       <Col className="col-4">
       <hr />
-        <div className="subtitleLargest">
+        <div className="subtitleLargest hideSetionMediaOne">
           Suggested
         </div>
         <Carousel
@@ -189,7 +218,7 @@ if (togglePremiere){
     if (toggleNewcoming){
       const discoverItems = fetchReducer.slice(0, 5).map(item => (
      <Table responsive>
-       <tbody key={item.id}>
+       <tbody key={item.id} className="transparentBtn">
          <tr>
            <td>
              <img
@@ -199,30 +228,44 @@ if (togglePremiere){
                src={item.url}
              />
            </td>
-           <td className="basicDescriptionText">Outlander - New Coming</td>
-           <td className=" float-right basicDescriptionText ">44.99 PLN</td>
+           <td>Outlander - New Coming</td>
+           <td className=" float-right">44.99 PLN</td>
          </tr>
        </tbody>
      </Table>
      ));
        return (
-        <Row className="col-10">
+        <Row className="col-12 hideSetionMediaOne">
           <Col className="col-8">
           <hr />
-            <div className="subtitleLargest">
-              <button disabled>Discover:</button>
-              <button onClick={onClickToggleBestsellers}>Bestsellers</button>
-              <button onClick={onClickTogglePremiere}>Premiere -></button>
-              <button onClick={onClickToggleNewcoming}>New Coming</button>
+            <div className="mb-3">
+            <Button className="transparentBtn discoverButton ml-0" onClick={onClickToggleBestsellers}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Bestsellers</Button>
+            <Button className="transparentBtn discoverButton" onClick={onClickTogglePremiere}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Premiere</Button>
+            <Button className="transparentBtn discoverButton" onClick={onClickToggleNewcoming}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>New Coming</Button>
             </div>
             {discoverItems}
-            <Button className="transparentBtn float-centered" type="button">
+            <Button className="transparentBtn float-centered mb-4" type="button">
               Show more ...
             </Button>
           </Col>
           <Col className="col-4">
             <hr/>
-            <div className="subtitleLargest">
+            <div className="subtitleLargest hideSetionMediaOne">
               Suggested
             </div>
             <Carousel
@@ -237,22 +280,36 @@ if (togglePremiere){
       );
        }
        return (
-        <Row className="col-10">
+        <Row className="col-12 hideSetionMediaOne">
           <Col className="col-8">
           <hr/>
-            <div className="subtitleLargest">
-              <button disabled>Discover:</button>
-              <button onClick={onClickToggleBestsellers}>Bestsellers</button>
-              <button onClick={onClickTogglePremiere}>Premiere -></button>
-              <button onClick={onClickToggleNewcoming}>New Coming</button>
+            <div className="mb-3">
+            <Button className="transparentBtn discoverButton ml-0" onClick={onClickToggleBestsellers}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Bestsellers</Button>
+            <Button className="transparentBtn discoverButton" onClick={onClickTogglePremiere}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>Premiere</Button>
+            <Button className="transparentBtn discoverButton" onClick={onClickToggleNewcoming}><img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>New Coming</Button>
             </div>
-            <Button className="transparentBtn float-centered" type="button">
+            <Button className="transparentBtn float-centered mb-4" type="button">
               Show more ...
             </Button>
           </Col>
           <Col className="col-4">
           <hr/>
-            <div className="subtitleLargest">
+            <div className="subtitleLargest hideSetionMediaOne">
               Suggested
             </div>
             <Carousel

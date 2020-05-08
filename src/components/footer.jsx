@@ -11,14 +11,21 @@ import {
 //assets
 import facebook from ".././assets/facebook.png";
 import twitter from ".././assets/twitter.png";
+import promoCode from ".././assets/promoCode.png";
 
 const Footer = () => {
   return (
     <footer>
         {/* FOOTER TOP */}
       <Navbar className="footerTop">
-        <Nav className=" footerTopElementOne ml-5 mr-auto">
-          <Nav.Link href="#home">Promo Code</Nav.Link>
+        <Nav className="footerTopElementOne ml-5 mr-auto">
+        <img id="promoCode"
+                  src={promoCode}
+                  alt="img"
+                  height="30px"
+                  width="30px"
+                ></img>
+          <Nav.Link href="#home" id="couponTitle">Coupon</Nav.Link>
           <Nav.Link href="#features">Features</Nav.Link>
           <Nav.Link href="#pricing">Pricing</Nav.Link>
         </Nav>
