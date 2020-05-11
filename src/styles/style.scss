@@ -130,11 +130,19 @@ body {
         @include otherBtn();
         background: $transparentBtn;
         margin-left: 10px;
+        border-radius: 0px;
 }
 
-.discoverButton{
-    background-color: $footerBackgroundColor !important;
-    margin-left: !important;
+.btn-primary {
+    border-radius: 0px !important;
+}
+
+.card-img, .card-img-top {
+    border-radius: 0px !important;
+}
+
+.card{
+    border-radius: 0px !important;
 }
 
 .cardGroup {
@@ -220,7 +228,7 @@ hr {
 //footer
 footer {
     letter-spacing: 1px;
-    background-color:$footerBackgroundColor;
+    background-color:$primaryTextWhite;
 }
 
 a {
@@ -228,19 +236,28 @@ a {
     font-size: $largeFontSize;
     text-transform: uppercase;
     font-weight:lighter;
+    // transition: linear !important;
+    transition: transform 0.5s linear !important;
 }
 
 a:hover{
-    color:$primaryTextWhite!important;
+    color:$primaryTextWhite !important;
     font-size: 18px;
-    transition: transform 0.5s ease;
+    transform: scale(1.2);
 }
 
+nav a.footerLink:hover{
+    color:$primaryTextDarkGrey !important;
+}
+
+
+a img {
+    transition: transform 0.5s linear !important;
+}
 
 a img:hover{
     transform: scale(1.5);
     padding:0px !important;
-    transition: transform 0.5s ease;
 }
 
 .footerTopElementOne{
@@ -251,7 +268,7 @@ a img:hover{
 }
 
 .footerBottom{
-    background-color:rgb(114, 71, 146); 
+    background-color:$primaryTextLightGrey; 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -346,4 +363,10 @@ a img:hover{
 }
 .discoverCarouselItem a.carousel-control-prev, .discoverCarouselItem a.carousel-control-next{
     display:none;
+}
+
+
+a td, a td:last-child :hover{
+color:$primaryTextDarkGrey;
+
 }

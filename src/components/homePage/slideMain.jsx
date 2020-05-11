@@ -10,6 +10,7 @@ import { addProductToBasket } from "../../actions/basketActions";
 import { Link } from 'react-router-dom';
 //assets
 import basketicon from "../navbar/assets/basketicon.png";
+import infoIcon from "../../assets/infoIcon.png";
 
 
 
@@ -32,30 +33,29 @@ const SlideMain = ({getItems,fetchReducer,addProductToBasket,basketReducer }) =>
       addProductToBasket(product,basketReducer) 
       };
 
-    const suggestedItems = fetchReducer.slice(0, 8).map(item => (
-      <Carousel.Item
-        key={item.id}
-      >
-        <Link to={'/'+item.id}>
+    const suggestedItems = fetchReducer.slice(0, 8).map((item) => (
+      <Carousel.Item key={item.id}>
+        <Link to={"/" + item.id}>
           <img
             className="d-block w-100"
             src={item.jumbotronUrl}
             alt="First slide"
             height="auto"
             width="100%"
-            
           />
         </Link>
         <Carousel.Caption>
           <h3>Sale -70%</h3>
-          <Button className="slideMainBtn" type="button" key={item.id} onClick={() => addProduct(item,basketReducer)}>
-                <img
-                  src={basketicon}
-                  alt="basket img"
-                  height="40px"
-                  width="40px"
-                ></img>
-          </Button>
+          <Link to={"/" + item.id}>
+          <img
+            className="infoIcon"
+            src={infoIcon}
+            alt="img"
+            height="40px"
+            width="40px"
+            onClick={() => addProduct(item, basketReducer)}
+          ></img>
+          </Link>
         </Carousel.Caption>
       </Carousel.Item>
     ));

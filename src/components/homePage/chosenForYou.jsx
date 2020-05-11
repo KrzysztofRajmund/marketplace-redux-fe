@@ -8,6 +8,9 @@ import {getItems} from '../../actions/fetchActions';
 import { addProductToBasket } from "../../actions/basketActions";
 //assets
 import basketicon from "../navbar/assets/basketicon.png";
+import infoIcon from "../../assets/infoIcon.png";
+//router
+import { Link } from 'react-router-dom';
 
 
 
@@ -32,17 +35,25 @@ const ChosenForYou = ({getItems, fetchReducer,addProductToBasket,basketReducer }
     const itemsForYou = fetchReducer.slice(0,2).map(item=>(
       <Row className="col-12 col-md-6">
       <Card key={item.id} className="chosenForYouRow">
+      <Link to={"/" + item.id}>
+        <Link to={"/" + item.id}>
         <Card.Img variant="top"src={item.jumbotronUrl}/>
+        </Link>
+        </Link>
         <Card.Body>
-    <Card.Title><div>{item.title}</div><p>${item.price}</p></Card.Title>
+    <Card.Title><div>{item.title}</div><p>€{item.price}</p></Card.Title>
         </Card.Body>
         <Card.Footer>
-          <Button className="slideMainBtn" onClick={() => addProduct(item,basketReducer)}> <img
-                        src={basketicon}
-                        alt="basket img"
-                        height="30px"
-                        width="30px"
-                      ></img></Button>
+        <Link to={"/" + item.id}>
+        <img
+            className="infoIcon"
+            src={infoIcon}
+            alt="basket img"
+            height="30px"
+            width="30px"
+            onClick={() => addProduct(item, basketReducer)}
+          ></img>
+          </Link>
         </Card.Footer>
       </Card>
       </Row>
@@ -50,17 +61,23 @@ const ChosenForYou = ({getItems, fetchReducer,addProductToBasket,basketReducer }
     const itemsForYouTwo = fetchReducer.slice(2,4).map(item=>(
       <Row className="col-12 col-md-6">
       <Card key={item.id} className="chosenForYouRow">
+        <Link to={"/" + item.id}>
         <Card.Img variant="top"src={item.jumbotronUrl}/>
+        </Link>
         <Card.Body>
-    <Card.Title><div>{item.title}</div><p>${item.price}</p></Card.Title>
+    <Card.Title><div>{item.title}</div><p>€{item.price}</p></Card.Title>
         </Card.Body>
         <Card.Footer>
-        <Button className="slideMainBtn" onClick={() => addProduct(item,basketReducer)}> <img
-                        src={basketicon}
-                        alt="basket img"
-                        height="30px"
-                        width="30px"
-                      ></img></Button>
+        <Link to={"/" + item.id}>
+        <img
+            className="infoIcon"
+            src={infoIcon}
+            alt="basket img"
+            height="30px"
+            width="30px"
+            onClick={() => addProduct(item, basketReducer)}
+          ></img>
+          </Link>
         </Card.Footer>
       </Card>
       </Row>

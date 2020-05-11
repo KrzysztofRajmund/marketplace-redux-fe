@@ -4,7 +4,6 @@ import React from 'react';
 import JumbotronSale from './jumbotronSale';
 import SlideMain from './slideMain';
 import ChosenForYou from './chosenForYou';
-import ChosenPromotions from './chosenPromotions';
 import Discover from './discover';
 
 
@@ -16,7 +15,6 @@ const MainPage = (props) => {
       <JumbotronSale />
       <SlideMain />
       <ChosenForYou/>
-      <ChosenPromotions/>
       <Discover/>
       </>
     

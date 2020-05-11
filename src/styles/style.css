@@ -127,11 +127,19 @@ body {
   border-radius: 2px;
   background: rgba(248, 248, 248, 0) !important;
   margin-left: 10px;
+  border-radius: 0px;
 }
 
-.discoverButton {
-  background-color: #8C50B9 !important;
-  margin-left: !important;
+.btn-primary {
+  border-radius: 0px !important;
+}
+
+.card-img, .card-img-top {
+  border-radius: 0px !important;
+}
+
+.card {
+  border-radius: 0px !important;
 }
 
 .cardGroup {
@@ -213,7 +221,7 @@ hr {
 
 footer {
   letter-spacing: 1px;
-  background-color: #8C50B9;
+  background-color: #F8F8F8;
 }
 
 a {
@@ -221,25 +229,34 @@ a {
   font-size: 16px;
   text-transform: uppercase;
   font-weight: lighter;
+  -webkit-transition: -webkit-transform 0.5s linear !important;
+  transition: -webkit-transform 0.5s linear !important;
+  transition: transform 0.5s linear !important;
+  transition: transform 0.5s linear, -webkit-transform 0.5s linear !important;
 }
 
 a:hover {
   color: #F8F8F8 !important;
   font-size: 18px;
-  -webkit-transition: -webkit-transform 0.5s ease;
-  transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+nav a.footerLink:hover {
+  color: #2B2B28 !important;
+}
+
+a img {
+  -webkit-transition: -webkit-transform 0.5s linear !important;
+  transition: -webkit-transform 0.5s linear !important;
+  transition: transform 0.5s linear !important;
+  transition: transform 0.5s linear, -webkit-transform 0.5s linear !important;
 }
 
 a img:hover {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
   padding: 0px !important;
-  -webkit-transition: -webkit-transform 0.5s ease;
-  transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
 .footerTopElementOne {
@@ -252,7 +269,7 @@ a img:hover {
 }
 
 .footerBottom {
-  background-color: #724792;
+  background-color: #CCCCCC;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -359,5 +376,9 @@ a img:hover {
 
 .discoverCarouselItem a.carousel-control-prev, .discoverCarouselItem a.carousel-control-next {
   display: none;
+}
+
+a td, a td:last-child :hover {
+  color: #2B2B28;
 }
 /*# sourceMappingURL=style.css.map */

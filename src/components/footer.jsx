@@ -25,9 +25,9 @@ const Footer = () => {
                   height="30px"
                   width="30px"
                 ></img>
-          <Nav.Link href="#home" id="couponTitle">Coupon</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav.Link className="footerLink" href="#home" id="couponTitle">Coupon</Nav.Link>
+          <Nav.Link  className="footerLink" href="#features">Features</Nav.Link>
+          <Nav.Link className="footerLink" href="#pricing">Pricing</Nav.Link>
         </Nav>
         <Nav className="mr-5">
           <Nav.Link href="#home"> <img

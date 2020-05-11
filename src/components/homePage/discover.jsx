@@ -9,7 +9,9 @@ import { addProductToBasket } from "../../actions/basketActions";
 //assets
 import basketicon from "../navbar/assets/basketicon.png";
 import promoCode from "../../assets/promoCode.png";
-
+import infoIcon from "../../assets/infoIcon.png";
+//router
+import { Link } from 'react-router-dom';
 
 
 
@@ -43,14 +45,16 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
           />
           <Carousel.Caption>
             <h3>Sale -30%</h3>
-            <Button className="slideMainBtn" type="button" key={item.id} onClick={() => addProduct(item,basketReducer)}>
-                <img
-                  src={basketicon}
-                  alt="basket img"
-                  height="30px"
-                  width="30px"
-                ></img>
-          </Button>
+            <Link to={"/" + item.id}>
+        <img
+            className="infoIcon"
+            src={infoIcon}
+            alt="basket img"
+            height="30px"
+            width="30px"
+            onClick={() => addProduct(item, basketReducer)}
+          ></img>
+          </Link>
           </Carousel.Caption>
         </Carousel.Item>
       ));
@@ -81,25 +85,48 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
        await setToggleNewcoming(true);
      }
 
+     
+  //    let discoverItems
+  //  switch (discoverItems) {
+
+  //    case toggleBestsellers:
+  //    discoverItems = bestsellersItems;
+  //    break;
+
+  //    case togglePremiere:
+  //    discoverItems = premiereItems;
+  //    break;
+
+  //    case toggleNewcoming:
+  //    discoverItems = newcomingItems;
+  //    break;
+
+  //    default:
+  //      discoverItems = bestsellersItems;
+  //  }
+
      // CONDITIONALS FOR TOGGLE !
 
    //toggle Bestsellers
    if (toggleBestsellers){
     const discoverItems = fetchReducer.slice(0, 5).map(item => (
-   <Table responsive>
-     <tbody key={item.id} className="transparentBtn">
-       <tr>
-         <td>
-           <img
-             src={item.url}
-             width="120px"
-             height="70px"
-           />
-         </td>
-         <td>Outlander - Bestsellers</td>
-         <td className=" float-right">44.99 PLN</td>
-       </tr>
-     </tbody>
+   <Table  key={item.id} responsive>
+  <tbody  className="transparentBtn">
+         <tr>
+         <Link to={"/" + item.id}>
+           <td>
+             <img
+               src={item.url}
+               width="120px"
+               height="70px"
+               src={item.url}
+             />
+           </td>
+           <td>{item.title}</td>
+           <td className=" float-right">€{item.price}</td>
+           </Link>
+         </tr>
+       </tbody>
    </Table>
    ));
      return (
@@ -107,19 +134,19 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
         <Col className="col-8">
         <hr />
           <div className="mb-3">
-            <Button className="transparentBtn discoverButton ml-0" onClick={onClickToggleBestsellers}><img id="promoCode"
+            <Button className="transparentBtn ml-0" onClick={onClickToggleBestsellers}><img id="promoCode"
                   src={promoCode}
                   alt="img"
                   height="30px"
                   width="30px"
                 ></img>Bestsellers</Button>
-            <Button className="transparentBtn discoverButton" onClick={onClickTogglePremiere}><img id="promoCode"
+            <Button className="transparentBtn" onClick={onClickTogglePremiere}><img id="promoCode"
                   src={promoCode}
                   alt="img"
                   height="30px"
                   width="30px"
                 ></img>Premiere</Button>
-            <Button className="transparentBtn discoverButton" onClick={onClickToggleNewcoming}><img id="promoCode"
+            <Button className="transparentBtn" onClick={onClickToggleNewcoming}><img id="promoCode"
                   src={promoCode}
                   alt="img"
                   height="30px"
@@ -150,22 +177,24 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
 
 //toggle Premiere
 if (togglePremiere){
-  const discoverItems = fetchReducer.slice(0, 5).map(item => (
- <Table responsive>
-   <tbody key={item.id} className="transparentBtn">
-     <tr>
-       <td>
-         <img
-           src={item.url}
-           width="120px"
-           height="70px"
-           src={item.url}
-         />
-       </td>
-       <td>Outlander - Premiere</td>
-       <td className=" float-right">44.99 PLN</td>
-     </tr>
-   </tbody>
+  const discoverItems = fetchReducer.slice(6,11).map(item => (
+ <Table key={item.id} responsive>
+ <tbody  className="transparentBtn">
+         <tr>
+         <Link to={"/" + item.id}>
+           <td>
+             <img
+               src={item.url}
+               width="120px"
+               height="70px"
+               src={item.url}
+             />
+           </td>
+           <td>{item.title}</td>
+           <td className=" float-right">€{item.price}</td>
+           </Link>
+         </tr>
+       </tbody>
  </Table>
  ));
    return (
@@ -173,19 +202,19 @@ if (togglePremiere){
       <Col className="col-8">
       <hr />
         <div className="mb-3">
-        <Button className="transparentBtn discoverButton ml-0" onClick={onClickToggleBestsellers}><img id="promoCode"
+        <Button className="transparentBtn ml-0" onClick={onClickToggleBestsellers}><img id="promoCode"
                   src={promoCode}
                   alt="img"
                   height="30px"
                   width="30px"
                 ></img>Bestsellers</Button>
-            <Button className="transparentBtn discoverButton" onClick={onClickTogglePremiere}><img id="promoCode"
+            <Button className="transparentBtn" onClick={onClickTogglePremiere}><img id="promoCode"
                   src={promoCode}
                   alt="img"
                   height="30px"
                   width="30px"
                 ></img>Premiere</Button>
-            <Button className="transparentBtn discoverButton" onClick={onClickToggleNewcoming}><img id="promoCode"
+            <Button className="transparentBtn" onClick={onClickToggleNewcoming}><img id="promoCode"
                   src={promoCode}
                   alt="img"
                   height="30px"
@@ -217,9 +246,10 @@ if (togglePremiere){
     //toggle Newcoming
     if (toggleNewcoming){
       const discoverItems = fetchReducer.slice(0, 5).map(item => (
-     <Table responsive>
-       <tbody key={item.id} className="transparentBtn">
+     <Table key={item.id} responsive>
+       <tbody  className="transparentBtn">
          <tr>
+         <Link to={"/" + item.id}>
            <td>
              <img
                src={item.url}
@@ -228,8 +258,9 @@ if (togglePremiere){
                src={item.url}
              />
            </td>
-           <td>Outlander - New Coming</td>
-           <td className=" float-right">44.99 PLN</td>
+           <td>{item.title}</td>
+           <td className=" float-right">€{item.price}</td>
+           </Link>
          </tr>
        </tbody>
      </Table>
@@ -239,19 +270,19 @@ if (togglePremiere){
           <Col className="col-8">
           <hr />
             <div className="mb-3">
-            <Button className="transparentBtn discoverButton ml-0" onClick={onClickToggleBestsellers}><img id="promoCode"
+            <Button className="transparentBtn ml-0" onClick={onClickToggleBestsellers}><img id="promoCode"
                   src={promoCode}
                   alt="img"
                   height="30px"
                   width="30px"
                 ></img>Bestsellers</Button>
-            <Button className="transparentBtn discoverButton" onClick={onClickTogglePremiere}><img id="promoCode"
+            <Button className="transparentBtn" onClick={onClickTogglePremiere}><img id="promoCode"
                   src={promoCode}
                   alt="img"
                   height="30px"
                   width="30px"
                 ></img>Premiere</Button>
-            <Button className="transparentBtn discoverButton" onClick={onClickToggleNewcoming}><img id="promoCode"
+            <Button className="transparentBtn" onClick={onClickToggleNewcoming}><img id="promoCode"
                   src={promoCode}
                   alt="img"
                   height="30px"
@@ -284,19 +315,19 @@ if (togglePremiere){
           <Col className="col-8">
           <hr/>
             <div className="mb-3">
-            <Button className="transparentBtn discoverButton ml-0" onClick={onClickToggleBestsellers}><img id="promoCode"
+            <Button className="transparentBtn ml-0" onClick={onClickToggleBestsellers}><img id="promoCode"
                   src={promoCode}
                   alt="img"
                   height="30px"
                   width="30px"
                 ></img>Bestsellers</Button>
-            <Button className="transparentBtn discoverButton" onClick={onClickTogglePremiere}><img id="promoCode"
+            <Button className="transparentBtn" onClick={onClickTogglePremiere}><img id="promoCode"
                   src={promoCode}
                   alt="img"
                   height="30px"
                   width="30px"
                 ></img>Premiere</Button>
-            <Button className="transparentBtn discoverButton" onClick={onClickToggleNewcoming}><img id="promoCode"
+            <Button className="transparentBtn" onClick={onClickToggleNewcoming}><img id="promoCode"
                   src={promoCode}
                   alt="img"
                   height="30px"
