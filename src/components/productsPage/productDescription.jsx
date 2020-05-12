@@ -1,9 +1,5 @@
 import React, { Component, useState, useEffect } from "react";
-import {
-  Row,
-  Col,
-  Table
-} from "react-bootstrap";
+import {Row,Col,Table,Container} from "react-bootstrap";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getItems, getProductDetails } from "../../actions/fetchActions";
@@ -21,9 +17,11 @@ const ProductDescription = ({
   }, []);
 
   return (
-    <Row className="col-11">
+
+    <Container className="col-12">
+    <Row className="col-12">
       {/* Product Description */}
-      <Col className="col-7">
+      <Col className="col-12 col-md-8">
         <h5>Description</h5>
         <hr />
         <div className="basicDescriptionText">
@@ -40,10 +38,10 @@ const ProductDescription = ({
         
       </Col>
       {/* BulletPoints Table */}
-      <Col className="col-5">
+      <Col className="col-12 col-md-4">
         <h5>BulletPoints</h5>
         <hr />
-        <Table responsive borderless>
+        <Table responsive borderless size="sm">
        <tbody>
          <tr>
            <td className="pl-0 pr-0 basicDescriptionText"> <strong>Brand:</strong></td>
@@ -65,6 +63,7 @@ const ProductDescription = ({
      </Table>
       </Col>
     </Row>
+    </Container>
   );
 };
 

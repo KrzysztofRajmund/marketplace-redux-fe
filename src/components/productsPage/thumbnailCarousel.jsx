@@ -1,5 +1,5 @@
 import React, {Component, useState, useEffect} from 'react';
-import {Container,Carousel,Button,Card,CardGroup, Modal} from 'react-bootstrap'
+import {Container,Carousel,Button,Card,CardGroup, Modal, Row,Col} from 'react-bootstrap'
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getItems, getProductDetails} from '../../actions/fetchActions';
@@ -37,76 +37,23 @@ const ThumbnailCarousel = ({getItems,getProductDetails, fetchReducer,selectedPro
       setDirection(e.direction);
     };
    
-    const suggestedItems = fetchReducer.slice(0, 1).map(item => (
-      <Carousel.Item className="mr-0">
-        <CardGroup className="pl-2 mb-3 pb-5">
-        <Button  variant="link" onClick={()=>handleShow(item.id)}>
-          <Card className="cardGroup m-1 bg-dark text-white" 
-          style={{ width: '14rem', height: '6rem'}} key={item.id}>
-
-            <Card.Img 
-             className="d-block w-100"
-             src={item.jumbotronUrl}
-             height="125px"
-             />
-            
-            <Card.ImgOverlay>
-                <small>{item.title}</small>
-            </Card.ImgOverlay>
-          </Card>
-          </Button>
-          <Button  variant="link" onClick={()=>handleShow(item.id)}>
-          <Card className="cardGroup m-1 bg-dark text-white" 
-          style={{ width: '14rem', height: '6rem'}} key={item.id}>
-
-            <Card.Img 
-             className="d-block w-100"
-             src={item.jumbotronUrl}
-             height="125px"
-             />
-            
-            <Card.ImgOverlay>
-                <small>{item.title}</small>
-            </Card.ImgOverlay>
-          </Card>
-          </Button>
-
-          <Button variant="link" onClick={()=>handleShow(item.id)}>
-          <Card className="cardGroup m-1 bg-dark text-white" 
-          style={{ width: '14rem', height: '6rem'}} key={item.id}>
-
-            <Card.Img 
-             className="d-block w-100"
-             src={item.jumbotronUrl}
-             height="125px"
-             />
-            
-            <Card.ImgOverlay>
-                <small>{item.title}</small>
-            </Card.ImgOverlay>
-          </Card>
-          </Button>
-
-          <Button variant="link" onClick={()=>handleShow(item.id)}>
-          <Card className="cardGroup m-1 bg-dark text-white" 
-          style={{ width: '14rem', height: '6rem'}} key={item.id}>
-
-            <Card.Img 
-             className="d-block w-100"
-             src={item.jumbotronUrl}
-             height="125px"
-             />
-            
-            <Card.ImgOverlay>
-                <small>{item.title}</small>
-            </Card.ImgOverlay>
-          </Card>
-          </Button>
-      
-          <hr/>
-        </CardGroup>
-      </Carousel.Item>
+    const productImages = fetchReducer.slice(0,4).map(item=>(
+      <Card key={item.id} className="thumbnailCarouselRow" onClick={()=>handleShow(item.id)}>
+        <a>
+        <Card.Img variant="top"src={item.verticalCardUrl}/>
+        </a>
+      </Card>
     ));
+    const productImagesTwo = fetchReducer.slice(5,9).map(item=>(
+      <Card key={item.id} 
+      className="thumbnailCarouselRow" 
+      onClick={()=>handleShow(item.id)}>
+        <a>
+        <Card.Img variant="top"src={item.verticalCardUrl}/>
+        </a>
+      </Card>
+    ));
+   
     return (
       <>
       {/* modal */}
@@ -128,9 +75,31 @@ const ThumbnailCarousel = ({getItems,getProductDetails, fetchReducer,selectedPro
            
           </Modal>
           {/* carousel */}
-        <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
-            {suggestedItems}
+          <Container className="col-12" >
+        <Carousel 
+        className="thumbnailCarousel" 
+        activeIndex={index}
+        interval={null}
+        indicators={false}
+         direction={direction} onSelect={handleSelect}>
+        
+          <Carousel.Item>
+          <Row className="col-12">
+            <CardGroup>
+          {productImages}
+          </CardGroup>
+          </Row>
+          </Carousel.Item>
+          <Carousel.Item>
+          <Row className="col-12">
+            <CardGroup>
+          {productImagesTwo}
+          </CardGroup>
+          </Row>
+          </Carousel.Item>
+         
         </Carousel>
+        </Container>
         </>
       );
 }

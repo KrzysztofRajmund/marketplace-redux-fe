@@ -167,6 +167,8 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
             activeIndex={index}
             direction={direction}
             onSelect={handleSelect}
+            controls={false}
+            
           >
             {suggestedItems}
           </Carousel>
@@ -235,6 +237,7 @@ if (togglePremiere){
           activeIndex={index}
           direction={direction}
           onSelect={handleSelect}
+            controls={false}
         >
           {suggestedItems}
         </Carousel>
@@ -303,6 +306,7 @@ if (togglePremiere){
               activeIndex={index}
               direction={direction}
               onSelect={handleSelect}
+            controls={false}
             >
               {suggestedItems}
             </Carousel>
@@ -347,6 +351,7 @@ if (togglePremiere){
               activeIndex={index}
               direction={direction}
               onSelect={handleSelect}
+            controls={false}
             >
               {suggestedItems}
             </Carousel>

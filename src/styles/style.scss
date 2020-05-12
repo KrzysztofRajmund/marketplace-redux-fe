@@ -27,6 +27,7 @@ body {
   .jumbotronSale {
     margin:0px !important;
     padding:0px !important;
+    background-color:$primaryTextWhite !important;
   }
 
 //SLIDE MAIN
@@ -34,38 +35,22 @@ body {
     @include mainText($primaryTextWhite,$textBolder,$largeFontSize);
     letter-spacing: $letterSpacing;
     @include otherBtn();
-    background: $greenBtn;
-
-    //CHECK !IMPORTANT HOW TO OVERWRITE PROPERLY!!!!!!!!!
-    
+    background: $greenBtn;    
 }
 
 //CARD PRODUCT PRICE (PRODUCT DETAILS PAGE)
 
 .cardPriceProduct{
-    top: -10rem;
+    margin-top: -10rem;
     z-index:1;
-    margin-left: 14rem;
-   
+    margin-left: 50%;
+    margin-bottom: 5%;
 }
 
 .cardPrice {
     box-shadow: 0px 5px 8px 3px rgba(0,0,0,0.3)!important;
     background-color: rgba(139, 80, 185, 0.5) !important;
     color:#CCCCCC !important;
-}
-
-//BREADCRUMB (PRODUCT DETAILS PAGE)
-
-.breadcrumb {
-    padding:0px !important;
-    background-color: transparent !important; 
-    margin-left: 30px;   
-}
-
-.breadcrumb-item a {
-    color: $primaryTextDarkGrey;
-    
 }
 
 //MODAL OPEN
@@ -229,6 +214,7 @@ hr {
 footer {
     letter-spacing: 1px;
     background-color:$primaryTextWhite;
+    margin-top: 60px;
 }
 
 a {
@@ -238,6 +224,7 @@ a {
     font-weight:lighter;
     // transition: linear !important;
     transition: transform 0.5s linear !important;
+    cursor: pointer;
 }
 
 a:hover{
@@ -299,7 +286,7 @@ a img:hover{
     }
     .footerTopElementOne:first-child a{
         display: none;
-    }    
+    } 
 }
 
 @media screen and (max-width:750px){
@@ -323,13 +310,45 @@ a img:hover{
     justify-content: center;
 }
 
+.title{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin-left: 25px !important;
+}
+
+.productTitle{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin-left: 5px !important;
+    margin-top: 25px;
+}
+
+
 .chosenForYouCarousel{
     margin-left: 55px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
+.thumbnailCarousel{
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.similarProducts{
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .chosenForYouRow{
+    margin:5px;
+}
+
+.thumbnailCarouselRow{
     margin:5px;
 }
 
@@ -339,6 +358,10 @@ a img:hover{
 
 .chosenForYouCarousel a.carousel-control-prev{
     margin-left: -60px !important;
+}
+
+.thumbnailCarousel a.carousel-control-prev{
+    margin-left: -30px !important;
 }
 
 .carousel-control-prev-icon{
@@ -357,14 +380,6 @@ a img:hover{
     background-color:$navBackgroundColor;
     height: 8px !important;
 }
-
-.chosenForYouCarousel ol.carousel-indicators{
-    display:none;
-}
-.discoverCarouselItem a.carousel-control-prev, .discoverCarouselItem a.carousel-control-next{
-    display:none;
-}
-
 
 a td, a td:last-child :hover{
 color:$primaryTextDarkGrey;

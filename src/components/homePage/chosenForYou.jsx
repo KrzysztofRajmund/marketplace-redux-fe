@@ -36,9 +36,7 @@ const ChosenForYou = ({getItems, fetchReducer,addProductToBasket,basketReducer }
       <Row className="col-12 col-md-6">
       <Card key={item.id} className="chosenForYouRow">
       <Link to={"/" + item.id}>
-        <Link to={"/" + item.id}>
         <Card.Img variant="top"src={item.jumbotronUrl}/>
-        </Link>
         </Link>
         <Card.Body>
     <Card.Title><div>{item.title}</div><p>€{item.price}</p></Card.Title>
@@ -88,7 +86,7 @@ const ChosenForYou = ({getItems, fetchReducer,addProductToBasket,basketReducer }
       <hr/>
         Chosen For You
       </div>
-        <Carousel className="chosenForYouCarousel" activeIndex={index} direction={direction} onSelect={handleSelect}>
+        <Carousel className="chosenForYouCarousel" indicators={false} activeIndex={index} direction={direction} onSelect={handleSelect}>
           <Carousel.Item>
             <CardGroup>
           {itemsForYou}
