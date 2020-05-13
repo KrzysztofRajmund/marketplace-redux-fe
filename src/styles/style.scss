@@ -53,24 +53,42 @@ body {
     color:#CCCCCC !important;
 }
 
-//MODAL OPEN
+//MODAL
 .modal-open {
     padding:0px !important;
 }
 
-// modal Product Details
+
+.modalProductDetails .modal-dialog {
+    margin-top: 2% !important;
+}
+
+.modalX {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.modalXBasket{
+    position: absolute;
+    top: -21px;
+    right: 16px;
+    font-size: 18px;
+    cursor: pointer; 
+}
+
+
+div.modal-content {
+    background-color: transparent;
+    border: none;
+}
+
 .modal-dialog {
     margin-top: 5% !important;
 }
-// modal searchBar
-.modalSearch .modal-dialog {
-    margin-top: 0% !important ;
-}
 
-.modalSearch .modal-content {
-    background-color:transparent;
-    border: none;  
-}
 
 .searchFormControl .form-control {
     width: 80% !important;
@@ -287,6 +305,16 @@ a img:hover{
     .footerTopElementOne:first-child a{
         display: none;
     } 
+
+    .modalXBasket{
+        top: -16px;
+    }
+
+    .basketModal .modal-dialog {
+        margin-top: 10% !important;
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
 }
 
 @media screen and (max-width:750px){

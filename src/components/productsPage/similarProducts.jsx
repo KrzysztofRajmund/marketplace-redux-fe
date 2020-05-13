@@ -5,9 +5,7 @@ import {Container,Carousel,Button, Card, CardGroup, Row} from 'react-bootstrap'
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getItems} from '../../actions/fetchActions';
-import { addProductToBasket } from "../../actions/basketActions";
 //assets
-import basketicon from "../navbar/assets/basketicon.png";
 import infoIcon from "../../assets/infoIcon.png";
 //router
 import { Link } from 'react-router-dom';
@@ -20,11 +18,6 @@ const SimilarProducts = ({getItems, fetchReducer,addProductToBasket,basketReduce
     useEffect (()=>{
         getItems();
     },[])
-
-    const addProduct = (product,basketReducer) => {
-      addProductToBasket(product,basketReducer) 
-      };
-
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(null);
   
@@ -48,7 +41,6 @@ const SimilarProducts = ({getItems, fetchReducer,addProductToBasket,basketReduce
             alt="basket img"
             height="30px"
             width="30px"
-            onClick={() => addProduct(item, basketReducer)}
           ></img>
           </Link>
         </Card.Footer>
@@ -70,7 +62,6 @@ const SimilarProducts = ({getItems, fetchReducer,addProductToBasket,basketReduce
             alt="basket img"
             height="30px"
             width="30px"
-            onClick={() => addProduct(item, basketReducer)}
           ></img>
           </Link>
         </Card.Footer>
@@ -115,9 +106,7 @@ const SimilarProducts = ({getItems, fetchReducer,addProductToBasket,basketReduce
 
 SimilarProducts.propTypes = {
     getItems: PropTypes.func.isRequired,
-    addProductToBasket: PropTypes.func.isRequired,
-    fetchReducer: PropTypes.array.isRequired,
-    basketReducer: PropTypes.array.isRequired
+    fetchReducer: PropTypes.array.isRequired
 
 }
 
@@ -126,4 +115,4 @@ fetchReducer: state.fetchReducer.items,
 basketReducer: state.basketReducer.basketProducts
 });
 
-export default connect (mapStateToProps,{getItems,addProductToBasket})(SimilarProducts);
+export default connect (mapStateToProps,{getItems})(SimilarProducts);

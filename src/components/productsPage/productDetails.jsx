@@ -2,21 +2,20 @@ import React, { Component, useState, useEffect } from "react";
 import { Route, Switch, Link } from "react-router-dom";
 import {
   Container,
-  Carousel,
   Button,
   Jumbotron,
   Card,
   CardGroup,
   Row,
   Col,
-  Breadcrumb,
   Nav,
   Navbar,
 } from "react-bootstrap";
 //redux
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getProductDetails } from "../../actions/fetchActions";
+import { getProductDetails,getItems } from "../../actions/fetchActions";
+import { addProductToBasket } from "../../actions/basketActions";
 //components
 import ThumbnailCarousel from "./thumbnailCarousel";
 import ProductDescription from "./productDescription";
@@ -25,13 +24,20 @@ import SimilarProducts from "./similarProducts";
 import basketicon from "../navbar/assets/basketicon.png";
 import facebook from "../../assets/facebook.png";
 import twitter from "../../assets/twitter.png";
-import promoCode from "../../assets/promoCode.png";
 
-const ProductDetails = ({ getProductDetails, selectedProduct, match }) => {
+const ProductDetails = ({ getProductDetails, selectedProduct, match, getItems,
+  addProductToBasket,
+  fetchReducer,
+  basketReducer }) => {
   useEffect(() => {
     var paramProduct = match.params.id;
     getProductDetails(paramProduct);
-  }, []);
+    getItems();
+  },[]);
+
+  const addProduct = (product,basketReducer) => {
+    addProductToBasket(product,basketReducer) 
+    };
 
   const getProduct = (
     <>
@@ -54,6 +60,7 @@ const ProductDetails = ({ getProductDetails, selectedProduct, match }) => {
                   alt="basket img"
                   height="30px"
                   width="30px"
+                  onClick={() => addProduct(selectedProduct,basketReducer)}
                 ></img>
               </Button>
               <Button className="col-12 mb-3" variant="outline-dark" size="sm">
@@ -110,10 +117,16 @@ const ProductDetails = ({ getProductDetails, selectedProduct, match }) => {
 ProductDetails.propTypes = {
   getProductDetails: PropTypes.func.isRequired,
   selectedProduct: PropTypes.object.isRequired,
+  getItems: PropTypes.func.isRequired,
+  addProductToBasket: PropTypes.func.isRequired,
+  fetchReducer: PropTypes.array.isRequired,
+  basketReducer: PropTypes.array.isRequired
 };
 
 const mapStateToProps = (state) => ({
   selectedProduct: state.fetchReducer.productDetails,
+  fetchReducer: state.fetchReducer.items,
+  basketReducer: state.basketReducer.basketProducts
 });
 
-export default connect(mapStateToProps, { getProductDetails })(ProductDetails);
+export default connect(mapStateToProps, { getProductDetails,getItems, addProductToBasket })(ProductDetails);

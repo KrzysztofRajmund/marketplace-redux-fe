@@ -22,6 +22,7 @@ const Basket = ({ basketReducer }) => {
 
   return (
     <>
+    
       {basketItems.length === 0 ? (
         <Card className="cardBasket">
           <Card.Body className="containerSearchBar pl-1 pr-1">

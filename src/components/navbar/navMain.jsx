@@ -19,8 +19,12 @@ import {
 import basketicon from "./assets/basketicon.png";
 import basketiconTwo from "./assets/basketiconTwo.png";
 import searchicon from "./assets/searchicon.png";
+import xButton from "../../assets/xButton.png";
+import infoIcon from "../../assets/infoIcon.png";
 //components
 import Basket from "./../Basket";
+//router
+import { Link } from 'react-router-dom';
 
 const NavMain = ({
   getItems,
@@ -128,6 +132,7 @@ const NavMain = ({
       {/* modal search */}
       <Modal className="modalSearch" show={show} onHide={handleClose}>
         <Modal.Body closeButton>
+        <div className="modalX" onClick={handleClose}><img src={xButton} width="30px" height="30px" alt="xButton"/></div>
           <Form className="searchFormControl" inline>
             <FormControl
               type="text"
@@ -138,6 +143,7 @@ const NavMain = ({
             />
           </Form>
           <div>
+            
             {productResult.map(search => (
               <Card className="cardSearchBar">
                 <Card.Body className="containerSearchBar pl-1 pr-1">
@@ -157,7 +163,15 @@ const NavMain = ({
                   <div className="pl-1 pr-1">${search.price.toFixed(2)}</div>
 
                   <div>
-                    <button disabled>-10%</button>
+                  <Link to={"/" + search.id}>
+        <img
+            className="infoIcon m-1"
+            src={infoIcon}
+            alt="basket img"
+            height="20px"
+            width="20px"
+          ></img>
+          </Link>
                     <button onClick={() => addProduct(search,basketReducer)}>
                       <img
                         src={basketiconTwo}
@@ -180,7 +194,9 @@ const NavMain = ({
         show={showBasket}
         onHide={handleCloseBasket}
       >
+        
         <Modal.Body closeButton>
+        <div onClick={handleCloseBasket} className="modalXBasket"><img src={xButton} width="30px" height="30px" alt="xButton"/></div>
           <Basket basketProducts={basketReducer} />
         </Modal.Body>
       </Modal>
