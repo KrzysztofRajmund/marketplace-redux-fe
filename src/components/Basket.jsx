@@ -44,7 +44,7 @@ const Basket = ({ basketReducer }) => {
                 </div>
                 <div className="pl-1">{item.count} x {item.title}</div>
                 <div>
-                  <button className="sumCardButton">${(item.price * item.count).toFixed(2)}</button>
+                  <button className="sumCardButton">€{(item.price * item.count).toFixed(2)}</button>
                   <button className="deleteCardButton" onClick={() => removeHandler(item,index)}>Delete</button>
                 </div>
               </Card.Body>
@@ -54,7 +54,7 @@ const Basket = ({ basketReducer }) => {
       )}
       <Card className="cardBasket">
         <Card.Body className="containerSearchBar pl-1 pr-1">
-          ${basketItems.reduce((a, b) => a + b.price * b.count, 0).toFixed(2)}
+          €{basketItems.reduce((a, b) => a + b.price * b.count, 0).toFixed(2)}
         </Card.Body>
       </Card>
     </>

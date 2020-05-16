@@ -21,17 +21,22 @@ import ThumbnailCarousel from "./thumbnailCarousel";
 import ProductDescription from "./productDescription";
 import SimilarProducts from "./similarProducts";
 //assets
-import basketicon from "../navbar/assets/basketicon.png";
+import basketiconTwo from "../navbar/assets/basketiconTwo.png";
 import facebook from "../../assets/facebook.png";
 import twitter from "../../assets/twitter.png";
+import heart from "../../assets/heart.png";
 
 const ProductDetails = ({ getProductDetails, selectedProduct, match, getItems,
   addProductToBasket,
   fetchReducer,
   basketReducer }) => {
+
+
   useEffect(() => {
     var paramProduct = match.params.id;
     getProductDetails(paramProduct);
+    console.log(match,"match for params")
+
     getItems();
   },[]);
 
@@ -54,18 +59,29 @@ const ProductDetails = ({ getProductDetails, selectedProduct, match, getItems,
           <Card className="cardPrice" key={selectedProduct.id}>
             <Card.Body className="pl-2 pr-2">
               <Card.Title className="mt-2">€{selectedProduct.price}</Card.Title>
-              <Button className="col-12" variant="dark" size="sm">
+              <hr className="cardPriceHR"/>
+              
+              <Container>
+              <a>
                 <img
-                  src={basketicon}
+                className="mr-2 mb-3"
+                  src={basketiconTwo}
                   alt="basket img"
                   height="30px"
                   width="30px"
                   onClick={() => addProduct(selectedProduct,basketReducer)}
                 ></img>
-              </Button>
-              <Button className="col-12 mb-3" variant="outline-dark" size="sm">
-                ADD TO WISHLIST
-              </Button>
+                </a>
+              <a>
+                <img
+                className="ml-2 mb-3"
+                src={heart}
+                alt="like"
+                height="30px"
+                width="30px"
+                />
+                </a>
+            </Container>
             </Card.Body>
           </Card>
         </Col>
@@ -108,7 +124,7 @@ const ProductDetails = ({ getProductDetails, selectedProduct, match, getItems,
       <div>
         <ThumbnailCarousel />
         <ProductDescription />
-        <SimilarProducts />
+        <SimilarProducts match={match} />
       </div>
     </>
   );

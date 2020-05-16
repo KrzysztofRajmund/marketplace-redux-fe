@@ -3,7 +3,7 @@ import {GET_PRODUCTDETAILS} from '../actions/types';
 
 const initialState = {
     items:[],
-    productDetails:[]
+    productDetails:{}
   
 }
 

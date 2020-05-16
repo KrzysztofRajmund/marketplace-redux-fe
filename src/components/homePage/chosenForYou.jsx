@@ -10,14 +10,11 @@ import infoIcon from "../../assets/infoIcon.png";
 //router
 import { Link } from 'react-router-dom';
 
-
-
-
 const ChosenForYou = ({getItems, fetchReducer}) => {
 
     useEffect (()=>{
         getItems();
-    },[])
+    },[]);
 
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(null);
@@ -27,8 +24,8 @@ const ChosenForYou = ({getItems, fetchReducer}) => {
       setDirection(e.direction);
     };
     const itemsForYou = fetchReducer.slice(0,2).map(item=>(
-      <Row className="col-12 col-md-6">
-      <Card key={item.id} className="chosenForYouRow">
+      <Row className="col-12 col-md-6"  key={item.id}>
+      <Card className="chosenForYouRow">
       <Link to={"/" + item.id}>
         <Card.Img variant="top"src={item.jumbotronUrl}/>
         </Link>
@@ -50,8 +47,8 @@ const ChosenForYou = ({getItems, fetchReducer}) => {
       </Row>
     ));
     const itemsForYouTwo = fetchReducer.slice(2,4).map(item=>(
-      <Row className="col-12 col-md-6">
-      <Card key={item.id} className="chosenForYouRow">
+      <Row className="col-12 col-md-6" key={item.id}>
+      <Card className="chosenForYouRow">
         <Link to={"/" + item.id}>
         <Card.Img variant="top"src={item.jumbotronUrl}/>
         </Link>

@@ -140,7 +140,7 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
                   height="30px"
                   width="30px"
                 ></img>Bestsellers</Button>
-            <Button className="transparentBtn" onClick={onClickTogglePremiere}><img id="promoCode"
+            <Button className="transparentBtn" bordless onClick={onClickTogglePremiere}><img id="promoCode"
                   src={promoCode}
                   alt="img"
                   height="30px"

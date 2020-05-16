@@ -40,10 +40,22 @@ body {
 }
 
 .cardPriceProduct {
-  margin-top: -10rem;
+  margin-top: -12rem;
   z-index: 1;
   margin-left: 50%;
-  margin-bottom: 5%;
+  margin-bottom: 13%;
+}
+
+.cardPriceProduct div {
+  color: #CCCCCC !important;
+  font-size: larger;
+}
+
+.cardPriceProduct button, .cardPriceProduct .transparentBtn {
+  color: #CCCCCC !important;
+  border: 0px !important;
+  margin: 0px !important;
+  margin-bottom: 5px !important;
 }
 
 .cardPrice {
@@ -91,6 +103,10 @@ div.modal-content {
   border-radius: 0;
   border: 0;
   border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+}
+
+.searchFormControl .modal-content {
+  width: 60% !important;
 }
 
 .searchFormControl input {
@@ -185,10 +201,12 @@ div.modal-content {
   text-transform: uppercase;
 }
 
+hr.cardPriceHR {
+  background-color: rgba(0, 0, 0, 0.514);
+}
+
 hr {
-  background-color: #AF85CE;
-  -webkit-box-shadow: 0px 1px 3px 1px rgba(184, 184, 184, 0.6);
-          box-shadow: 0px 1px 3px 1px rgba(184, 184, 184, 0.6);
+  background-color: rgba(0, 0, 0, 0.103);
 }
 
 .subtitleLarge {
@@ -298,13 +316,14 @@ a img:hover {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
   }
+  a:hover {
+    color: #F8F8F8 !important;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 @media screen and (max-width: 465px) {
-  .nav-link {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-  }
   .footerTopElementOne:first-child img {
     cursor: pointer;
     width: 45px;
@@ -322,8 +341,14 @@ a img:hover {
   }
   .basketModal .modal-dialog {
     margin-top: 10% !important;
-    margin-right: 0px !important;
+    margin-right: 25px !important;
     margin-left: 0px !important;
+  }
+  .cardPriceProduct {
+    margin-top: -10rem;
+    z-index: 1;
+    margin-left: 50%;
+    margin-bottom: 10%;
   }
 }
 
@@ -362,7 +387,6 @@ a img:hover {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  margin-left: 25px !important;
 }
 
 .productTitle {

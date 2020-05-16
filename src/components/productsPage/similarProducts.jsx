@@ -1,10 +1,11 @@
 import React, {Component, useState, useEffect} from 'react';
 //react-boottrap
-import {Container,Carousel,Button, Card, CardGroup, Row} from 'react-bootstrap'
+import {Container,Carousel,Button, Card, CardGroup, Row,Col} from 'react-bootstrap'
 //redux
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {getItems} from '../../actions/fetchActions';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { getProductDetails,getItems } from "../../actions/fetchActions";
+import { addProductToBasket } from "../../actions/basketActions";
 //assets
 import infoIcon from "../../assets/infoIcon.png";
 //router
@@ -13,11 +14,22 @@ import { Link } from 'react-router-dom';
 
 
 
-const SimilarProducts = ({getItems, fetchReducer,addProductToBasket,basketReducer }) => {
+const SimilarProducts = ({getProductDetails, selectedProduct, match, getItems,
+  addProductToBasket,
+  fetchReducer,
+  basketReducer }) => {
 
-    useEffect (()=>{
-        getItems();
-    },[])
+    useEffect(() => {
+      getItems();
+    },[]);
+
+    useEffect(() => {
+      var paramProduct = match.params.id;
+      getProductDetails(paramProduct);
+      console.log(match,"match similar products")
+      },[match]);
+
+
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(null);
   
@@ -69,12 +81,14 @@ const SimilarProducts = ({getItems, fetchReducer,addProductToBasket,basketReduce
     ));
     return (
 <>
-<Container className="title">
-<div className="subtitleLargest">
-<hr/>
-        Similar Products
-      </div>
-</Container>
+<Container className="productTitle col-12">
+        <Col className="col-xs-12 col-md-4">
+        <hr/> 
+      <div  className="subtitleLargest">    
+      Similar Products
+      </div> 
+      </Col>
+      </Container>
       <Container className="col-12" >
         <Carousel 
          className="thumbnailCarousel" 
@@ -105,14 +119,19 @@ const SimilarProducts = ({getItems, fetchReducer,addProductToBasket,basketReduce
 
 
 SimilarProducts.propTypes = {
-    getItems: PropTypes.func.isRequired,
-    fetchReducer: PropTypes.array.isRequired
+  getProductDetails: PropTypes.func.isRequired,
+  selectedProduct: PropTypes.object.isRequired,
+  getItems: PropTypes.func.isRequired,
+  addProductToBasket: PropTypes.func.isRequired,
+  fetchReducer: PropTypes.array.isRequired,
+  basketReducer: PropTypes.array.isRequired
 
 }
 
 const mapStateToProps = state => ({
-fetchReducer: state.fetchReducer.items,
-basketReducer: state.basketReducer.basketProducts
+  selectedProduct: state.fetchReducer.productDetails,
+  fetchReducer: state.fetchReducer.items,
+  basketReducer: state.basketReducer.basketProducts
 });
 
-export default connect (mapStateToProps,{getItems})(SimilarProducts);
+export default connect (mapStateToProps,{getProductDetails,getItems, addProductToBasket})(SimilarProducts);
