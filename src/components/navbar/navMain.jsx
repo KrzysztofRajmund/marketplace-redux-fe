@@ -132,7 +132,7 @@ const NavMain = ({
       {/* modal search */}
       <Modal className="modalSearch" show={show} onHide={handleClose}>
         <Modal.Body closeButton>
-        <div className="modalX" onClick={handleClose}><img src={xButton} width="30px" height="30px" alt="xButton"/></div>
+        <div className="modalX" onClick={handleClose}><img src={xButton} width="20px" height="20px" alt="xButton"/></div>
           <Form className="searchFormControl" inline>
             <FormControl
               type="text"
@@ -196,7 +196,7 @@ const NavMain = ({
       >
         
         <Modal.Body closeButton>
-        <div onClick={handleCloseBasket} className="modalXBasket"><img src={xButton} width="30px" height="30px" alt="xButton"/></div>
+        <div onClick={handleCloseBasket} className="modalXBasket"><img src={xButton} width="20px" height="20px" alt="xButton"/></div>
           <Basket basketProducts={basketReducer} />
         </Modal.Body>
       </Modal>

@@ -18,7 +18,6 @@ import Footer from './footer';
 import MainPage from './homePage/mainPage';
 import ProductDetails from './productsPage/productDetails';
 
-
 const Routing = (props) => {
   return (
     <Provider store={store}>

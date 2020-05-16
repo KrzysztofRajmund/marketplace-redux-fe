@@ -20,7 +20,7 @@ const ThumbnailCarousel = ({getItems,getProductDetails, fetchReducer,selectedPro
         getItems();
     },[])
 
-  
+
     //modal button
 
     const [show, setShow] = useState(false);
@@ -44,18 +44,18 @@ const ThumbnailCarousel = ({getItems,getProductDetails, fetchReducer,selectedPro
    
     const productImages = fetchReducer.slice(0,4).map(item=>(
       <Card key={item.id} className="thumbnailCarouselRow" onClick={()=>handleShow(item.id)}>
-        <a>
+      
         <Card.Img variant="top"src={item.verticalCardUrl}/>
-        </a>
+        
       </Card>
     ));
     const productImagesTwo = fetchReducer.slice(5,9).map(item=>(
       <Card key={item.id} 
       className="thumbnailCarouselRow" 
       onClick={()=>handleShow(item.id)}>
-        <a>
+      
         <Card.Img variant="top"src={item.verticalCardUrl}/>
-        </a>
+        
       </Card>
     ));
    
@@ -66,8 +66,9 @@ const ThumbnailCarousel = ({getItems,getProductDetails, fetchReducer,selectedPro
         onHide={handleClose}
         // size="xl"
         className="modalProductDetails"
+        backdropClassName="backdropModalProductPage"
         >     
-        <div onClick={handleClose} className="modalX"><img src={xButton} width="30px" height="30px" alt="xButton"/></div>
+        <div onClick={handleClose} className="modalX"><img src={xButton} width="20px" height="20px" alt="xButton"/></div>
               <Card.Img 
              className="d-block w-100"
              src={selectedProduct.verticalCardUrl}

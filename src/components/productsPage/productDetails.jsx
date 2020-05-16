@@ -1,5 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
-import { Route, Switch, Link } from "react-router-dom";
+//router
+import { Route, Switch, Link, useLocation } from "react-router-dom";
+//react-bootstrap
 import {
   Container,
   Button,
@@ -31,14 +33,21 @@ const ProductDetails = ({ getProductDetails, selectedProduct, match, getItems,
   fetchReducer,
   basketReducer }) => {
 
+    
+    useEffect(() => {
+      var paramProduct = match.params.id;
+      getProductDetails(paramProduct);
+      console.log(match,"match for params")
+ 
+    },[match]);
+    
+  
+    useEffect(() => {
+      getItems();
+      window.scrollTo(0,0)
+    },[]);
+    
 
-  useEffect(() => {
-    var paramProduct = match.params.id;
-    getProductDetails(paramProduct);
-    console.log(match,"match for params")
-
-    getItems();
-  },[]);
 
   const addProduct = (product,basketReducer) => {
     addProductToBasket(product,basketReducer) 

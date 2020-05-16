@@ -27,6 +27,11 @@ const SimilarProducts = ({getProductDetails, selectedProduct, match, getItems,
       var paramProduct = match.params.id;
       getProductDetails(paramProduct);
       console.log(match,"match similar products")
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: null ? 'auto' : 'smooth' //for Safari support
+      });
       },[match]);
 
 

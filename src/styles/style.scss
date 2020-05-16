@@ -76,6 +76,10 @@ body {
     margin-top: 2% !important;
 }
 
+.backdropModalProductPage {
+    opacity:0.8!important;
+}
+
 .modalX {
     position: absolute;
     top: 8px;
@@ -282,9 +286,14 @@ a img {
 }
 
 a img:hover{
-    transform: scale(1.5);
+    transform: scale(1.2);
     padding:0px !important;
 }
+
+.thumbnailCarouselRow img{
+    cursor: pointer;
+}
+
 
 .footerTopElementOne{
     border: 0.3px solid #2B2B28;
@@ -302,68 +311,6 @@ a img:hover{
     padding-bottom: 10px;
     letter-spacing: 5px;
     
-}
-
-@media screen and (max-width:991px){
-    .nav-link{
-        padding-top:10px !important;
-        padding-bottom:10px !important;
-    }
-
-    a:hover{
-        color:$primaryTextWhite !important;
-        transform: scale(1);
-    }
-}
-
-@media screen and (max-width:465px){
-    // .nav-link{
-    //     padding-top:10px !important;
-    //     padding-bottom:10px !important;
-    // }
-
-    .footerTopElementOne:first-child img{
-        cursor: pointer;
-        width: 45px;
-        height: 45px;
-        transition: transform 0.5s;
-    }
-    .footerTopElementOne:first-child a{
-        display: none;
-    } 
-
-    .modalXBasket{
-        top: -16px;
-    }
-
-    .basketModal .modal-dialog {
-        margin-top: 10% !important;
-        margin-right: 25px !important;
-        margin-left: 0px !important;
-    }
-
-    .cardPriceProduct{
-        margin-top: -10rem;
-        z-index:1;
-        margin-left: 50%;
-        margin-bottom: 10%;
-    }
-}
-
-@media screen and (max-width:750px){
-    .hideSetionMediaOne{
-        display:none !important;
-    }
-
-}
-
-@media screen and (max-width:600px){
-    .chosenForYouCarousel a.carousel-control-prev, .chosenForYouCarousel a.carousel-control-next{
-        width: 15% !important;
-    }
-    .chosenForYouCarousel{
-        margin:0px;
-    }
 }
 
 .container{
@@ -446,4 +393,84 @@ a img:hover{
 a td, a td:last-child :hover{
 color:$primaryTextDarkGrey;
 
+}
+
+//media
+@media screen and (max-width:991px){
+    .nav-link{
+        padding-top:10px !important;
+        padding-bottom:10px !important;
+    }
+
+    a:hover{
+        color:$primaryTextWhite !important;
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width:750px){
+    .hideSetionMediaOne{
+        display:none !important;
+    }
+
+    
+.chosenForYouCarousel{
+    margin-left: 35px;
+}
+.chosenForYouCarousel a.carousel-control-prev{
+    margin-left: -30px !important;
+}
+
+}
+
+
+@media screen and (max-width:600px){
+    .chosenForYouCarousel a.carousel-control-prev, .chosenForYouCarousel a.carousel-control-next{
+        width: 15% !important;
+    }
+}
+
+
+@media screen and (max-width:465px){
+    // .nav-link{
+    //     padding-top:10px !important;
+    //     padding-bottom:10px !important;
+    // }
+
+    .footerTopElementOne:first-child img{
+        cursor: pointer;
+        width: 45px;
+        height: 45px;
+        transition: transform 0.5s;
+    }
+    .footerTopElementOne:first-child a{
+        display: none;
+    } 
+
+    .modalXBasket{
+        top: -16px;
+    }
+
+    .basketModal .modal-dialog {
+        margin-top: 10% !important;
+        margin-right: 25px !important;
+        margin-left: 0px !important;
+    }
+
+    .cardPriceProduct{
+        margin-top: -10rem;
+        z-index:1;
+        margin-left: 50%;
+        margin-bottom: 10%;
+    }
+
+    .modalProductDetails .modal-dialog {
+        margin-top: 6% !important;
+    }
+}
+
+@media screen and (max-width:400px){
+    .modalProductDetails .modal-dialog {
+        margin-top: 15% !important;
+    }
 }
