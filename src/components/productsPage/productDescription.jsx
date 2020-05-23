@@ -25,15 +25,7 @@ const ProductDescription = ({
         <h5>Description</h5>
         <hr />
         <div className="basicDescriptionText">
-            {selectedProduct.title}
-            {selectedProduct.title}
-            {selectedProduct.title}
-            {selectedProduct.title}
-            {selectedProduct.title}
-            {selectedProduct.title}
-            {selectedProduct.title}
-            {selectedProduct.title}
-            {selectedProduct.title}
+            {selectedProduct.description}
         </div>
         
       </Col>
@@ -45,15 +37,15 @@ const ProductDescription = ({
        <tbody>
          <tr>
            <td className="pl-0 pr-0 basicDescriptionText"> <strong>Brand:</strong></td>
-           <td className="basicDescriptionText">Boethe</td>
+           <td className="basicDescriptionText">{selectedProduct.brand}</td>
          </tr>
          <tr>
            <td className="pl-0 pr-0 basicDescriptionText"> <strong>Product type:</strong></td>
-           <td className="basicDescriptionText">Power Tools</td>
+           <td className="basicDescriptionText">{selectedProduct.productType}</td>
          </tr>
          <tr>
            <td className="pl-0 pr-0 basicDescriptionText"> <strong>Launched on:</strong></td>
-           <td className="basicDescriptionText">05/2013</td>
+           <td className="basicDescriptionText">{selectedProduct.collection}</td>
          </tr>
          <tr>
            <td className="pl-0 pr-0 basicDescriptionText"> <strong>Language:</strong></td>

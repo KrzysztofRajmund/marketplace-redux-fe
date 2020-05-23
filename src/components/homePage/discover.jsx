@@ -52,7 +52,6 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
             alt="basket img"
             height="30px"
             width="30px"
-            onClick={() => addProduct(item, basketReducer)}
           ></img>
           </Link>
           </Carousel.Caption>
