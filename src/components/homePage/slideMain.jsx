@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 //assets
 import basketicon from "../navbar/assets/basketicon.png";
 import infoIcon from "../../assets/infoIcon.png";
-import gifTwo from "../../assets/gifTwo.gif";
+
 
 
 
@@ -35,12 +35,12 @@ const SlideMain = ({getItems,fetchReducer,addProductToBasket,basketReducer }) =>
       addProductToBasket(product,basketReducer) 
       };
 
-    const suggestedItems = fetchReducer.slice(0, 3).map((item) => (
+    const suggestedItems = fetchReducer.slice(0, 2).map((item) => (
       <Carousel.Item key={item.id}>
         <Link to={"/" + item.id}>
           <img
             className="d-block w-100"
-            src={gifTwo}
+            src={item.gif}
             alt="First slide"
             height="auto"
             width="100%"
@@ -48,10 +48,10 @@ const SlideMain = ({getItems,fetchReducer,addProductToBasket,basketReducer }) =>
             {/* <ReactPlayer url={item.jumbotronVideoUrl} width="3000" height="1500" playing="true" loop="true"/> */}
         </Link>
         <Carousel.Caption>
-        <h3>{item.sale}</h3>
+        <h3 className="slideSale">{item.sale}</h3>
           <Link to={"/" + item.id}>
           <img
-            className="infoIcon"
+            className="infoIconSlide"
             src={infoIcon}
             alt="img"
             height="40px"
@@ -68,7 +68,12 @@ const SlideMain = ({getItems,fetchReducer,addProductToBasket,basketReducer }) =>
       <hr/>
         Suggested Products
       </div> */}
-        <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
+        <Carousel activeIndex={index} direction={direction}
+        indicators={false}
+        controls={false}
+        // interval={null}
+        slide={true}
+         onSelect={handleSelect}>
             {suggestedItems}
         </Carousel>
         </>
