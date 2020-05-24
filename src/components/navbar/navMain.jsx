@@ -163,7 +163,7 @@ const NavMain = ({
                   <div className="pl-1 pr-1">${search.price.toFixed(2)}</div>
 
                   <div>
-                  <Link to={"/" + search.id}>
+                  <Link to={"/" + search.id} onClick={handleClose}>
         <img
             className="infoIcon m-1"
             src={infoIcon}

@@ -1,6 +1,6 @@
-import React, {Component, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 //react-bootstrap
-import {Container,Carousel,Button,Card,CardGroup, Modal, Row,Col} from 'react-bootstrap'
+import {Container,Carousel,Card,CardGroup, Modal, Row} from 'react-bootstrap'
 //redux
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
@@ -8,7 +8,6 @@ import {getItems, getProductDetails} from '../../actions/fetchActions';
 //router
 import { Link } from 'react-router-dom';
 //assets
-import xButton from "../../assets/xButton.png";
 import infoIcon from "../../assets/infoIcon.png";
 
 
@@ -69,22 +68,18 @@ const ThumbnailCarousel = ({getItems,getProductDetails, fetchReducer,selectedPro
         className="modalProductDetails"
         backdropClassName="backdropModalProductPage"
         >     
-        {/* <div onClick={handleClose} 
-        className="modalX"><img src={xButton} width="20px" height="20px" alt="xButton"/></div> */}
               <Card.Img 
              className="d-block w-100"
              src={selectedProduct.verticalCardUrl}
              height="auto"
              />
-            
-            <Link to={"/" + selectedProduct.id}>
+            <Link  className="modalInfoIcon" onClick={handleClose} to={"/" + selectedProduct.id}>
         <img
-            className="modalInfoIcon"
             src={infoIcon}
-            alt="basket img"
+            alt="infoicon img"
             height="30px"
             width="30px"
-          ></img>
+          />
           </Link>
            
           </Modal>

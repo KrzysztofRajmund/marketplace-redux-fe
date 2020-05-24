@@ -85,15 +85,11 @@ body {
   cursor: pointer;
 }
 
-.modalInfoIcon {
+.modal-content a.modalInfoIcon {
   position: absolute;
   top: 8px;
   right: 16px;
   cursor: pointer;
-  -webkit-transition: none !important;
-  transition: none !important;
-  -webkit-transform: none !important;
-          transform: none !important;
 }
 
 .modalXBasket {
