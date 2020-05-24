@@ -1,4 +1,5 @@
 import React, {Component, useState, useEffect} from 'react';
+import ReactPlayer from 'react-player';
 //bootstrap
 import {Container,Carousel,Button} from 'react-bootstrap'
 //redux
@@ -33,19 +34,20 @@ const SlideMain = ({getItems,fetchReducer,addProductToBasket,basketReducer }) =>
       addProductToBasket(product,basketReducer) 
       };
 
-    const suggestedItems = fetchReducer.slice(5, 8).map((item) => (
+    const suggestedItems = fetchReducer.slice(0, 3).map((item) => (
       <Carousel.Item key={item.id}>
         <Link to={"/" + item.id}>
-          <img
+          {/* <img
             className="d-block w-100"
             src={item.jumbotronUrl}
             alt="First slide"
             height="auto"
             width="100%"
-          />
+          /> */}
+            <ReactPlayer url={item.jumbotronVideoUrl} width="3000" height="1500" playing="true" loop="true"/>
         </Link>
         <Carousel.Caption>
-          <h3>Sale -70%</h3>
+        <h3>{item.sale}</h3>
           <Link to={"/" + item.id}>
           <img
             className="infoIcon"

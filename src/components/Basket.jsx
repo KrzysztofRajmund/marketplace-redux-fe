@@ -4,7 +4,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addProductToBasket } from "../actions/basketActions";
 //react bootstrap
-import { Card } from "react-bootstrap";
+import { Card,Button } from "react-bootstrap";
+//assets
+import trash from ".././assets/trash.png";
 
 const Basket = ({ basketReducer }) => {
 
@@ -44,8 +46,13 @@ const Basket = ({ basketReducer }) => {
                 </div>
                 <div className="pl-1">{item.count} x {item.title}</div>
                 <div>
-                  <button className="sumCardButton">€{(item.price * item.count).toFixed(2)}</button>
-                  <button className="deleteCardButton" onClick={() => removeHandler(item,index)}>Delete</button>
+                  <Button variant="outline-light" className="sumCardButton">€{(item.price * item.count).toFixed(2)}</Button>
+                  <Button href="#" variant="outline-light" className="sumCardButton" onClick={() => removeHandler(item,index)}><img
+                  src={trash}
+                  alt="img trash"
+                  height="25px"
+                  width="25px"
+                ></img></Button>
                 </div>
               </Card.Body>
             </Card>

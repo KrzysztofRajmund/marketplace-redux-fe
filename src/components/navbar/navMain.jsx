@@ -160,26 +160,28 @@ const NavMain = ({
                     {search.title.substr(0, 12) + "..."}
                   </div>
 
-                  <div className="pl-1 pr-1">${search.price.toFixed(2)}</div>
+                  <div className="pl-1 pr-1">€{search.price.toFixed(2)}</div>
 
                   <div>
                   <Link to={"/" + search.id} onClick={handleClose}>
         <img
-            className="infoIcon m-1"
+            className="infoIcon m-1 mr-2"
             src={infoIcon}
             alt="basket img"
-            height="20px"
-            width="20px"
+            height="30px"
+            width="30px"
           ></img>
           </Link>
-                    <button onClick={() => addProduct(search,basketReducer)}>
+          <a>
+                    <Button className="transparentBtn" onClick={() => addProduct(search,basketReducer)}>
                       <img
                         src={basketiconTwo}
                         alt="basket img"
-                        height="20px"
-                        width="20px"
+                        height="30px"
+                        width="30px"
                       ></img>
-                    </button>
+                    </Button>
+                    </a>
                   </div>
                 </Card.Body>
               </Card>

@@ -165,6 +165,17 @@ div.modal-content {
   border-radius: 0px;
 }
 
+button.sumCardButton {
+  background-color: rgba(248, 248, 248, 0) !important;
+  border: none !important;
+  color: #2B2B28;
+}
+
+button.sumCardButton:hover {
+  background-color: rgba(248, 248, 248, 0) !important;
+  border: none !important;
+}
+
 .btn-primary {
   border-radius: 0px !important;
 }

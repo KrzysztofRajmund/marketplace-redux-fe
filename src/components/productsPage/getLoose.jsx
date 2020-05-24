@@ -12,6 +12,7 @@ import {
   Col,
   Nav,
   Navbar,
+  Carousel
 } from "react-bootstrap";
 //redux
 import PropTypes from "prop-types";
@@ -27,7 +28,7 @@ import basketiconTwo from "../navbar/assets/basketiconTwo.png";
 import facebook from "../../assets/facebook.png";
 import twitter from "../../assets/twitter.png";
 import heart from "../../assets/heart.png";
-import creditCards from "../../assets/creditCards.png"
+import creditCards from "../../assets/creditCards.png";
 
 const GetLoose = ({ getProductDetails, selectedProduct, match, getItems,
   addProductToBasket,
@@ -83,6 +84,7 @@ const GetLoose = ({ getProductDetails, selectedProduct, match, getItems,
       </Container>
     </>
   );
+
 
   return (
     <>

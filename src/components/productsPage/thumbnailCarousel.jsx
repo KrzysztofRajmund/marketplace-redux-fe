@@ -42,14 +42,14 @@ const ThumbnailCarousel = ({getItems,getProductDetails, fetchReducer,selectedPro
       setDirection(e.direction);
     };
    
-    const productImages = fetchReducer.slice(0,4).map(item=>(
+    const productImages = fetchReducer.slice(3,7).map(item=>(
       <Card key={item.id} className="thumbnailCarouselRow" onClick={()=>handleShow(item.id)}>
       
         <Card.Img variant="top"src={item.verticalCardUrl}/>
         
       </Card>
     ));
-    const productImagesTwo = fetchReducer.slice(5,9).map(item=>(
+    const productImagesTwo = fetchReducer.slice(8,12).map(item=>(
       <Card key={item.id} 
       className="thumbnailCarouselRow" 
       onClick={()=>handleShow(item.id)}>

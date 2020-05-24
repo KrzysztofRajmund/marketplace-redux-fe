@@ -36,7 +36,7 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
         addProductToBasket(product,basketReducer) 
         };
       
-      const suggestedItems = fetchReducer.slice(0,1).map(item=>(
+      const suggestedItems = fetchReducer.slice(3,4).map(item=>(
           <Carousel.Item key={item.id}>
           {/* <img
             className="d-block w-100"
@@ -109,7 +109,7 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
 
    //toggle Bestsellers
    if (toggleBestsellers){
-    const discoverItems = fetchReducer.slice(0, 5).map(item => (
+    const discoverItems = fetchReducer.slice(2,5).map(item => (
    <Table  key={item.id} responsive>
   <tbody  className="transparentBtn">
          <tr>
@@ -118,11 +118,11 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
              <img
                src={item.url}
                width="120px"
-               height="70px"
-               src={item.url}
+               height="auto"
              />
            </td>
            <td>{item.title}</td>
+            <td>{item.description.substr(0, 50) + "..."}...</td>
            <td className=" float-right">€{item.price}</td>
            </Link>
          </tr>
@@ -248,7 +248,7 @@ if (togglePremiere){
 
     //toggle Newcoming
     if (toggleNewcoming){
-      const discoverItems = fetchReducer.slice(0, 5).map(item => (
+      const discoverItems = fetchReducer.slice(0,5).map(item => (
      <Table key={item.id} responsive>
        <tbody  className="transparentBtn">
          <tr>
