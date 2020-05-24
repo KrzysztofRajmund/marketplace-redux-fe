@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 //assets
 import basketicon from "../navbar/assets/basketicon.png";
 import infoIcon from "../../assets/infoIcon.png";
-import gif from "../../assets/gif.gif";
+import gifTwo from "../../assets/gifTwo.gif";
 
 
 
@@ -40,7 +40,7 @@ const SlideMain = ({getItems,fetchReducer,addProductToBasket,basketReducer }) =>
         <Link to={"/" + item.id}>
           <img
             className="d-block w-100"
-            src={gif}
+            src={gifTwo}
             alt="First slide"
             height="auto"
             width="100%"
