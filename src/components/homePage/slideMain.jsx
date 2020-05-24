@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 //assets
 import basketicon from "../navbar/assets/basketicon.png";
 import infoIcon from "../../assets/infoIcon.png";
+import gif from "../../assets/gif.gif";
 
 
 
@@ -37,14 +38,14 @@ const SlideMain = ({getItems,fetchReducer,addProductToBasket,basketReducer }) =>
     const suggestedItems = fetchReducer.slice(0, 3).map((item) => (
       <Carousel.Item key={item.id}>
         <Link to={"/" + item.id}>
-          {/* <img
+          <img
             className="d-block w-100"
-            src={item.jumbotronUrl}
+            src={gif}
             alt="First slide"
             height="auto"
             width="100%"
-          /> */}
-            <ReactPlayer url={item.jumbotronVideoUrl} width="3000" height="1500" playing="true" loop="true"/>
+          />
+            {/* <ReactPlayer url={item.jumbotronVideoUrl} width="3000" height="1500" playing="true" loop="true"/> */}
         </Link>
         <Carousel.Caption>
         <h3>{item.sale}</h3>
