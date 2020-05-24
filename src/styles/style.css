@@ -12,7 +12,7 @@ body {
 }
 
 .card-body {
-  background-color: rgba(209, 185, 227, 0.25);
+  background-color: rgba(40, 9, 63, 0.25);
 }
 
 .card-title {
@@ -83,6 +83,17 @@ body {
   right: 16px;
   font-size: 18px;
   cursor: pointer;
+}
+
+.modalInfoIcon {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  cursor: pointer;
+  -webkit-transition: none !important;
+  transition: none !important;
+  -webkit-transform: none !important;
+          transform: none !important;
 }
 
 .modalXBasket {
@@ -236,7 +247,7 @@ hr {
 .navbarMain {
   -webkit-box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3) !important;
           box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3) !important;
-  background-color: rgba(133, 206, 176, 0.911) !important;
+  background-color: #628c9a !important;
   color: #CCCCCC !important;
 }
 
@@ -293,15 +304,6 @@ a img:hover {
 
 .thumbnailCarouselRow img {
   cursor: pointer;
-}
-
-.footerTopElementOne {
-  border: 0.3px solid #2B2B28;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.356);
-          box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.356);
-  border-radius: 1px;
 }
 
 .footerBottom {
@@ -405,7 +407,7 @@ a img:hover {
 }
 
 .carousel-indicators li {
-  background-color: rgba(133, 206, 176, 0.911) !important;
+  background-color: #628c9a !important;
   height: 8px !important;
 }
 

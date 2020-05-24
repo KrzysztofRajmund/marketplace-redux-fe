@@ -69,6 +69,53 @@ const ChosenForYou = ({getItems, fetchReducer}) => {
       </Card>
       </Row>
     ));
+
+    const itemsForYouThree = fetchReducer.slice(6,8).map(item=>(
+      <Row className="col-12 col-md-6"  key={item.id}>
+      <Card className="chosenForYouRow">
+      <Link to={"/" + item.id}>
+        <Card.Img variant="top"src={item.jumbotronUrl}/>
+        </Link>
+        <Card.Body>
+    <Card.Title><div>{item.title}</div><p>€{item.price}</p></Card.Title>
+        </Card.Body>
+        <Card.Footer>
+        <Link to={"/" + item.id}>
+        <img
+            className="infoIcon"
+            src={infoIcon}
+            alt="basket img"
+            height="30px"
+            width="30px"
+          ></img>
+          </Link>
+        </Card.Footer>
+      </Card>
+      </Row>
+    ));
+    const itemsForYouFour = fetchReducer.slice(10,12).map(item=>(
+      <Row className="col-12 col-md-6" key={item.id}>
+      <Card className="chosenForYouRow">
+        <Link to={"/" + item.id}>
+        <Card.Img variant="top"src={item.jumbotronUrl}/>
+        </Link>
+        <Card.Body>
+    <Card.Title><div>{item.title}</div><p>€{item.price}</p></Card.Title>
+        </Card.Body>
+        <Card.Footer>
+        <Link to={"/" + item.id}>
+        <img
+            className="infoIcon"
+            src={infoIcon}
+            alt="basket img"
+            height="30px"
+            width="30px"
+          ></img>
+          </Link>
+        </Card.Footer>
+      </Card>
+      </Row>
+    ));
     return (
       <Container className="col-12" >
       <div className="subtitleLargest">
@@ -84,8 +131,8 @@ const ChosenForYou = ({getItems, fetchReducer}) => {
           </Carousel.Item>
           <Carousel.Item>
             <CardGroup>
-          {itemsForYou}
-          {itemsForYouTwo}
+          {itemsForYouThree}
+          {itemsForYouFour}
           </CardGroup>
           </Carousel.Item>
         </Carousel>

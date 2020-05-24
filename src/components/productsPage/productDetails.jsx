@@ -19,7 +19,7 @@ import { connect } from "react-redux";
 import { getProductDetails,getItems } from "../../actions/fetchActions";
 import { addProductToBasket } from "../../actions/basketActions";
 //components
-import ThumbnailCarousel from "./thumbnailCarousel";
+import GetLoose from "./getLoose";
 import ProductDescription from "./productDescription";
 import SimilarProducts from "./similarProducts";
 //assets
@@ -131,9 +131,9 @@ const ProductDetails = ({ getProductDetails, selectedProduct, match, getItems,
     <>
       <div>{getProduct}</div>
       <div>
-        <ThumbnailCarousel />
         <ProductDescription />
         <SimilarProducts match={match} />
+        <GetLoose />
       </div>
     </>
   );

@@ -33,7 +33,7 @@ const SlideMain = ({getItems,fetchReducer,addProductToBasket,basketReducer }) =>
       addProductToBasket(product,basketReducer) 
       };
 
-    const suggestedItems = fetchReducer.slice(0, 8).map((item) => (
+    const suggestedItems = fetchReducer.slice(5, 8).map((item) => (
       <Carousel.Item key={item.id}>
         <Link to={"/" + item.id}>
           <img
@@ -61,10 +61,10 @@ const SlideMain = ({getItems,fetchReducer,addProductToBasket,basketReducer }) =>
     ));
     return (
       <>
-      <div className="subtitleLargest">
+      {/* <div className="subtitleLargest">
       <hr/>
         Suggested Products
-      </div>
+      </div> */}
         <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
             {suggestedItems}
         </Carousel>

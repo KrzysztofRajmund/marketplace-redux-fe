@@ -88,6 +88,15 @@ body {
     cursor: pointer;
 }
 
+.modalInfoIcon{
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    cursor: pointer;
+    transition: none !important;
+    transform: none !important;
+}
+
 .modalXBasket{
     position: absolute;
     top: -21px;
@@ -292,14 +301,6 @@ a img:hover{
 
 .thumbnailCarouselRow img{
     cursor: pointer;
-}
-
-
-.footerTopElementOne{
-    border: 0.3px solid #2B2B28;
-    box-sizing: border-box;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.356) ;
-    border-radius: 1px;
 }
 
 .footerBottom{

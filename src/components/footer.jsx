@@ -12,22 +12,31 @@ import {
 import facebook from ".././assets/facebook.png";
 import twitter from ".././assets/twitter.png";
 import promoCode from ".././assets/promoCode.png";
+import creditCards from ".././assets/creditCards.png"
 
 const Footer = () => {
   return (
     <footer>
         {/* FOOTER TOP */}
       <Navbar className="footerTop">
-        <Nav className="footerTopElementOne ml-5 mr-auto">
+        <Nav 
+        className="
+        footerTopElementOne
+         ml-5 mr-auto">
         <img id="promoCode"
                   src={promoCode}
                   alt="img"
                   height="30px"
                   width="30px"
                 ></img>
-          <Nav.Link className="footerLink" href="#home" id="couponTitle">Coupon</Nav.Link>
-          <Nav.Link  className="footerLink" href="#features">Features</Nav.Link>
-          <Nav.Link className="footerLink" href="#pricing">Pricing</Nav.Link>
+          <Nav.Link className="footerLink" href="#home" id="couponTitle">
+          <img 
+                  src={creditCards}
+                  alt="img"
+                  height="30px"
+                  width="auto"
+                ></img>
+          </Nav.Link>
         </Nav>
         <Nav className="mr-5">
           <Nav.Link href="#home"> <img
@@ -46,7 +55,9 @@ const Footer = () => {
       </Navbar>
         {/* FOOTER BOTTOM */}
         <Container className="footerBottom row-12">
-        <div className="footerLogo" href="#home">LOGO</div>
+        <div  href="#home">JÄGERSTRASSE 54, </div>
+        <div  href="#home">Jaeger Street 54, </div>
+        <div  href="#home">10117 Berlin</div>
        
       </Container>
     </footer>

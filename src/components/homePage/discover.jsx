@@ -1,4 +1,5 @@
 import React, {Component, useState, useEffect} from 'react';
+import ReactPlayer from 'react-player';
 //bootstrap
 import {Container,Carousel,Button, Card, CardGroup, Row, Col, Table} from 'react-bootstrap'
 //redux
@@ -35,21 +36,21 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
         addProductToBasket(product,basketReducer) 
         };
       
-      const suggestedItems = fetchReducer.slice(0,3).map(item=>(
+      const suggestedItems = fetchReducer.slice(0,1).map(item=>(
           <Carousel.Item key={item.id}>
-          <img
+          {/* <img
             className="d-block w-100"
             src={item.verticalCardUrl}
             height="auto"
             width="auto"
-          />
+          /> */}
+          <ReactPlayer url={item.videoUrl} width="320" height="480" playing="true" loop="true"/>
           <Carousel.Caption>
             <h3>Sale -30%</h3>
             <Link to={"/" + item.id}>
         <img
-            className="infoIcon"
             src={infoIcon}
-            alt="basket img"
+            alt="info img"
             height="30px"
             width="30px"
           ></img>

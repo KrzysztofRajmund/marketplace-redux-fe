@@ -1,10 +1,12 @@
 import React from 'react';
 
 //components
-import JumbotronSale from './jumbotronSale';
+// import JumbotronSale from './jumbotronSale';
 import SlideMain from './slideMain';
 import ChosenForYou from './chosenForYou';
 import Discover from './discover';
+import ThumbnailCarousel from './../productsPage/thumbnailCarousel';
+import GetLoose from './../productsPage/getLoose';
 
 
 const MainPage = (props) => {
@@ -12,10 +14,12 @@ const MainPage = (props) => {
 
     
       <>
-      <JumbotronSale />
+      {/* <JumbotronSale /> */}
       <SlideMain />
-      <ChosenForYou/>
+      <GetLoose/>
+      {/* <ThumbnailCarousel/> */}
       <Discover/>
+      <ChosenForYou/>
       </>
     
   );
