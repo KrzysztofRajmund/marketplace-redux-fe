@@ -24,8 +24,8 @@ const Routing = (props) => {
       <Router>
         <Route path="/" component={NavMain} />
         <Switch>
-          <Route path="/mainpage" component={MainPage} />
           <Route path="/:id" component={ProductDetails} />
+          <Route path="/" component={MainPage} />
         </Switch>
         <Route path="/" component={Footer} />
       </Router>

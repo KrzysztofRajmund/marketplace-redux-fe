@@ -282,8 +282,13 @@ hr {
 
 footer {
   letter-spacing: 1px;
-  background-color: #F8F8F8;
+  background-color: rgba(43, 43, 40, 0.055);
   margin-top: 60px;
+}
+
+.textCentre {
+  text-align: center;
+  display: block !important;
 }
 
 a {
@@ -327,7 +332,6 @@ a img:hover {
 }
 
 .footerBottom {
-  background-color: #CCCCCC;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -339,6 +343,7 @@ a img:hover {
   padding: 2px;
   padding-bottom: 10px;
   letter-spacing: 5px;
+  color: #2B2B28;
 }
 
 .container {

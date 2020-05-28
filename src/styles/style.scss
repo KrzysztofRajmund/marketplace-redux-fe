@@ -287,9 +287,14 @@ hr.cardPriceHR{
 //footer
 footer {
     letter-spacing: 1px;
-    background-color:$primaryTextWhite;
+    background-color:rgba(43, 43, 40, 0.055);
     margin-top: 60px;
 }
+
+.textCentre {
+    text-align:center;
+    display:block !important;
+ }
 
 a {
     color:$primaryTextDarkGrey !important;
@@ -326,13 +331,13 @@ a img:hover{
 }
 
 .footerBottom{
-    background-color:$primaryTextLightGrey; 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding:2px;
     padding-bottom: 10px;
     letter-spacing: 5px;
+    color:$primaryTextDarkGrey;
     
 }
 

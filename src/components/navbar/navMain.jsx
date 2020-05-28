@@ -21,6 +21,8 @@ import basketiconTwo from "./assets/basketiconTwo.png";
 import searchicon from "./assets/searchicon.png";
 import xButton from "../../assets/xButton.png";
 import infoIcon from "../../assets/infoIcon.png";
+import home from "../../assets/home.png";
+import logo2 from "../../assets/logo2.png";
 //components
 import Basket from "./../Basket";
 //router
@@ -93,7 +95,16 @@ const NavMain = ({
     <>
       {/* navbar */}
       <Navbar className="navbarMain" expand="lg" sticky="top">
-        <Navbar.Brand>LOGO</Navbar.Brand>
+        {/* <Nav.Link>
+          <Link to={"/"}>
+            <img src={home} alt="home" height="25px" width="25px"></img>
+          </Link>
+        </Nav.Link> */}
+        <Navbar.Brand>
+        <Link to={"/"}>
+          <img src={logo2} alt="home" height="35px" width="auto"></img>
+          </Link>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -103,7 +114,11 @@ const NavMain = ({
           {/* search icon + basket icon */}
           <Nav className="mr-5">
             <Nav.Link>
-              <Button className="p-0 m-0" variant="link" onClick={handleShowBasket}>
+              <Button
+                className="p-0 m-0"
+                variant="link"
+                onClick={handleShowBasket}
+              >
                 <img
                   src={basketicon}
                   alt="basket img"
@@ -111,7 +126,7 @@ const NavMain = ({
                   width="20px"
                 ></img>
                 <Badge pill variant="success">
-                {basketReducer.length}
+                  {basketReducer.length}
                 </Badge>
               </Button>
             </Nav.Link>
@@ -132,7 +147,9 @@ const NavMain = ({
       {/* modal search */}
       <Modal className="modalSearch" show={show} onHide={handleClose}>
         <Modal.Body closeButton>
-        <div className="modalX" onClick={handleClose}><img src={xButton} width="20px" height="20px" alt="xButton"/></div>
+          <div className="modalX" onClick={handleClose}>
+            <img src={xButton} width="20px" height="20px" alt="xButton" />
+          </div>
           <Form className="searchFormControl" inline>
             <FormControl
               type="text"
@@ -143,8 +160,7 @@ const NavMain = ({
             />
           </Form>
           <div>
-            
-            {productResult.map(search => (
+            {productResult.map((search) => (
               <Card className="cardSearchBar">
                 <Card.Body className="containerSearchBar pl-1 pr-1">
                   <div>
@@ -163,24 +179,27 @@ const NavMain = ({
                   <div className="pl-1 pr-1">€{search.price.toFixed(2)}</div>
 
                   <div>
-                  <Link to={"/" + search.id} onClick={handleClose}>
-        <img
-            className="infoIcon m-1 mr-2"
-            src={infoIcon}
-            alt="basket img"
-            height="30px"
-            width="30px"
-          ></img>
-          </Link>
-          <a>
-                    <Button className="transparentBtn" onClick={() => addProduct(search,basketReducer)}>
+                    <Link to={"/" + search.id} onClick={handleClose}>
                       <img
-                        src={basketiconTwo}
+                        className="infoIcon m-1 mr-2"
+                        src={infoIcon}
                         alt="basket img"
                         height="30px"
                         width="30px"
                       ></img>
-                    </Button>
+                    </Link>
+                    <a>
+                      <Button
+                        className="transparentBtn"
+                        onClick={() => addProduct(search, basketReducer)}
+                      >
+                        <img
+                          src={basketiconTwo}
+                          alt="basket img"
+                          height="30px"
+                          width="30px"
+                        ></img>
+                      </Button>
                     </a>
                   </div>
                 </Card.Body>
@@ -196,9 +215,10 @@ const NavMain = ({
         show={showBasket}
         onHide={handleCloseBasket}
       >
-        
         <Modal.Body closeButton>
-        <div onClick={handleCloseBasket} className="modalXBasket"><img src={xButton} width="20px" height="20px" alt="xButton"/></div>
+          <div onClick={handleCloseBasket} className="modalXBasket">
+            <img src={xButton} width="20px" height="20px" alt="xButton" />
+          </div>
           <Basket basketProducts={basketReducer} />
         </Modal.Body>
       </Modal>

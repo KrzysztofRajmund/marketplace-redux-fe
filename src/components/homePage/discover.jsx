@@ -109,7 +109,7 @@ const Discover = ({getItems, fetchReducer, addProductToBasket,basketReducer }) =
 
    //toggle Bestsellers
    if (toggleBestsellers){
-    const discoverItems = fetchReducer.slice(2,5).map(item => (
+    const discoverItems = fetchReducer.slice(2,6).map(item => (
    <Table  key={item.id} responsive>
   <tbody  className="transparentBtn">
          <tr>
