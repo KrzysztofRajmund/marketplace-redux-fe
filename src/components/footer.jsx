@@ -60,7 +60,13 @@ const Footer = () => {
           </Row>
 
           <Row className="row-12 textCentre mt-1">
-            Edisonstraße 63/2 12459 Berlin
+          JÄGERSTRASSE 54
+          </Row>
+          <Row className="row-12 textCentre mt-1">
+          Jaeger Street 54
+          </Row>
+          <Row className="row-12 textCentre mt-1">
+          10117 Berlin
           </Row>
         </Col>
       </Container>
