@@ -100,19 +100,19 @@ const NavMain = ({
             <img src={home} alt="home" height="25px" width="25px"></img>
           </Link>
         </Nav.Link> */}
-        <Navbar.Brand>
+        <Navbar.Brand className="ml-1">
         <Link to={"/"}>
           <img src={logo2} alt="home" height="35px" width="auto"></img>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+          <Nav className="mr-auto ml-3">
             <Nav.Link>About</Nav.Link>
             <Nav.Link>Contact</Nav.Link>
           </Nav>
           {/* search icon + basket icon */}
-          <Nav className="mr-5">
+          <Nav className="mr-5 ml-3">
             <Nav.Link>
               <Button
                 className="p-0 m-0"
